@@ -1,0 +1,29 @@
+(executables
+ (names
+  main
+  enhanced_prover
+  galbpc
+  galb_rft
+  galb_sat
+  galb_target
+  galb_mod_target
+  galb_mod_refute
+  galb_mod_naive_refute
+  galb_mod_mono_refute
+  galb_mod_mono_target
+  check_grammar)
+ (public_names
+  micse-s
+  micse-s.enhanced_prover
+  galbpc
+  galb_rft
+  galb_sat
+  galb_target
+  galb_mod_target
+  galb_mod_refute
+  galb_mod_naive_refute
+  galb_mod_mono_refute
+  galb_mod_mono_target
+  check_grammar)
+ (libraries core lib_s micse.lib micse.utils)
+ (package micse-s))
