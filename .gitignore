@@ -1,0 +1,21 @@
+# Build directories
+_build
+.merlin
+/bin
+
+# Etc
+.DS_Store
+.vscode
+tmp/
+
+# Benchmark
+/benchmarks/sample_*
+/scripts/output/
+/scripts/.env
+/result
+
+# Vagrant Configurations
+.vagrant/
+
+# Python
+__pycache__

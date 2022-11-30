@@ -1,0 +1,59 @@
+name: Build & Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build_and_tests:
+    runs-on: ubuntu-20.04
+
+    env:
+      OPAM_SWITCH_VERSION: 4.10.0
+      Z3_VERSION: 4.8.12
+      CORES: 2
+
+    steps:
+      - uses: actions/checkout@v2
+
+      ## Setup
+      - name: System Dependencies
+        run: |
+          sudo apt-get update >/dev/null
+          for pkg in "cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib"; do
+            echo "[NOTE] Install $pkg: start"
+            sudo apt-get install -y -qq $pkg >/dev/null 2>&1
+            echo "[NOTE] Install $pkg: done"
+          done
+
+      - name: OPAM and OCaml Dependencies
+        run: |
+          opam init -y --bare >/dev/null
+          opam update >/dev/null
+          eval $(opam env)
+          if [[ ! "$(ocaml --version)" =~ "$OPAM_SWITCH_VERSION" ]]; then
+            if [[ "$(opam switch list 2>/dev/null | grep -c "$OPAM_SWITCH_VERSION")" -eq 0 ]]; then
+              opam switch create $OPAM_SWITCH_VERSION >/dev/null
+            else
+              opam switch $OPAM_SWITCH_VERSION >/dev/null
+            fi
+          fi
+          echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
+          eval $(opam env) && \
+            opam install -y -q -j $CORES ./ --deps-only
+
+      ## Build
+      - name: Build
+        run: |
+          eval $(opam env)
+          make
+
+      ## Tests
+      - name: Tests
+        run: |
+          eval $(opam env)
+          make test
