@@ -1,4 +1,0 @@
-[submodule "MicSE"]
-	path = MicSE
-	url = git@github.com:kupl/MicSE.git
-	branch = master
