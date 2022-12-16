@@ -44,8 +44,8 @@ if [[ ! "$(ocaml --version)" =~ "$OPAM_SWITCH_VERSION" ]]; then
 fi
 #echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 eval $(opam env) && \
-	opam install -y -q -j $CORES dune.3.4.0 batteries.3.3.0 core.v0.14.1 menhir.20210419 ocamlgraph.2.0.0 ptime.0.8.5 yojson.1.7.0 zarith.1.11 ounit2.2.2.4 bignum.v0.14.0 ppx_deriving.5.2.1 mtime.1.2.0 logs.0.7.0 z3.4.8.11 odoc
-#opam install -y -q -j $CORES /vagrant --deps-only
+	#opam install -y -q -j $CORES dune.2.4.0 batteries.3.3.0 core.v0.14.1 menhir.20210419 ocamlgraph.2.0.0 ptime.0.8.5 yojson.1.7.0 zarith.1.11 ounit2.2.2.4 bignum.v0.14.0 ppx_deriving.5.2.1 mtime.1.2.0 logs.0.7.0 z3.4.8.11 odoc.1.5.3
+  opam install -y -q -j $CORES /vagrant --deps-only
 echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 OPAM_LIB_DIR=~/.opam/$OPAM_SWITCH_VERSION/lib/
 echo "[NOTE] End-up Initialize OPAM"
