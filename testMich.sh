@@ -31,8 +31,9 @@ for FILE_NAME in $LIST_FILE_NAME; do
     echo "file name ${IDX} : ${FILE_NAME}.tz"
     CODEFILE="benchmarks/top30/${FILE_NAME}.tz"
     STORAGEFILE="benchmarks/top30/${FILE_NAME}.storage.tz"
-    timeout 4800 micse -T 3600 -I $CODEFILE -S $STORAGEFILE -d > ~/MicSE/result/nonco/${FILE_NAME}.nonco 2>&1 &
-    timeout 4800 micse-s -T 3600 -I $CODEFILE -S $STORAGEFILE -d > ~/MicSE/result/syner/${FILE_NAME}.syner 2>&1 &
+	mkdir ~/MicSE/result/${IDX}
+    timeout 4800 micse -T 3600 -I $CODEFILE -S $STORAGEFILE -d > ~/MicSE/result/${IDX}/${FILE_NAME}.nonco 2>&1 &
+    timeout 4800 micse-s -T 3600 -I $CODEFILE -S $STORAGEFILE -d > ~/MicSE/result/${IDX}/${FILE_NAME}.syner 2>&1 &
     FLAG=`expr $IDX % 4`
     if [[ $FLAG -eq 0 ]]
     then
