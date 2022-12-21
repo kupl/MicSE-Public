@@ -21,6 +21,8 @@ MicSE can verify the absence of runtime failures of Michelson programs, e.g., no
 
 ## Documents
 
+[Installation](./doc/Installation.md)
+
 ## Development
 
 ### Prerequisite
