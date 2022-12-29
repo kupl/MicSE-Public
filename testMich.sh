@@ -1,26 +1,37 @@
 #!/bin/bash
-set -- $(getopt :S:E:j: "$@")
+#set -- $(getopt :S:E:j:h "$@")
 #default option
+Help()
+{
+    echo "Syntax: ./testMich.sh [-S|E|j|h]"
+    echo "options:"
+    echo "S     indicate Start index in benchmarks table (default: 1)"
+    echo "E     indicate End   index in benchmarks table (default: 23)"
+    echo "j     indicate the number of cores (default: 1)"
+    echo "h     displays the option"
+    echo ""
+}
 START=1
 END=23
 CORES=1
-while [ -n "$1" ]
+while getopts ":S:E:j:h" option; 
 do
-        case "$1" in
-                -S) echo "Found the -S option";START=$2;
-                        echo "Found the -S option, with from $START"
-                        shift;;
-                -E) echo "Found the -E option";END=$2;
-                        echo "Found the -E option, with from $END"
-                        shift;;
-                -j) echo "Found the -j option";CORES=$2;
-                        echo "Found the -j option, now cores used are $CORES"
-                        shift;;
-                --) shift
-                        break;;
-                *) echo "$1 is not an option";;
-        esac
-        shift
+    case "$option" in
+        S) echo "Found the -S option";START=$OPTARG;
+                echo "Found the -S option, with from $START";;
+        E) echo "Found the -E option";END=$OPTARG;
+                echo "Found the -E option, with from $END";;
+        j) echo "Found the -j option";CORES=$OPTARG;
+                echo "Found the -j option, now cores used are $CORES";;
+        h) echo "Found help option";
+                Help
+                exit;;
+        #--) shift
+        #        break;;
+        \?) echo "$1 is not an option";
+                Help
+                exit;;
+    esac
 done
 
 if [ $START -gt $END ];then
