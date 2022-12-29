@@ -58,7 +58,7 @@ echo ""
 echo "<<<< File Name List >>>>"
 IDX=`expr $START`
 USED=0
-until [ $IDX -eq $END ]
+until [ $IDX -gt $END ]
 do
     echo "${IDX}'th file name : ${LIST_FILE_NAME[IDX - 1]}.tz"
     CODEFILE="${LIST_FILE_NAME[IDX - 1]}.tz"
@@ -69,21 +69,59 @@ do
     fi
     if [ $CORES -eq 1 ]; then
         timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
-        sleep 4800
+        echo "Start New micse"
+        sleep 30
+        while [ 1 ]
+        do
+            if [ $(pgrep -xc micse) -eq 0 ] ## micse is done
+            then
+                echo "Terminated micse"
+                break
+            else
+                echo "Not yet"
+                sleep 480
+            fi
+        done
         timeout 4800 micse-s -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
-        sleep 4800
+        echo "Start New micse-s"
+        sleep 30
+        while [ 1 ]
+        do
+            if [ $(pgrep -xc micse-s) -eq 0 ] ## micse-s is done
+            then
+                echo "Terminated micse-s"
+                break
+            else
+                echo "Not yet"
+                sleep 480
+            fi
+        done
     elif [ $CORES -gt 1 ]; then
         timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
-        USED=`expr $USED + 1`
+        USED=$(pgrep -c micse)
         if [ $USED -eq $CORES ]; then
-            sleep 4800
-            USED=0
+            while [ 1 ]
+            do
+                if [ $(pgrep -c micse) -lt 3 ] ## all micse and micse-s process are done
+                then
+                    USED=$(pgrep -c micse)
+                    break
+                fi
+                sleep 480
+            done
         fi
         timeout 4800 micse-s -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
-        USED=`expr $USED + 1`
+        USED=$(pgrep -c micse)
         if [ $USED -eq $CORES ]; then
-            sleep 4800
-            USED=0
+            while [ 1 ]
+            do
+                if [ $(pgrep -c micse) -lt 3 ] ## all micse and micse-s process are done
+                then
+                    USED=$(pgrep -c micse)
+                    break
+                fi
+                sleep 480
+            done
         fi
     else
         echo "Core number should be non-negative"
@@ -92,4 +130,7 @@ do
     IDX=`expr $IDX + 1`
 done
 
+echo "Benchmarking is over!!"
+
 ##### Parsing result of benchmarks and displays it in chart
+python3 ~/MicSE/parse.py $START $END
