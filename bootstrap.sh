@@ -102,6 +102,6 @@ chmod +x taq
 sudo mv taq /usr/local/bin
 
 # install pip and tabulate for benchmarking
-sudo apt-get install python3-pip
+sudo apt-get install -y python3-pip
 python3 -m pip install tabulate
 echo "[NOTE] End-up bootstraping"
