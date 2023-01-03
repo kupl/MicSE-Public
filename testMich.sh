@@ -79,17 +79,16 @@ do
         mkdir ~/MicSE/benchmarks/result/${IDX}
     fi
     if [ $CORES -eq 1 ]; then
-        timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
+        timeout 4800 micse.naive_trxpath_main -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
         echo "Start New micse"
         sleep 30
         while [ 1 ]
         do
-            if [ $(pgrep -xc micse) -eq 0 ] ## micse is done
+            if [ $(pgrep -xc micse.naive_trx) -eq 0 ] ## micse is done
             then
                 echo "Terminated micse"
                 break
             else
-                echo "Not yet"
                 sleep 480
             fi
         done
@@ -103,12 +102,11 @@ do
                 echo "Terminated micse-s"
                 break
             else
-                echo "Not yet"
                 sleep 480
             fi
         done
     elif [ $CORES -gt 1 ]; then
-        timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
+        timeout 4800 micse.naive_trxpath_main -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
         USED=$(pgrep -c micse)
         if [ $USED -eq $CORES ]; then
             while [ 1 ]
