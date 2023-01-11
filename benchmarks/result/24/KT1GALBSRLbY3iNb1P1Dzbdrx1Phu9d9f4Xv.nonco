@@ -1,0 +1,4 @@
+[INFO] [000031ms] Logger Start.
+[INFO] [000089ms] > # of Instructions: 2976
+[DEBUG] [000091ms] ExecFlow.sym_exec start
+[DEBUG] [000487ms] ExecFlow.sym_exec end

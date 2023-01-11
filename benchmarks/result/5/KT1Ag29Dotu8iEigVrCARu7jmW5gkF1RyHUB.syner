@@ -1,0 +1,125 @@
+[INFO] [000004ms] Logger Start.
+[INFO] [000015ms] > # of Instructions: 1494
+[DEBUG] [000015ms] ExecFlow.sym_exec start
+[DEBUG] [000038ms] ExecFlow.sym_exec end
+[DEBUG] [000685ms] Res.init_res start
+[DEBUG] [000686ms] Res.init_res : result value construction start
+[DEBUG] [105376ms] Res.init_res : result value construction end
+[DEBUG] [105377ms] Res.init_res end
+[DEBUG] [105377ms] ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx)):
+	> # of pred state: 6
+	> # of succ state: 6
+	> # of candidates: 183
+[INFO] [105378ms] > Report: Time = 105.339035 sec , Memory = 0.032669 GB , P/R/U/F = 0 / 0 / 8 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[INFO] [105378ms] > Refuter Turn Start
+[INFO] [110891ms] > Refuter Turn End
+[INFO] [110891ms] > Report: Time = 5.513328 sec , Memory = 0.051281 GB , P/R/U/F = 0 / 2 / 6 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[INFO] [110892ms] > Prover Turn Start
+[INFO] [111521ms] > Prover Turn End
+[INFO] [111522ms] > Report: Time = 0.630272 sec , Memory = 0.051281 GB , P/R/U/F = 1 / 2 / 5 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[INFO] [111522ms] > Refuter Turn Start
+[DEBUG] [111522ms] Time = 0.000694 sec , Memory = 0.051281 GB , P/R/U/F = 1 / 2 / 5 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[DEBUG] [111522ms]   Pick-Path Start
+[DEBUG] [111523ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [111523ms]   Picked-Paths ::
+[DEBUG] [111523ms]   > Summary = (2)	Score = 0.000000  ()
+[DEBUG] [116123ms]   Pick-Path Start
+[DEBUG] [116124ms]   Pick-Path End >> #Picked / #Unpicked = 2 / 0
+[DEBUG] [116124ms]   Picked-Paths ::
+[DEBUG] [116125ms]   > Summary = (3)	Score = 0.000000  ()
+[DEBUG] [116125ms]   > Summary = (4)	Score = 0.000000  ()
+[DEBUG] [191664ms]   Pick-Path Start
+[DEBUG] [191664ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [191665ms]   Picked-Paths ::
+[DEBUG] [191665ms]   > Summary = (7)	Score = 0.000000  ()
+[DEBUG] [192962ms]   Pick-Path Start
+[DEBUG] [192962ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [192963ms]   Picked-Paths ::
+[DEBUG] [192963ms]   > Summary = (7)	Score = 0.000000  ()
+[DEBUG] [216262ms]   Pick-Path Start
+[DEBUG] [216262ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [216262ms]   Picked-Paths ::
+[DEBUG] [216263ms]   > Summary = (7)	Score = 0.000000  ()
+[INFO] [230701ms] > Refuter Turn End
+[INFO] [230701ms] > Report: Time = 119.179209 sec , Memory = 0.092682 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 38 , expanding-ppath-acc = 44 , combinations = 0
+[INFO] [230702ms] > Precondition Search Turn Start
+[INFO] [316547ms] > Precondition Search Turn End
+[INFO] [316548ms] > Report: Time = 85.846485 sec , Memory = 0.092682 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 38 , expanding-ppath-acc = 44 , combinations = 0
+[INFO] [316548ms] > Prover Turn Start
+[INFO] [332891ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_is_true(()MV_geq_ib(MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))(MV_sigma_m_am_m1(MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))))))))(MF_mutez_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))))(MF_nat_bound(()MV_sigma_m_am_m1(MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))))))(MF_map_default_value(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))))))))
+
+[INFO] [339720ms] > Prover Turn End
+[INFO] [339720ms] > Report: Time = 23.172389 sec , Memory = 0.092682 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 38 , expanding-ppath-acc = 44 , combinations = 25
+[INFO] [339720ms] > Refuter Turn Start
+[DEBUG] [339721ms] Time = 0.000193 sec , Memory = 0.092682 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 38 , expanding-ppath-acc = 44 , combinations = 25
+[DEBUG] [339721ms]   Pick-Path Start
+[DEBUG] [339721ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 1
+[DEBUG] [339721ms]   Picked-Paths ::
+[DEBUG] [339721ms]   > Summary = (3 2)	Score = -1.000000  (1)
+[DEBUG] [339721ms]   > Summary = (4 2)	Score = -1.000000  (1)
+[DEBUG] [339722ms]   > Summary = (7 2)	Score = -1.000000  (1)
+[DEBUG] [339722ms]   > Summary = (12 2)	Score = -1.000000  (1)
+[DEBUG] [339722ms]   > Summary = (13 2)	Score = -1.000000  (1)
+[DEBUG] [960785ms]   Pick-Path Start
+[DEBUG] [960786ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 5
+[DEBUG] [960786ms]   Picked-Paths ::
+[DEBUG] [960786ms]   > Summary = (4 3)	Score = -1.000000  (1)
+[DEBUG] [960786ms]   > Summary = (4 4)	Score = -1.000000  (1)
+[DEBUG] [960786ms]   > Summary = (7 3)	Score = -1.000000  (1)
+[DEBUG] [960787ms]   > Summary = (7 4)	Score = -1.000000  (1)
+[DEBUG] [960787ms]   > Summary = (12 3)	Score = -1.000000  (1)
+[INFO] [1676326ms] > Refuter Turn End
+[INFO] [1676326ms] > Report: Time = 1,336.605838 sec , Memory = 0.104141 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 47 , expanding-ppath-acc = 63 , combinations = 25
+[INFO] [1676327ms] > Precondition Search Turn Start
+[INFO] [1910241ms] > Precondition Search Turn End
+[INFO] [1910241ms] > Report: Time = 233.915091 sec , Memory = 0.105896 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 47 , expanding-ppath-acc = 63 , combinations = 25
+[INFO] [1910242ms] > Prover Turn Start
+[INFO] [1920402ms] > Prover Turn End
+[INFO] [1920402ms] > Report: Time = 10.160973 sec , Memory = 0.105896 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 47 , expanding-ppath-acc = 63 , combinations = 43
+[INFO] [1920403ms] > Refuter Turn Start
+[DEBUG] [1920403ms] Time = 0.001022 sec , Memory = 0.105896 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 47 , expanding-ppath-acc = 63 , combinations = 43
+[DEBUG] [1920404ms]   Pick-Path Start
+[DEBUG] [1920405ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 7
+[DEBUG] [1920405ms]   Picked-Paths ::
+[DEBUG] [1920405ms]   > Summary = (3 12 2)	Score = -1.000000  (1 1)
+[DEBUG] [1920406ms]   > Summary = (4 4 2)	Score = -1.000000  (1 1)
+[DEBUG] [1920406ms]   > Summary = (7 3 2)	Score = -1.000000  (1 1)
+[DEBUG] [1920406ms]   > Summary = (7 12 2)	Score = -1.000000  (1 1)
+[DEBUG] [1920406ms]   > Summary = (7 13 2)	Score = -1.000000  (1 1)
+[DEBUG] [2800728ms]   Pick-Path Start
+[DEBUG] [2800729ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 8
+[DEBUG] [2800729ms]   Picked-Paths ::
+[DEBUG] [2800730ms]   > Summary = (4 12 3)	Score = -1.000000  (1 1)
+[DEBUG] [2800730ms]   > Summary = (12 4)	Score = -1.000000  (1)
+[DEBUG] [2800730ms]   > Summary = (12 7 3)	Score = -1.000000  (1 1)
+[DEBUG] [2800730ms]   > Summary = (12 7 4)	Score = -1.000000  (1 1)
+[DEBUG] [2800731ms]   > Summary = (13 3)	Score = -1.000000  (1)
+[INFO] [3563045ms] > Refuter Turn End
+[INFO] [3563045ms] > Report: Time = 1,642.641662 sec , Memory = 0.112675 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 41 , expanding-ppath-acc = 67 , combinations = 43
+[INFO] [3563045ms] > Precondition Search Turn Start
+[INFO] [3820404ms] > Precondition Search Turn End
+[INFO] [3820404ms] > Report: Time = 257.359023 sec , Memory = 0.112793 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 41 , expanding-ppath-acc = 67 , combinations = 43
+[INFO] [3820405ms] > Prover Turn Start
+[DEBUG] [3820405ms] Prove : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3820405ms] > Prover Turn End
+[INFO] [3820405ms] > Report: Time = 0.001039 sec , Memory = 0.112793 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 41 , expanding-ppath-acc = 67 , combinations = 43
+[INFO] [3820405ms] > Refuter Turn Start
+[DEBUG] [3820405ms] Time = 0.000145 sec , Memory = 0.112793 GB , P/R/U/F = 2 / 4 / 2 / 0 , expanding-ppath = 41 , expanding-ppath-acc = 67 , combinations = 43
+[DEBUG] [3820405ms]   Pick-Path Start
+[DEBUG] [3820406ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 3
+[DEBUG] [3820406ms]   Picked-Paths ::
+[DEBUG] [3820406ms]   > Summary = (12 3 2)	Score = -1.000000  (1 1)
+[DEBUG] [3820406ms]   > Summary = (12 13 2)	Score = -1.000000  (1 1)
+[DEBUG] [3820406ms]   > Summary = (13 3 2)	Score = -1.000000  (1 1)
+[DEBUG] [3820406ms]   > Summary = (13 4 2)	Score = -1.000000  (1 1)
+[DEBUG] [3820406ms]   > Summary = (15 2)	Score = -1.000000  (1)
+[DEBUG] [4603834ms]   Pick-Path Start
+[DEBUG] [4603840ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 6
+[DEBUG] [4603841ms]   Picked-Paths ::
+[DEBUG] [4603842ms]   > Summary = (3 13 3)	Score = -1.000000  (1 1)
+[DEBUG] [4603842ms]   > Summary = (7 12 4)	Score = -1.000000  (1 1)
+[DEBUG] [4603842ms]   > Summary = (12 13 3)	Score = -1.000000  (1 1)
+[DEBUG] [4603843ms]   > Summary = (13 4)	Score = -1.000000  (1)
+[DEBUG] [4603843ms]   > Summary = (15 3)	Score = -1.000000  (1)

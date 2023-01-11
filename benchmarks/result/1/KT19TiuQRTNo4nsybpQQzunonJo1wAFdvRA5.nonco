@@ -1,0 +1,5 @@
+[INFO] [000005ms] Logger Start.
+[INFO] [000018ms] > # of Instructions: 1471
+[WARNING] [000018ms] File "MicSE/lib/tzUtil.ml", line 1948, characters 15-29 : D_int in this data is interpreted to MV_empty_big_map. If it is not intended situation, please check the data.
+[DEBUG] [000019ms] ExecFlow.sym_exec start
+[DEBUG] [000069ms] ExecFlow.sym_exec end

@@ -1,0 +1,57 @@
+[INFO] [000031ms] Logger Start.
+[INFO] [000061ms] > # of Instructions: 1471
+[WARNING] [000063ms] File "MicSE/lib/tzUtil.ml", line 1948, characters 15-29 : D_int in this data is interpreted to MV_empty_big_map. If it is not intended situation, please check the data.
+[DEBUG] [000063ms] ExecFlow.sym_exec start
+[DEBUG] [000110ms] ExecFlow.sym_exec end
+[DEBUG] [418898ms] Res.init_res start
+[DEBUG] [418899ms] Res.init_res : result value construction start
+[DEBUG] [1324079ms] Res.init_res : result value construction end
+[DEBUG] [1324080ms] Res.init_res end
+[DEBUG] [1324080ms] ((rmci_loc(CCLOC_Pos((lin 33)(col 8))((lin 538)(col 24))))(rmci_cutcat RMCC_trx)):
+	> # of pred state: 22
+	> # of succ state: 14
+	> # of candidates: 174
+[DEBUG] [1324080ms] ((rmci_loc(CCLOC_Pos((lin 182)(col 28))((lin 190)(col 41))))(rmci_cutcat RMCC_iter)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 1384
+[DEBUG] [1324080ms] ((rmci_loc(CCLOC_Pos((lin 362)(col 32))((lin 362)(col 85))))(rmci_cutcat RMCC_iter)):
+	> # of pred state: 2
+	> # of succ state: 6
+	> # of candidates: 1701
+[DEBUG] [1324081ms] ((rmci_loc(CCLOC_Pos((lin 373)(col 32))((lin 422)(col 73))))(rmci_cutcat RMCC_iter)):
+	> # of pred state: 6
+	> # of succ state: 10
+	> # of candidates: 2051
+[INFO] [1324086ms] > Report: Time = 1,323.971743 sec , Memory = 0.203999 GB , P/R/U/F = 0 / 0 / 3 / 0 , expanding-ppath = 192 , expanding-ppath-acc = 5 , combinations = 0
+[INFO] [1324087ms] > Refuter Turn Start
+[INFO] [1533381ms] > Refuter Turn End
+[INFO] [1533381ms] > Report: Time = 209.294438 sec , Memory = 0.203999 GB , P/R/U/F = 0 / 0 / 3 / 0 , expanding-ppath = 192 , expanding-ppath-acc = 5 , combinations = 0
+[INFO] [1533381ms] > Prover Turn Start
+[INFO] [1534051ms] > Prover Turn End
+[INFO] [1534051ms] > Report: Time = 0.670514 sec , Memory = 0.203999 GB , P/R/U/F = 0 / 0 / 3 / 0 , expanding-ppath = 192 , expanding-ppath-acc = 5 , combinations = 0
+[INFO] [1534052ms] > Refuter Turn Start
+[DEBUG] [1534059ms] Time = 0.007218 sec , Memory = 0.203999 GB , P/R/U/F = 0 / 0 / 3 / 0 , expanding-ppath = 192 , expanding-ppath-acc = 5 , combinations = 0
+[DEBUG] [1534060ms]   Pick-Path Start
+[DEBUG] [1534061ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [1534061ms]   Picked-Paths ::
+[DEBUG] [1534061ms]   > Summary = (5)	Score = 0.000000  ()
+[DEBUG] [2074561ms]   Pick-Path Start
+[DEBUG] [2074567ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 93
+[DEBUG] [2074567ms]   Picked-Paths ::
+[DEBUG] [2074567ms]   > Summary = (30 31 31 31 32)	Score = 0.000000  ()
+[DEBUG] [2074567ms]   > Summary = (30 31 31 32)	Score = 0.000000  ()
+[DEBUG] [2074568ms]   > Summary = (30 31 32)	Score = 0.000000  ()
+[DEBUG] [2074568ms]   > Summary = (30 32)	Score = 0.000000  ()
+[DEBUG] [2074568ms]   > Summary = (33 34 34 34 39)	Score = 0.000000  ()
+[DEBUG] [2299112ms]   Pick-Path Start
+[DEBUG] [2299112ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 88
+[DEBUG] [2299113ms]   Picked-Paths ::
+[DEBUG] [2299113ms]   > Summary = (30 31 31 31 41)	Score = 0.000000  ()
+[DEBUG] [2299113ms]   > Summary = (30 31 31 41)	Score = 0.000000  ()
+[DEBUG] [2299113ms]   > Summary = (30 31 41)	Score = 0.000000  ()
+[DEBUG] [2299113ms]   > Summary = (33 34 34 34 47)	Score = 0.000000  ()
+[DEBUG] [2299114ms]   > Summary = (33 34 34 36 47)	Score = 0.000000  ()
+[INFO] [2555572ms] > Refuter Turn End
+[INFO] [2555573ms] > Report: Time = 1,021.514247 sec , Memory = 0.252281 GB , P/R/U/F = 0 / 0 / 3 / 0 , expanding-ppath = 752 , expanding-ppath-acc = 576 , combinations = 0
+[INFO] [2555573ms] > Precondition Search Turn Start

@@ -1,0 +1,140 @@
+[INFO] [000005ms] Logger Start.
+[INFO] [000015ms] > # of Instructions: 1494
+[DEBUG] [000016ms] ExecFlow.sym_exec start
+[DEBUG] [000040ms] ExecFlow.sym_exec end
+[DEBUG] [000647ms] Res.init_res start
+[DEBUG] [000648ms] Res.init_res : result value construction start
+[DEBUG] [086363ms] Res.init_res : result value construction end
+[DEBUG] [086364ms] Res.init_res end
+[DEBUG] [086364ms] ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx)):
+	> # of pred state: 6
+	> # of succ state: 6
+	> # of candidates: 183
+[DEBUG] [086364ms] Refute.featurediff_first_score_f_gen start
+[DEBUG] [367356ms] Refute.featurediff_first_score_f_gen end
+[INFO] [367357ms] > Report: Time = 367.316894 sec , Memory = 0.100784 GB , P/R/U/F = 0 / 0 / 8 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[INFO] [367357ms] > Prover Turn Start
+[INFO] [367884ms] > Prover Turn End
+[INFO] [367884ms] > Report: Time = 0.526892 sec , Memory = 0.100784 GB , P/R/U/F = 1 / 0 / 7 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 10 , combinations = 0
+[INFO] [367884ms] > Refuter Turn Start
+[INFO] [373338ms] > Refuter Turn End
+[INFO] [373338ms] > Report: Time = 5.454536 sec , Memory = 0.100784 GB , P/R/U/F = 1 / 2 / 5 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 20 , combinations = 0
+[INFO] [373339ms] > Prover Turn Start
+[INFO] [374546ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(()MV_lit_nat 500000))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))(MF_nat_bound(()MV_lit_nat 500000))))
+
+[INFO] [379744ms] > Prover Turn End
+[INFO] [379745ms] > Report: Time = 6.406529 sec , Memory = 0.100784 GB , P/R/U/F = 1 / 2 / 5 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 20 , combinations = 6
+[INFO] [379746ms] > Refuter Turn Start
+[DEBUG] [379746ms] Time = 0.001017 sec , Memory = 0.100784 GB , P/R/U/F = 1 / 2 / 5 / 0 , expanding-ppath = 10 , expanding-ppath-acc = 20 , combinations = 6
+[DEBUG] [379746ms]   Pick-Path Start
+[DEBUG] [379747ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [379747ms]   Picked-Paths ::
+[DEBUG] [379747ms]   > Summary = (2)	Score = 1.000000
+[DEBUG] [381005ms]   Pick-Path Start
+[DEBUG] [381006ms]   Pick-Path End >> #Picked / #Unpicked = 2 / 0
+[DEBUG] [381006ms]   Picked-Paths ::
+[DEBUG] [381006ms]   > Summary = (3)	Score = 1.000000
+[DEBUG] [381006ms]   > Summary = (4)	Score = 1.000000
+[DEBUG] [401799ms]   Pick-Path Start
+[DEBUG] [401800ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [401800ms]   Picked-Paths ::
+[DEBUG] [401800ms]   > Summary = (7)	Score = 1.000000
+[DEBUG] [410821ms]   Pick-Path Start
+[DEBUG] [410821ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [410822ms]   Picked-Paths ::
+[DEBUG] [410822ms]   > Summary = (7)	Score = 1.000000
+[DEBUG] [420708ms]   Pick-Path Start
+[DEBUG] [420709ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [420709ms]   Picked-Paths ::
+[DEBUG] [420710ms]   > Summary = (7)	Score = 1.000000
+[INFO] [457613ms] > Refuter Turn End
+[INFO] [457614ms] > Report: Time = 77.867736 sec , Memory = 0.114689 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 39 , expanding-ppath-acc = 55 , combinations = 6
+[INFO] [457614ms] > Prover Turn Start
+[INFO] [458671ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(()MV_lit_nat 500000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))(()MV_lit_nat 1000))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(MF_nat_bound(()MV_lit_nat 1000))(MF_nat_bound(()MV_lit_nat 500000))))
+
+[INFO] [463780ms] > Prover Turn End
+[INFO] [463781ms] > Report: Time = 6.166813 sec , Memory = 0.114689 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 39 , expanding-ppath-acc = 55 , combinations = 12
+[INFO] [463781ms] > Refuter Turn Start
+[DEBUG] [463781ms] Time = 0.000500 sec , Memory = 0.114689 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 39 , expanding-ppath-acc = 55 , combinations = 12
+[DEBUG] [463781ms]   Pick-Path Start
+[DEBUG] [463781ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 1
+[DEBUG] [463782ms]   Picked-Paths ::
+[DEBUG] [463782ms]   > Summary = (3 2)	Score = 1.000000
+[DEBUG] [463782ms]   > Summary = (4 2)	Score = 1.000000
+[DEBUG] [463782ms]   > Summary = (7 2)	Score = 1.000000
+[DEBUG] [463782ms]   > Summary = (12 2)	Score = 1.000000
+[DEBUG] [463782ms]   > Summary = (13 2)	Score = 1.000000
+[DEBUG] [1084629ms]   Pick-Path Start
+[DEBUG] [1084629ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 7
+[DEBUG] [1084629ms]   Picked-Paths ::
+[DEBUG] [1084630ms]   > Summary = (3 3)	Score = 1.000000
+[DEBUG] [1084630ms]   > Summary = (3 4)	Score = 1.000000
+[DEBUG] [1084630ms]   > Summary = (4 3)	Score = 1.000000
+[DEBUG] [1084630ms]   > Summary = (4 4)	Score = 1.000000
+[DEBUG] [1084630ms]   > Summary = (7 3)	Score = 1.000000
+[DEBUG] [1802173ms]   Pick-Path Start
+[DEBUG] [1802174ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 1
+[DEBUG] [1802174ms]   Picked-Paths ::
+[DEBUG] [1802175ms]   > Summary = (3 7)	Score = 1.000000
+[DEBUG] [1802175ms]   > Summary = (4 7)	Score = 1.000000
+[DEBUG] [1802175ms]   > Summary = (7 7)	Score = 1.000000
+[DEBUG] [1802175ms]   > Summary = (12 7)	Score = 1.000000
+[DEBUG] [1802175ms]   > Summary = (13 7)	Score = 1.000000
+[INFO] [2404118ms] > Refuter Turn End
+[INFO] [2404118ms] > Report: Time = 1,940.337047 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 54 , expanding-ppath-acc = 85 , combinations = 12
+[INFO] [2404119ms] > Prover Turn Start
+[INFO] [2405261ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(()MV_lit_nat 500000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))(()MV_lit_nat 1000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))(()MV_lit_mutez 1000000000))(MF_mutez_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))(MF_mutez_bound(()MV_lit_mutez 1000000000))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(MF_nat_bound(()MV_lit_nat 1000))(MF_nat_bound(()MV_lit_nat 500000))))
+
+[INFO] [2412060ms] > Prover Turn End
+[INFO] [2412060ms] > Report: Time = 7.941970 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 54 , expanding-ppath-acc = 85 , combinations = 18
+[INFO] [2412060ms] > Refuter Turn Start
+[DEBUG] [2412061ms] Time = 0.000537 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 54 , expanding-ppath-acc = 85 , combinations = 18
+[DEBUG] [2412061ms]   Pick-Path Start
+[DEBUG] [2412061ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 7
+[DEBUG] [2412061ms]   Picked-Paths ::
+[DEBUG] [2412062ms]   > Summary = (3 7 2)	Score = 1.000000
+[DEBUG] [2412062ms]   > Summary = (4 12 2)	Score = 1.000000
+[DEBUG] [2412062ms]   > Summary = (4 13 2)	Score = 1.000000
+[DEBUG] [2412062ms]   > Summary = (7 12 2)	Score = 1.000000
+[DEBUG] [2412063ms]   > Summary = (12 3 2)	Score = 1.000000
+[DEBUG] [3283722ms]   Pick-Path Start
+[DEBUG] [3283723ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 11
+[DEBUG] [3283723ms]   Picked-Paths ::
+[DEBUG] [3283724ms]   > Summary = (7 4)	Score = 1.000000
+[DEBUG] [3283724ms]   > Summary = (12 3)	Score = 1.000000
+[DEBUG] [3283724ms]   > Summary = (12 4)	Score = 1.000000
+[DEBUG] [3283724ms]   > Summary = (13 3)	Score = 1.000000
+[DEBUG] [3283724ms]   > Summary = (13 4)	Score = 1.000000
+[DEBUG] [3817551ms]   Pick-Path Start
+[DEBUG] [3817552ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 6
+[DEBUG] [3817552ms]   Picked-Paths ::
+[DEBUG] [3817553ms]   > Summary = (3 3 7)	Score = 0.485519
+[DEBUG] [3817553ms]   > Summary = (4 13 7)	Score = 0.447268
+[DEBUG] [3817554ms]   > Summary = (12 3 7)	Score = 0.583880
+[DEBUG] [3817554ms]   > Summary = (13 3 7)	Score = 0.583880
+[DEBUG] [3817554ms]   > Summary = (15 7)	Score = 1.000000
+[INFO] [4631170ms] > Refuter Turn End
+[INFO] [4631170ms] > Report: Time = 2,219.109888 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 56 , expanding-ppath-acc = 102 , combinations = 18
+[INFO] [4631171ms] > Prover Turn Start
+[INFO] [4633115ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 7)(col 8))((lin 816)(col 76))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(()MV_lit_nat 500000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))(()MV_lit_nat 1000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))(()MV_lit_mutez 1000000000))(MF_eq(()MV_car(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))(()MV_lit_nat 100))(MF_mutez_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))(MF_mutez_bound(()MV_lit_mutez 1000000000))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0))))))))))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))))(MF_nat_bound(()MV_car(MV_cdr(MV_cdr(MV_ref((MT_pair MT_unit(MT_pair MT_address(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_nat(MT_pair MT_nat(MT_pair MT_mutez(MT_pair MT_mutez(MT_pair(MT_map MT_address MT_mutez)MT_nat)))))))))(MSC_mich_stack 0)))))))(MF_nat_bound(()MV_lit_nat 100))(MF_nat_bound(()MV_lit_nat 1000))(MF_nat_bound(()MV_lit_nat 500000))))
+
+[INFO] [4639982ms] > Prover Turn End
+[INFO] [4639983ms] > Report: Time = 8.812020 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 56 , expanding-ppath-acc = 102 , combinations = 24
+[INFO] [4639983ms] > Refuter Turn Start
+[DEBUG] [4639983ms] Time = 0.000307 sec , Memory = 0.133270 GB , P/R/U/F = 1 / 4 / 3 / 0 , expanding-ppath = 56 , expanding-ppath-acc = 102 , combinations = 24
+[DEBUG] [4639983ms]   Pick-Path Start
+[DEBUG] [4639983ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 2
+[DEBUG] [4639983ms]   Picked-Paths ::
+[DEBUG] [4639983ms]   > Summary = (12 7 2)	Score = 1.000000
+[DEBUG] [4639983ms]   > Summary = (13 3 2)	Score = 1.000000
+[DEBUG] [4639983ms]   > Summary = (13 12 2)	Score = 1.000000
+[DEBUG] [4639983ms]   > Summary = (15 2)	Score = 1.000000
+[DEBUG] [4639984ms]   > Summary = (15 3 2)	Score = 1.000000

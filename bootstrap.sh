@@ -100,6 +100,8 @@ ln -s /home/vagrant/smartpy-cli/SmartPy.sh /home/vagrant/smartpy-cli/smartpy
 curl -LO https://taqueria.io/get/linux/taq
 chmod +x taq
 sudo mv taq /usr/local/bin
+mkdir ~/.taq-settings
+echo -e "{\n    \"consent\": \"opt_out\"\n}" > ~/.taq-settings/taq-settings.json
 
 # install pip and tabulate for benchmarking
 sudo apt-get install -y python3-pip

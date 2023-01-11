@@ -1,0 +1,131 @@
+[INFO] [000006ms] Logger Start.
+[INFO] [000025ms] > # of Instructions: 2256
+[WARNING] [000026ms] File "MicSE/lib/tzUtil.ml", line 1948, characters 15-29 : D_int in this data is interpreted to MV_empty_big_map. If it is not intended situation, please check the data.
+[DEBUG] [000026ms] ExecFlow.sym_exec start
+[DEBUG] [000089ms] ExecFlow.sym_exec end
+[DEBUG] [001597ms] Res.init_res start
+[DEBUG] [001598ms] Res.init_res : result value construction start
+[DEBUG] [017185ms] Res.init_res : result value construction end
+[DEBUG] [017186ms] Res.init_res end
+[DEBUG] [017187ms] ((rmci_loc(CCLOC_Pos((lin 30)(col 8))((lin 1509)(col 36))))(rmci_cutcat RMCC_trx)):
+	> # of pred state: 22
+	> # of succ state: 22
+	> # of candidates: 55
+[INFO] [017187ms] > Report: Time = 17.096695 sec , Memory = 0.032104 GB , P/R/U/F = 0 / 0 / 10 / 0 , expanding-ppath = 16 , expanding-ppath-acc = 18 , combinations = 0
+[INFO] [017187ms] > Prover Turn Start
+[INFO] [049838ms] > Prover Turn End
+[INFO] [049844ms] > Report: Time = 32.657599 sec , Memory = 0.044247 GB , P/R/U/F = 6 / 0 / 4 / 0 , expanding-ppath = 16 , expanding-ppath-acc = 18 , combinations = 0
+[INFO] [049845ms] > Refuter Turn Start
+[INFO] [050176ms] > Refuter Turn End
+[INFO] [050177ms] > Report: Time = 0.332135 sec , Memory = 0.044247 GB , P/R/U/F = 6 / 0 / 4 / 0 , expanding-ppath = 16 , expanding-ppath-acc = 34 , combinations = 0
+[INFO] [050177ms] > Prover Turn Start
+[INFO] [062068ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 30)(col 8))((lin 1509)(col 36))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_cdr(MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair(MT_or(MT_or(MT_or(MT_pair MT_address(MT_pair MT_nat MT_nat))(MT_pair(MT_pair MT_address MT_nat)(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_address MT_nat))(MT_pair MT_mutez(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair MT_address(MT_pair MT_nat MT_timestamp))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat(MT_pair MT_mutez MT_timestamp))))))(MT_or(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_nat MT_address))(MT_pair MT_address(MT_pair MT_nat MT_timestamp)))(MT_or MT_key_hash MT_nat))(MT_or(MT_pair(MT_option MT_key_hash)MT_bool)(MT_or MT_address MT_unit))))(MT_pair(MT_big_map MT_address(MT_pair MT_nat(MT_map MT_address MT_nat)))(MT_pair(MT_pair MT_bool(MT_pair MT_bool MT_nat))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat MT_mutez)))))(MSC_mich_stack 0))))))))(()MV_lit_address(MV_lit_key_hash 0x01a3d0f58d8964bd1b37fb0a0c197b38cf46608d4900)))))
+
+[INFO] [064357ms] > Prover Turn End
+[INFO] [064358ms] > Report: Time = 14.181245 sec , Memory = 0.050117 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 16 , expanding-ppath-acc = 34 , combinations = 9
+[INFO] [064358ms] > Refuter Turn Start
+[DEBUG] [064358ms] Time = 0.000538 sec , Memory = 0.050117 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 16 , expanding-ppath-acc = 34 , combinations = 9
+[DEBUG] [064359ms]   Pick-Path Start
+[DEBUG] [064359ms]   Pick-Path End >> #Picked / #Unpicked = 2 / 0
+[DEBUG] [064359ms]   Picked-Paths ::
+[DEBUG] [064360ms]   > Summary = (17)	Score = -1.000000
+[DEBUG] [064360ms]   > Summary = (18)	Score = -1.000000
+[DEBUG] [069485ms]   Pick-Path Start
+[DEBUG] [069486ms]   Pick-Path End >> #Picked / #Unpicked = 4 / 0
+[DEBUG] [069486ms]   Picked-Paths ::
+[DEBUG] [069487ms]   > Summary = (27)	Score = -1.000000
+[DEBUG] [069487ms]   > Summary = (30)	Score = -1.000000
+[DEBUG] [069487ms]   > Summary = (34)	Score = -1.000000
+[DEBUG] [069487ms]   > Summary = (37)	Score = -1.000000
+[DEBUG] [091561ms]   Pick-Path Start
+[DEBUG] [091568ms]   Pick-Path End >> #Picked / #Unpicked = 1 / 0
+[DEBUG] [091569ms]   Picked-Paths ::
+[DEBUG] [091569ms]   > Summary = (139)	Score = -1.000000
+[INFO] [092875ms] > Refuter Turn End
+[INFO] [092875ms] > Report: Time = 28.517135 sec , Memory = 0.050865 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 123 , expanding-ppath-acc = 148 , combinations = 9
+[INFO] [092876ms] > Prover Turn Start
+[INFO] [214613ms] > Prover Turn End
+[INFO] [214620ms] > Report: Time = 121.744160 sec , Memory = 0.062920 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 123 , expanding-ppath-acc = 148 , combinations = 60
+[INFO] [214620ms] > Refuter Turn Start
+[DEBUG] [214620ms] Time = 0.000821 sec , Memory = 0.062920 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 123 , expanding-ppath-acc = 148 , combinations = 60
+[DEBUG] [214621ms]   Pick-Path Start
+[DEBUG] [214621ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 19
+[DEBUG] [214621ms]   Picked-Paths ::
+[DEBUG] [214622ms]   > Summary = (1 17)	Score = -1.000000
+[DEBUG] [214622ms]   > Summary = (1 18)	Score = -1.000000
+[DEBUG] [214622ms]   > Summary = (3 17)	Score = -1.000000
+[DEBUG] [214622ms]   > Summary = (3 18)	Score = -1.000000
+[DEBUG] [214622ms]   > Summary = (7 17)	Score = -1.000000
+[DEBUG] [229335ms]   Pick-Path Start
+[DEBUG] [229336ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 67
+[DEBUG] [229336ms]   Picked-Paths ::
+[DEBUG] [229336ms]   > Summary = (1 27)	Score = -1.000000
+[DEBUG] [229337ms]   > Summary = (1 30)	Score = -1.000000
+[DEBUG] [229337ms]   > Summary = (1 34)	Score = -1.000000
+[DEBUG] [229337ms]   > Summary = (1 37)	Score = -1.000000
+[DEBUG] [229338ms]   > Summary = (3 27)	Score = -1.000000
+[DEBUG] [261327ms]   Pick-Path Start
+[DEBUG] [261330ms]   Pick-Path End >> #Picked / #Unpicked = 5 / 13
+[DEBUG] [261330ms]   Picked-Paths ::
+[DEBUG] [261330ms]   > Summary = (1 139)	Score = -2.000000
+[DEBUG] [261331ms]   > Summary = (3 139)	Score = -2.000000
+[DEBUG] [261331ms]   > Summary = (7 139)	Score = -2.000000
+[DEBUG] [261331ms]   > Summary = (19 139)	Score = -2.000000
+[DEBUG] [261331ms]   > Summary = (20 139)	Score = -2.000000
+[INFO] [275573ms] > Refuter Turn End
+[INFO] [275574ms] > Report: Time = 60.953088 sec , Memory = 0.064430 GB , P/R/U/F = 7 / 0 / 3 / 0 , expanding-ppath = 336 , expanding-ppath-acc = 376 , combinations = 60
+[INFO] [275574ms] > Prover Turn Start
+[INFO] [275575ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 30)(col 8))((lin 1509)(col 36))))(rmci_cutcat RMCC_trx))
+		(MF_and((MF_eq(()MV_cdr(MV_car(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair(MT_or(MT_or(MT_or(MT_pair MT_address(MT_pair MT_nat MT_nat))(MT_pair(MT_pair MT_address MT_nat)(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_address MT_nat))(MT_pair MT_mutez(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair MT_address(MT_pair MT_nat MT_timestamp))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat(MT_pair MT_mutez MT_timestamp))))))(MT_or(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_nat MT_address))(MT_pair MT_address(MT_pair MT_nat MT_timestamp)))(MT_or MT_key_hash MT_nat))(MT_or(MT_pair(MT_option MT_key_hash)MT_bool)(MT_or MT_address MT_unit))))(MT_pair(MT_big_map MT_address(MT_pair MT_nat(MT_map MT_address MT_nat)))(MT_pair(MT_pair MT_bool(MT_pair MT_bool MT_nat))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat MT_mutez)))))(MSC_mich_stack 0))))))))(()MV_lit_address(MV_lit_key_hash 0x01a3d0f58d8964bd1b37fb0a0c197b38cf46608d4900)))(MF_is_true(()MV_geq_ib(MV_ref(MT_mutez MSC_balance))(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair(MT_or(MT_or(MT_or(MT_pair MT_address(MT_pair MT_nat MT_nat))(MT_pair(MT_pair MT_address MT_nat)(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_address MT_nat))(MT_pair MT_mutez(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair MT_address(MT_pair MT_nat MT_timestamp))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat(MT_pair MT_mutez MT_timestamp))))))(MT_or(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_nat MT_address))(MT_pair MT_address(MT_pair MT_nat MT_timestamp)))(MT_or MT_key_hash MT_nat))(MT_or(MT_pair(MT_option MT_key_hash)MT_bool)(MT_or MT_address MT_unit))))(MT_pair(MT_big_map MT_address(MT_pair MT_nat(MT_map MT_address MT_nat)))(MT_pair(MT_pair MT_bool(MT_pair MT_bool MT_nat))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat MT_mutez)))))(MSC_mich_stack 0))))))))))(MF_mutez_bound(()MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_cdr(MV_ref((MT_pair(MT_or(MT_or(MT_or(MT_pair MT_address(MT_pair MT_nat MT_nat))(MT_pair(MT_pair MT_address MT_nat)(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_address MT_nat))(MT_pair MT_mutez(MT_pair MT_nat MT_timestamp)))(MT_or(MT_pair MT_address(MT_pair MT_nat MT_timestamp))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat(MT_pair MT_mutez MT_timestamp))))))(MT_or(MT_or(MT_pair(MT_pair MT_address(MT_pair MT_nat MT_address))(MT_pair MT_address(MT_pair MT_nat MT_timestamp)))(MT_or MT_key_hash MT_nat))(MT_or(MT_pair(MT_option MT_key_hash)MT_bool)(MT_or MT_address MT_unit))))(MT_pair(MT_big_map MT_address(MT_pair MT_nat(MT_map MT_address MT_nat)))(MT_pair(MT_pair MT_bool(MT_pair MT_bool MT_nat))(MT_pair(MT_pair MT_address MT_address)(MT_pair MT_nat MT_mutez)))))(MSC_mich_stack 0)))))))))(MF_mutez_bound(()MV_ref(MT_mutez MSC_balance)))))
+
+[INFO] [278055ms] > Prover Turn End
+[INFO] [278055ms] > Report: Time = 2.481709 sec , Memory = 0.064430 GB , P/R/U/F = 10 / 0 / 0 / 0 , expanding-ppath = 336 , expanding-ppath-acc = 376 , combinations = 61
+[INFO] [278055ms] > Refuter Turn Start
+[DEBUG] [278056ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [278056ms] > Refuter Turn End
+[DEBUG] [278056ms] naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [278057ms] > Report: Time = 0.001520 sec , Memory = 0.064430 GB , P/R/U/F = 10 / 0 / 0 / 0 , expanding-ppath = 336 , expanding-ppath-acc = 376 , combinations = 61
+ Final-Report : 
+=== Final Result ===
+Time: 277.967062 sec		Memory: 0.064430 GB
+Combinations: 62
+#Total: 10		#Proved: 10		#Refuted: 0		#Failed: 0
+#Err: 0	#UU: 0	#UF: 0	#FU: 0	#FF: 0
+<< Proved >>
+> Location:(CCLOC_Pos((lin 206)(col 24))((lin 206)(col 27)))
+	Category:Q_mutez_add_no_overflow
+
+> Location:(CCLOC_Pos((lin 393)(col 24))((lin 393)(col 27)))
+	Category:Q_mutez_add_no_overflow
+
+> Location:(CCLOC_Pos((lin 584)(col 20))((lin 584)(col 23)))
+	Category:Q_mutez_mul_mnm_no_overflow
+
+> Location:(CCLOC_Pos((lin 721)(col 20))((lin 721)(col 23)))
+	Category:Q_mutez_sub_no_underflow
+
+> Location:(CCLOC_Pos((lin 889)(col 24))((lin 889)(col 27)))
+	Category:Q_mutez_add_no_overflow
+
+> Location:(CCLOC_Pos((lin 1011)(col 24))((lin 1011)(col 27)))
+	Category:Q_mutez_mul_mnm_no_overflow
+
+> Location:(CCLOC_Pos((lin 1049)(col 30))((lin 1049)(col 33)))
+	Category:Q_mutez_sub_no_underflow
+
+> Location:(CCLOC_Pos((lin 1187)(col 20))((lin 1187)(col 23)))
+	Category:Q_mutez_mul_mnm_no_overflow
+
+> Location:(CCLOC_Pos((lin 1225)(col 20))((lin 1225)(col 23)))
+	Category:Q_mutez_sub_no_underflow
+
+> Location:(CCLOC_Pos((lin 1490)(col 24))((lin 1490)(col 27)))
+	Category:Q_mutez_add_no_overflow
+
+<< Refuted >>
+
+<< Failed >>
+

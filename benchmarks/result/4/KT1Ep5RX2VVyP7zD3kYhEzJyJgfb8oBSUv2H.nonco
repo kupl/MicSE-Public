@@ -1,0 +1,807 @@
+[INFO] [000004ms] Logger Start.
+[INFO] [000020ms] > # of Instructions: 1490
+[DEBUG] [000020ms] ExecFlow.sym_exec start
+[DEBUG] [000049ms] ExecFlow.sym_exec end
+[DEBUG] [000538ms] Res.init_res start
+[DEBUG] [000539ms] Res.init_res : result value construction start
+[DEBUG] [558715ms] Res.init_res : result value construction end
+[DEBUG] [558715ms] Res.init_res end
+[DEBUG] [558716ms] ((rmci_loc(CCLOC_Pos((lin 10)(col 8))((lin 1285)(col 12))))(rmci_cutcat RMCC_trx)):
+	> # of pred state: 1
+	> # of succ state: 6
+	> # of candidates: 1225
+[DEBUG] [558716ms] ((rmci_loc(CCLOC_Pos((lin 226)(col 20))((lin 257)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 3
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558716ms] ((rmci_loc(CCLOC_Pos((lin 315)(col 20))((lin 346)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558716ms] ((rmci_loc(CCLOC_Pos((lin 404)(col 20))((lin 435)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558717ms] ((rmci_loc(CCLOC_Pos((lin 494)(col 20))((lin 525)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558717ms] ((rmci_loc(CCLOC_Pos((lin 583)(col 20))((lin 614)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558717ms] ((rmci_loc(CCLOC_Pos((lin 673)(col 20))((lin 704)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558717ms] ((rmci_loc(CCLOC_Pos((lin 763)(col 20))((lin 794)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558717ms] ((rmci_loc(CCLOC_Pos((lin 859)(col 20))((lin 890)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558718ms] ((rmci_loc(CCLOC_Pos((lin 956)(col 20))((lin 987)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 2
+	> # of candidates: 3254
+[DEBUG] [558718ms] ((rmci_loc(CCLOC_Pos((lin 1044)(col 20))((lin 1075)(col 31))))(rmci_cutcat RMCC_loop)):
+	> # of pred state: 2
+	> # of succ state: 16
+	> # of candidates: 3254
+[DEBUG] [558718ms] ((rmci_loc(CCLOC_Pos((lin 1284)(col 8))((lin 1284)(col 21))))(rmci_cutcat RMCC_iter)):
+	> # of pred state: 20
+	> # of succ state: 2
+	> # of candidates: 3255
+[DEBUG] [558718ms] Refute.featurediff_first_score_f_gen start
+[DEBUG] [1389098ms] Refute.featurediff_first_score_f_gen end
+[INFO] [1389099ms] > Report: Time = 1,389.049632 sec , Memory = 0.082565 GB , P/R/U/F = 0 / 0 / 12 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 22 , combinations = 0
+[INFO] [1389099ms] > Prover Turn Start
+[INFO] [1389422ms] > Prover Turn End
+[INFO] [1389422ms] > Report: Time = 0.323194 sec , Memory = 0.082565 GB , P/R/U/F = 5 / 0 / 7 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 22 , combinations = 0
+[INFO] [1389423ms] > Refuter Turn Start
+[INFO] [1391949ms] > Refuter Turn End
+[INFO] [1391950ms] > Report: Time = 2.527662 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 0
+[INFO] [1391950ms] > Prover Turn Start
+[INFO] [1407914ms] > Prover Turn End
+[INFO] [1407915ms] > Report: Time = 15.964694 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 54
+[INFO] [1407915ms] > Refuter Turn Start
+[DEBUG] [1407915ms] Time = 0.000556 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 54
+[INFO] [1407915ms] > Refuter Turn End
+[INFO] [1407916ms] > Report: Time = 0.000493 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 54
+[INFO] [1407916ms] > Prover Turn Start
+[INFO] [1423832ms] > Prover Turn End
+[INFO] [1423833ms] > Report: Time = 15.916946 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 108
+[INFO] [1423833ms] > Refuter Turn Start
+[DEBUG] [1423833ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1423833ms] > Refuter Turn End
+[INFO] [1423833ms] > Report: Time = 0.000773 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 108
+[INFO] [1423833ms] > Prover Turn Start
+[INFO] [1439101ms] > Prover Turn End
+[INFO] [1439101ms] > Report: Time = 15.267832 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 162
+[INFO] [1439102ms] > Refuter Turn Start
+[DEBUG] [1439102ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1439102ms] > Refuter Turn End
+[INFO] [1439102ms] > Report: Time = 0.001090 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 162
+[INFO] [1439102ms] > Prover Turn Start
+[INFO] [1453969ms] > Prover Turn End
+[INFO] [1453970ms] > Report: Time = 14.867409 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 216
+[INFO] [1453970ms] > Refuter Turn Start
+[DEBUG] [1453970ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1453971ms] > Refuter Turn End
+[INFO] [1453971ms] > Report: Time = 0.001229 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 216
+[INFO] [1453971ms] > Prover Turn Start
+[INFO] [1468904ms] > Prover Turn End
+[INFO] [1468905ms] > Report: Time = 14.933985 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 270
+[INFO] [1468905ms] > Refuter Turn Start
+[DEBUG] [1468905ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1468906ms] > Refuter Turn End
+[INFO] [1468906ms] > Report: Time = 0.001046 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 270
+[INFO] [1468906ms] > Prover Turn Start
+[INFO] [1484893ms] > Prover Turn End
+[INFO] [1484894ms] > Report: Time = 15.987851 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 324
+[INFO] [1484894ms] > Refuter Turn Start
+[DEBUG] [1484894ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1484895ms] > Refuter Turn End
+[INFO] [1484895ms] > Report: Time = 0.001094 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 324
+[INFO] [1484895ms] > Prover Turn Start
+[INFO] [1499822ms] > Prover Turn End
+[INFO] [1499822ms] > Report: Time = 14.927553 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 378
+[INFO] [1499823ms] > Refuter Turn Start
+[DEBUG] [1499823ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1499823ms] > Refuter Turn End
+[INFO] [1499823ms] > Report: Time = 0.001023 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 378
+[INFO] [1499824ms] > Prover Turn Start
+[INFO] [1513995ms] > Prover Turn End
+[INFO] [1513996ms] > Report: Time = 14.172365 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 432
+[INFO] [1513996ms] > Refuter Turn Start
+[DEBUG] [1513996ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1513997ms] > Refuter Turn End
+[INFO] [1513997ms] > Report: Time = 0.001013 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 432
+[INFO] [1513997ms] > Prover Turn Start
+[INFO] [1528240ms] > Prover Turn End
+[INFO] [1528240ms] > Report: Time = 14.243671 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 486
+[INFO] [1528241ms] > Refuter Turn Start
+[DEBUG] [1528241ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1528241ms] > Refuter Turn End
+[INFO] [1528241ms] > Report: Time = 0.000968 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 486
+[INFO] [1528242ms] > Prover Turn Start
+[INFO] [1544124ms] > Prover Turn End
+[INFO] [1544125ms] > Report: Time = 15.883200 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 540
+[INFO] [1544125ms] > Refuter Turn Start
+[DEBUG] [1544125ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1544125ms] > Refuter Turn End
+[INFO] [1544126ms] > Report: Time = 0.000992 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 540
+[INFO] [1544126ms] > Prover Turn Start
+[INFO] [1561305ms] > Prover Turn End
+[INFO] [1561306ms] > Report: Time = 17.180049 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 594
+[INFO] [1561306ms] > Refuter Turn Start
+[DEBUG] [1561306ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1561307ms] > Refuter Turn End
+[INFO] [1561307ms] > Report: Time = 0.001174 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 594
+[INFO] [1561307ms] > Prover Turn Start
+[INFO] [1576933ms] > Prover Turn End
+[INFO] [1576934ms] > Report: Time = 15.626865 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 648
+[INFO] [1576934ms] > Refuter Turn Start
+[DEBUG] [1576934ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1576935ms] > Refuter Turn End
+[INFO] [1576935ms] > Report: Time = 0.001097 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 648
+[INFO] [1576935ms] > Prover Turn Start
+[INFO] [1592096ms] > Prover Turn End
+[INFO] [1592097ms] > Report: Time = 15.161936 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 702
+[INFO] [1592097ms] > Refuter Turn Start
+[DEBUG] [1592097ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1592098ms] > Refuter Turn End
+[INFO] [1592098ms] > Report: Time = 0.000991 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 702
+[INFO] [1592098ms] > Prover Turn Start
+[INFO] [1607268ms] > Prover Turn End
+[INFO] [1607269ms] > Report: Time = 15.171089 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 756
+[INFO] [1607269ms] > Refuter Turn Start
+[DEBUG] [1607269ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1607270ms] > Refuter Turn End
+[INFO] [1607270ms] > Report: Time = 0.001005 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 756
+[INFO] [1607270ms] > Prover Turn Start
+[INFO] [1621406ms] > Prover Turn End
+[INFO] [1621406ms] > Report: Time = 14.136270 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 810
+[INFO] [1621406ms] > Refuter Turn Start
+[DEBUG] [1621407ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1621407ms] > Refuter Turn End
+[INFO] [1621407ms] > Report: Time = 0.001049 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 810
+[INFO] [1621407ms] > Prover Turn Start
+[INFO] [1636098ms] > Prover Turn End
+[INFO] [1636098ms] > Report: Time = 14.690964 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 864
+[INFO] [1636098ms] > Refuter Turn Start
+[DEBUG] [1636099ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1636099ms] > Refuter Turn End
+[INFO] [1636099ms] > Report: Time = 0.001188 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 864
+[INFO] [1636100ms] > Prover Turn Start
+[INFO] [1650515ms] > Prover Turn End
+[INFO] [1650515ms] > Report: Time = 14.416062 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 918
+[INFO] [1650515ms] > Refuter Turn Start
+[DEBUG] [1650516ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1650516ms] > Refuter Turn End
+[INFO] [1650516ms] > Report: Time = 0.000717 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 918
+[INFO] [1650516ms] > Prover Turn Start
+[INFO] [1667523ms] > Prover Turn End
+[INFO] [1667523ms] > Report: Time = 17.006976 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 972
+[INFO] [1667523ms] > Refuter Turn Start
+[DEBUG] [1667523ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1667524ms] > Refuter Turn End
+[INFO] [1667524ms] > Report: Time = 0.001160 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 972
+[INFO] [1667524ms] > Prover Turn Start
+[INFO] [1683798ms] > Prover Turn End
+[INFO] [1683798ms] > Report: Time = 16.274198 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1026
+[INFO] [1683799ms] > Refuter Turn Start
+[DEBUG] [1683799ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1683799ms] > Refuter Turn End
+[INFO] [1683800ms] > Report: Time = 0.001147 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1026
+[INFO] [1683800ms] > Prover Turn Start
+[INFO] [1699897ms] > Prover Turn End
+[INFO] [1699897ms] > Report: Time = 16.097760 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1080
+[INFO] [1699898ms] > Refuter Turn Start
+[DEBUG] [1699898ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1699898ms] > Refuter Turn End
+[INFO] [1699898ms] > Report: Time = 0.001054 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1080
+[INFO] [1699899ms] > Prover Turn Start
+[INFO] [1713849ms] > Prover Turn End
+[INFO] [1713850ms] > Report: Time = 13.951458 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1134
+[INFO] [1713850ms] > Refuter Turn Start
+[DEBUG] [1713851ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1713851ms] > Refuter Turn End
+[INFO] [1713851ms] > Report: Time = 0.001217 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1134
+[INFO] [1713851ms] > Prover Turn Start
+[INFO] [1729269ms] > Prover Turn End
+[INFO] [1729270ms] > Report: Time = 15.419021 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1188
+[INFO] [1729271ms] > Refuter Turn Start
+[DEBUG] [1729271ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1729271ms] > Refuter Turn End
+[INFO] [1729272ms] > Report: Time = 0.001463 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1188
+[INFO] [1729272ms] > Prover Turn Start
+[INFO] [1743611ms] > Prover Turn End
+[INFO] [1743612ms] > Report: Time = 14.340334 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1242
+[INFO] [1743612ms] > Refuter Turn Start
+[DEBUG] [1743613ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1743613ms] > Refuter Turn End
+[INFO] [1743613ms] > Report: Time = 0.001267 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1242
+[INFO] [1743613ms] > Prover Turn Start
+[INFO] [1759645ms] > Prover Turn End
+[INFO] [1759646ms] > Report: Time = 16.032688 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1296
+[INFO] [1759646ms] > Refuter Turn Start
+[DEBUG] [1759646ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1759647ms] > Refuter Turn End
+[INFO] [1759647ms] > Report: Time = 0.000998 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1296
+[INFO] [1759647ms] > Prover Turn Start
+[INFO] [1774907ms] > Prover Turn End
+[INFO] [1774907ms] > Report: Time = 15.260111 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1349
+[INFO] [1774908ms] > Refuter Turn Start
+[DEBUG] [1774908ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1774908ms] > Refuter Turn End
+[INFO] [1774909ms] > Report: Time = 0.001662 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1349
+[INFO] [1774909ms] > Prover Turn Start
+[INFO] [1789246ms] > Prover Turn End
+[INFO] [1789246ms] > Report: Time = 14.337513 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1402
+[INFO] [1789247ms] > Refuter Turn Start
+[DEBUG] [1789247ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [1789247ms] > Refuter Turn End
+[INFO] [1789248ms] > Report: Time = 0.001426 sec , Memory = 0.108093 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1402
+[INFO] [1789248ms] > Prover Turn Start
+[INFO] [1790998ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 10)(col 8))((lin 1285)(col 12))))(rmci_cutcat RMCC_trx))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 226)(col 20))((lin 257)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 315)(col 20))((lin 346)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 404)(col 20))((lin 435)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 494)(col 20))((lin 525)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 583)(col 20))((lin 614)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 673)(col 20))((lin 704)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 763)(col 20))((lin 794)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 859)(col 20))((lin 890)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 956)(col 20))((lin 987)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1044)(col 20))((lin 1075)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1284)(col 8))((lin 1284)(col 21))))(rmci_cutcat RMCC_iter))
+		MF_true
+
+[INFO] [2294703ms] > Prover Turn End
+[INFO] [2294703ms] > Report: Time = 505.455666 sec , Memory = 0.119972 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1408
+[INFO] [2294704ms] > Refuter Turn Start
+[DEBUG] [2294704ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2294704ms] > Refuter Turn End
+[INFO] [2294704ms] > Report: Time = 0.001167 sec , Memory = 0.119972 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1408
+[INFO] [2294705ms] > Prover Turn Start
+[INFO] [2310247ms] > Prover Turn End
+[INFO] [2310247ms] > Report: Time = 15.542947 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1462
+[INFO] [2310248ms] > Refuter Turn Start
+[DEBUG] [2310248ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2310248ms] > Refuter Turn End
+[INFO] [2310249ms] > Report: Time = 0.001524 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1462
+[INFO] [2310249ms] > Prover Turn Start
+[INFO] [2325457ms] > Prover Turn End
+[INFO] [2325458ms] > Report: Time = 15.208941 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1516
+[INFO] [2325458ms] > Refuter Turn Start
+[DEBUG] [2325458ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2325459ms] > Refuter Turn End
+[INFO] [2325459ms] > Report: Time = 0.001302 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1516
+[INFO] [2325459ms] > Prover Turn Start
+[INFO] [2340427ms] > Prover Turn End
+[INFO] [2340428ms] > Report: Time = 14.968467 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1570
+[INFO] [2340428ms] > Refuter Turn Start
+[DEBUG] [2340428ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2340428ms] > Refuter Turn End
+[INFO] [2340429ms] > Report: Time = 0.001136 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1570
+[INFO] [2340429ms] > Prover Turn Start
+[INFO] [2355877ms] > Prover Turn End
+[INFO] [2355878ms] > Report: Time = 15.448914 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1624
+[INFO] [2355878ms] > Refuter Turn Start
+[DEBUG] [2355878ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2355878ms] > Refuter Turn End
+[INFO] [2355879ms] > Report: Time = 0.001208 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1624
+[INFO] [2355879ms] > Prover Turn Start
+[INFO] [2371324ms] > Prover Turn End
+[INFO] [2371325ms] > Report: Time = 15.446066 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1678
+[INFO] [2371325ms] > Refuter Turn Start
+[DEBUG] [2371326ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2371326ms] > Refuter Turn End
+[INFO] [2371326ms] > Report: Time = 0.001564 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1678
+[INFO] [2371327ms] > Prover Turn Start
+[INFO] [2386158ms] > Prover Turn End
+[INFO] [2386158ms] > Report: Time = 14.831909 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1732
+[INFO] [2386159ms] > Refuter Turn Start
+[DEBUG] [2386159ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2386160ms] > Refuter Turn End
+[INFO] [2386160ms] > Report: Time = 0.001745 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1732
+[INFO] [2386160ms] > Prover Turn Start
+[INFO] [2401575ms] > Prover Turn End
+[INFO] [2401576ms] > Report: Time = 15.415566 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1786
+[INFO] [2401576ms] > Refuter Turn Start
+[DEBUG] [2401576ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2401576ms] > Refuter Turn End
+[INFO] [2401577ms] > Report: Time = 0.000967 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1786
+[INFO] [2401577ms] > Prover Turn Start
+[INFO] [2417016ms] > Prover Turn End
+[INFO] [2417017ms] > Report: Time = 15.440380 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1840
+[INFO] [2417018ms] > Refuter Turn Start
+[DEBUG] [2417018ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2417018ms] > Refuter Turn End
+[INFO] [2417018ms] > Report: Time = 0.001431 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1840
+[INFO] [2417018ms] > Prover Turn Start
+[INFO] [2432768ms] > Prover Turn End
+[INFO] [2432769ms] > Report: Time = 15.750256 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1894
+[INFO] [2432769ms] > Refuter Turn Start
+[DEBUG] [2432769ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2432769ms] > Refuter Turn End
+[INFO] [2432770ms] > Report: Time = 0.001015 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1894
+[INFO] [2432770ms] > Prover Turn Start
+[INFO] [2448011ms] > Prover Turn End
+[INFO] [2448012ms] > Report: Time = 15.242432 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1948
+[INFO] [2448012ms] > Refuter Turn Start
+[DEBUG] [2448013ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2448013ms] > Refuter Turn End
+[INFO] [2448013ms] > Report: Time = 0.000991 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 1948
+[INFO] [2448013ms] > Prover Turn Start
+[INFO] [2464173ms] > Prover Turn End
+[INFO] [2464174ms] > Report: Time = 16.160988 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2002
+[INFO] [2464175ms] > Refuter Turn Start
+[DEBUG] [2464175ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2464175ms] > Refuter Turn End
+[INFO] [2464175ms] > Report: Time = 0.000842 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2002
+[INFO] [2464175ms] > Prover Turn Start
+[INFO] [2480729ms] > Prover Turn End
+[INFO] [2480729ms] > Report: Time = 16.554538 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2056
+[INFO] [2480730ms] > Refuter Turn Start
+[DEBUG] [2480730ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2480731ms] > Refuter Turn End
+[INFO] [2480731ms] > Report: Time = 0.001577 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2056
+[INFO] [2480731ms] > Prover Turn Start
+[INFO] [2495666ms] > Prover Turn End
+[INFO] [2495666ms] > Report: Time = 14.935425 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2110
+[INFO] [2495667ms] > Refuter Turn Start
+[DEBUG] [2495667ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2495667ms] > Refuter Turn End
+[INFO] [2495668ms] > Report: Time = 0.001267 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2110
+[INFO] [2495668ms] > Prover Turn Start
+[INFO] [2511151ms] > Prover Turn End
+[INFO] [2511152ms] > Report: Time = 15.484135 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2164
+[INFO] [2511152ms] > Refuter Turn Start
+[DEBUG] [2511153ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2511153ms] > Refuter Turn End
+[INFO] [2511153ms] > Report: Time = 0.001314 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2164
+[INFO] [2511153ms] > Prover Turn Start
+[INFO] [2525649ms] > Prover Turn End
+[INFO] [2525649ms] > Report: Time = 14.496264 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2218
+[INFO] [2525650ms] > Refuter Turn Start
+[DEBUG] [2525650ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2525650ms] > Refuter Turn End
+[INFO] [2525651ms] > Report: Time = 0.001107 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2218
+[INFO] [2525651ms] > Prover Turn Start
+[INFO] [2541766ms] > Prover Turn End
+[INFO] [2541766ms] > Report: Time = 16.115886 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2272
+[INFO] [2541767ms] > Refuter Turn Start
+[DEBUG] [2541767ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2541767ms] > Refuter Turn End
+[INFO] [2541768ms] > Report: Time = 0.001072 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2272
+[INFO] [2541768ms] > Prover Turn Start
+[INFO] [2556825ms] > Prover Turn End
+[INFO] [2556826ms] > Report: Time = 15.058367 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2326
+[INFO] [2556826ms] > Refuter Turn Start
+[DEBUG] [2556827ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2556827ms] > Refuter Turn End
+[INFO] [2556827ms] > Report: Time = 0.001103 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2326
+[INFO] [2556827ms] > Prover Turn Start
+[INFO] [2571571ms] > Prover Turn End
+[INFO] [2571572ms] > Report: Time = 14.744562 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2380
+[INFO] [2571572ms] > Refuter Turn Start
+[DEBUG] [2571573ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2571573ms] > Refuter Turn End
+[INFO] [2571573ms] > Report: Time = 0.001612 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2380
+[INFO] [2571573ms] > Prover Turn Start
+[INFO] [2586536ms] > Prover Turn End
+[INFO] [2586537ms] > Report: Time = 14.963495 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2434
+[INFO] [2586537ms] > Refuter Turn Start
+[DEBUG] [2586538ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2586538ms] > Refuter Turn End
+[INFO] [2586538ms] > Report: Time = 0.001332 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2434
+[INFO] [2586538ms] > Prover Turn Start
+[INFO] [2601372ms] > Prover Turn End
+[INFO] [2601372ms] > Report: Time = 14.834197 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2488
+[INFO] [2601373ms] > Refuter Turn Start
+[DEBUG] [2601373ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [2601373ms] > Refuter Turn End
+[INFO] [2601373ms] > Report: Time = 0.001143 sec , Memory = 0.120476 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2488
+[INFO] [2601374ms] > Prover Turn Start
+[INFO] [2610087ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 10)(col 8))((lin 1285)(col 12))))(rmci_cutcat RMCC_trx))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 226)(col 20))((lin 257)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 315)(col 20))((lin 346)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 404)(col 20))((lin 435)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 494)(col 20))((lin 525)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 583)(col 20))((lin 614)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 673)(col 20))((lin 704)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 763)(col 20))((lin 794)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 859)(col 20))((lin 890)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 956)(col 20))((lin 987)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1044)(col 20))((lin 1075)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1284)(col 8))((lin 1284)(col 21))))(rmci_cutcat RMCC_iter))
+		MF_true
+
+[INFO] [3121858ms] > Prover Turn End
+[INFO] [3121858ms] > Report: Time = 520.484700 sec , Memory = 0.120728 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2519
+[INFO] [3121858ms] > Refuter Turn Start
+[DEBUG] [3121859ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3121859ms] > Refuter Turn End
+[INFO] [3121859ms] > Report: Time = 0.001230 sec , Memory = 0.120728 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2519
+[INFO] [3121859ms] > Prover Turn Start
+[INFO] [3137359ms] > Prover Turn End
+[INFO] [3137360ms] > Report: Time = 15.500671 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2573
+[INFO] [3137360ms] > Refuter Turn Start
+[DEBUG] [3137361ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3137361ms] > Refuter Turn End
+[INFO] [3137361ms] > Report: Time = 0.001051 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2573
+[INFO] [3137361ms] > Prover Turn Start
+[INFO] [3152729ms] > Prover Turn End
+[INFO] [3152730ms] > Report: Time = 15.369091 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2627
+[INFO] [3152731ms] > Refuter Turn Start
+[DEBUG] [3152731ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3152731ms] > Refuter Turn End
+[INFO] [3152732ms] > Report: Time = 0.001459 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2627
+[INFO] [3152732ms] > Prover Turn Start
+[INFO] [3169327ms] > Prover Turn End
+[INFO] [3169327ms] > Report: Time = 16.595690 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2681
+[INFO] [3169328ms] > Refuter Turn Start
+[DEBUG] [3169328ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3169328ms] > Refuter Turn End
+[INFO] [3169328ms] > Report: Time = 0.001064 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2681
+[INFO] [3169329ms] > Prover Turn Start
+[INFO] [3184563ms] > Prover Turn End
+[INFO] [3184564ms] > Report: Time = 15.235653 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2735
+[INFO] [3184564ms] > Refuter Turn Start
+[DEBUG] [3184564ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3184565ms] > Refuter Turn End
+[INFO] [3184565ms] > Report: Time = 0.000908 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2735
+[INFO] [3184565ms] > Prover Turn Start
+[INFO] [3200378ms] > Prover Turn End
+[INFO] [3200378ms] > Report: Time = 15.813552 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2789
+[INFO] [3200379ms] > Refuter Turn Start
+[DEBUG] [3200379ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3200379ms] > Refuter Turn End
+[INFO] [3200380ms] > Report: Time = 0.001099 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2789
+[INFO] [3200380ms] > Prover Turn Start
+[INFO] [3214156ms] > Prover Turn End
+[INFO] [3214156ms] > Report: Time = 13.776587 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2843
+[INFO] [3214156ms] > Refuter Turn Start
+[DEBUG] [3214157ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3214157ms] > Refuter Turn End
+[INFO] [3214157ms] > Report: Time = 0.000983 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2843
+[INFO] [3214157ms] > Prover Turn Start
+[INFO] [3230019ms] > Prover Turn End
+[INFO] [3230020ms] > Report: Time = 15.862512 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2897
+[INFO] [3230020ms] > Refuter Turn Start
+[DEBUG] [3230020ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3230020ms] > Refuter Turn End
+[INFO] [3230021ms] > Report: Time = 0.001154 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2897
+[INFO] [3230021ms] > Prover Turn Start
+[INFO] [3245561ms] > Prover Turn End
+[INFO] [3245562ms] > Report: Time = 15.541264 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2951
+[INFO] [3245562ms] > Refuter Turn Start
+[DEBUG] [3245563ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3245563ms] > Refuter Turn End
+[INFO] [3245563ms] > Report: Time = 0.001276 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 2951
+[INFO] [3245563ms] > Prover Turn Start
+[INFO] [3261245ms] > Prover Turn End
+[INFO] [3261246ms] > Report: Time = 15.682239 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3005
+[INFO] [3261246ms] > Refuter Turn Start
+[DEBUG] [3261246ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3261247ms] > Refuter Turn End
+[INFO] [3261247ms] > Report: Time = 0.001236 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3005
+[INFO] [3261247ms] > Prover Turn Start
+[INFO] [3276267ms] > Prover Turn End
+[INFO] [3276268ms] > Report: Time = 15.021067 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3059
+[INFO] [3276268ms] > Refuter Turn Start
+[DEBUG] [3276268ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3276269ms] > Refuter Turn End
+[INFO] [3276269ms] > Report: Time = 0.000937 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3059
+[INFO] [3276269ms] > Prover Turn Start
+[INFO] [3292916ms] > Prover Turn End
+[INFO] [3292917ms] > Report: Time = 16.648102 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3113
+[INFO] [3292917ms] > Refuter Turn Start
+[DEBUG] [3292917ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3292918ms] > Refuter Turn End
+[INFO] [3292918ms] > Report: Time = 0.000960 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3113
+[INFO] [3292918ms] > Prover Turn Start
+[INFO] [3308095ms] > Prover Turn End
+[INFO] [3308095ms] > Report: Time = 15.177252 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3167
+[INFO] [3308095ms] > Refuter Turn Start
+[DEBUG] [3308095ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3308095ms] > Refuter Turn End
+[INFO] [3308096ms] > Report: Time = 0.000496 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3167
+[INFO] [3308096ms] > Prover Turn Start
+[INFO] [3324827ms] > Prover Turn End
+[INFO] [3324827ms] > Report: Time = 16.731387 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3221
+[INFO] [3324827ms] > Refuter Turn Start
+[DEBUG] [3324828ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3324828ms] > Refuter Turn End
+[INFO] [3324828ms] > Report: Time = 0.001093 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3221
+[INFO] [3324828ms] > Prover Turn Start
+[INFO] [3340305ms] > Prover Turn End
+[INFO] [3340306ms] > Report: Time = 15.477752 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3275
+[INFO] [3340306ms] > Refuter Turn Start
+[DEBUG] [3340306ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3340307ms] > Refuter Turn End
+[INFO] [3340307ms] > Report: Time = 0.001070 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3275
+[INFO] [3340307ms] > Prover Turn Start
+[INFO] [3355855ms] > Prover Turn End
+[INFO] [3355856ms] > Report: Time = 15.548749 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3329
+[INFO] [3355856ms] > Refuter Turn Start
+[DEBUG] [3355856ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3355856ms] > Refuter Turn End
+[INFO] [3355857ms] > Report: Time = 0.000938 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3329
+[INFO] [3355857ms] > Prover Turn Start
+[INFO] [3371648ms] > Prover Turn End
+[INFO] [3371648ms] > Report: Time = 15.791897 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3383
+[INFO] [3371649ms] > Refuter Turn Start
+[DEBUG] [3371649ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3371650ms] > Refuter Turn End
+[INFO] [3371650ms] > Report: Time = 0.001206 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3383
+[INFO] [3371650ms] > Prover Turn Start
+[INFO] [3386338ms] > Prover Turn End
+[INFO] [3386338ms] > Report: Time = 14.688720 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3437
+[INFO] [3386339ms] > Refuter Turn Start
+[DEBUG] [3386339ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3386339ms] > Refuter Turn End
+[INFO] [3386340ms] > Report: Time = 0.001188 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3437
+[INFO] [3386340ms] > Prover Turn Start
+[INFO] [3399991ms] > Prover Turn End
+[INFO] [3399991ms] > Report: Time = 13.651611 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3491
+[INFO] [3399991ms] > Refuter Turn Start
+[DEBUG] [3399992ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3399992ms] > Refuter Turn End
+[INFO] [3399992ms] > Report: Time = 0.000794 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3491
+[INFO] [3399992ms] > Prover Turn Start
+[INFO] [3412960ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 10)(col 8))((lin 1285)(col 12))))(rmci_cutcat RMCC_trx))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 226)(col 20))((lin 257)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 315)(col 20))((lin 346)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 404)(col 20))((lin 435)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 494)(col 20))((lin 525)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 583)(col 20))((lin 614)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 673)(col 20))((lin 704)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 763)(col 20))((lin 794)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 859)(col 20))((lin 890)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 956)(col 20))((lin 987)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1044)(col 20))((lin 1075)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1284)(col 8))((lin 1284)(col 21))))(rmci_cutcat RMCC_iter))
+		MF_true
+
+[INFO] [3918280ms] > Prover Turn End
+[INFO] [3918281ms] > Report: Time = 518.288799 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3534
+[INFO] [3918281ms] > Refuter Turn Start
+[DEBUG] [3918281ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3918282ms] > Refuter Turn End
+[INFO] [3918282ms] > Report: Time = 0.000964 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3534
+[INFO] [3918282ms] > Prover Turn Start
+[INFO] [3933752ms] > Prover Turn End
+[INFO] [3933752ms] > Report: Time = 15.470631 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3588
+[INFO] [3933753ms] > Refuter Turn Start
+[DEBUG] [3933753ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3933753ms] > Refuter Turn End
+[INFO] [3933753ms] > Report: Time = 0.000943 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3588
+[INFO] [3933754ms] > Prover Turn Start
+[INFO] [3949847ms] > Prover Turn End
+[INFO] [3949848ms] > Report: Time = 16.094337 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3642
+[INFO] [3949848ms] > Refuter Turn Start
+[DEBUG] [3949848ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3949848ms] > Refuter Turn End
+[INFO] [3949849ms] > Report: Time = 0.000973 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3642
+[INFO] [3949849ms] > Prover Turn Start
+[INFO] [3964897ms] > Prover Turn End
+[INFO] [3964897ms] > Report: Time = 15.048675 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3696
+[INFO] [3964898ms] > Refuter Turn Start
+[DEBUG] [3964898ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3964898ms] > Refuter Turn End
+[INFO] [3964898ms] > Report: Time = 0.000832 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3696
+[INFO] [3964898ms] > Prover Turn Start
+[INFO] [3980650ms] > Prover Turn End
+[INFO] [3980650ms] > Report: Time = 15.752050 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3750
+[INFO] [3980650ms] > Refuter Turn Start
+[DEBUG] [3980651ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3980651ms] > Refuter Turn End
+[INFO] [3980651ms] > Report: Time = 0.000746 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3750
+[INFO] [3980651ms] > Prover Turn Start
+[INFO] [3995496ms] > Prover Turn End
+[INFO] [3995496ms] > Report: Time = 14.845197 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3804
+[INFO] [3995497ms] > Refuter Turn Start
+[DEBUG] [3995497ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [3995497ms] > Refuter Turn End
+[INFO] [3995498ms] > Report: Time = 0.001843 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3804
+[INFO] [3995498ms] > Prover Turn Start
+[INFO] [4013234ms] > Prover Turn End
+[INFO] [4013234ms] > Report: Time = 17.736300 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3858
+[INFO] [4013235ms] > Refuter Turn Start
+[DEBUG] [4013235ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4013235ms] > Refuter Turn End
+[INFO] [4013235ms] > Report: Time = 0.001012 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3858
+[INFO] [4013235ms] > Prover Turn Start
+[INFO] [4027588ms] > Prover Turn End
+[INFO] [4027588ms] > Report: Time = 14.353172 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3912
+[INFO] [4027589ms] > Refuter Turn Start
+[DEBUG] [4027589ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4027590ms] > Refuter Turn End
+[INFO] [4027590ms] > Report: Time = 0.001417 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3912
+[INFO] [4027590ms] > Prover Turn Start
+[INFO] [4042304ms] > Prover Turn End
+[INFO] [4042304ms] > Report: Time = 14.714372 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3966
+[INFO] [4042305ms] > Refuter Turn Start
+[DEBUG] [4042305ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4042305ms] > Refuter Turn End
+[INFO] [4042305ms] > Report: Time = 0.001194 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 3966
+[INFO] [4042306ms] > Prover Turn Start
+[INFO] [4058939ms] > Prover Turn End
+[INFO] [4058939ms] > Report: Time = 16.633948 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4020
+[INFO] [4058940ms] > Refuter Turn Start
+[DEBUG] [4058940ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4058940ms] > Refuter Turn End
+[INFO] [4058940ms] > Report: Time = 0.000956 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4020
+[INFO] [4058941ms] > Prover Turn Start
+[INFO] [4074706ms] > Prover Turn End
+[INFO] [4074707ms] > Report: Time = 15.766160 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4074
+[INFO] [4074707ms] > Refuter Turn Start
+[DEBUG] [4074707ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4074707ms] > Refuter Turn End
+[INFO] [4074707ms] > Report: Time = 0.000942 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4074
+[INFO] [4074708ms] > Prover Turn Start
+[INFO] [4090630ms] > Prover Turn End
+[INFO] [4090631ms] > Report: Time = 15.923475 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4128
+[INFO] [4090631ms] > Refuter Turn Start
+[DEBUG] [4090631ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4090632ms] > Refuter Turn End
+[INFO] [4090632ms] > Report: Time = 0.000905 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4128
+[INFO] [4090632ms] > Prover Turn Start
+[INFO] [4107981ms] > Prover Turn End
+[INFO] [4107982ms] > Report: Time = 17.349921 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4182
+[INFO] [4107982ms] > Refuter Turn Start
+[DEBUG] [4107983ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4107983ms] > Refuter Turn End
+[INFO] [4107983ms] > Report: Time = 0.001616 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4182
+[INFO] [4107984ms] > Prover Turn Start
+[INFO] [4123296ms] > Prover Turn End
+[INFO] [4123297ms] > Report: Time = 15.313605 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4236
+[INFO] [4123297ms] > Refuter Turn Start
+[DEBUG] [4123297ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4123297ms] > Refuter Turn End
+[INFO] [4123298ms] > Report: Time = 0.000732 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4236
+[INFO] [4123298ms] > Prover Turn Start
+[INFO] [4138857ms] > Prover Turn End
+[INFO] [4138857ms] > Report: Time = 15.559520 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4290
+[INFO] [4138857ms] > Refuter Turn Start
+[DEBUG] [4138858ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4138858ms] > Refuter Turn End
+[INFO] [4138858ms] > Report: Time = 0.001254 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4290
+[INFO] [4138859ms] > Prover Turn Start
+[INFO] [4153629ms] > Prover Turn End
+[INFO] [4153629ms] > Report: Time = 14.771006 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4344
+[INFO] [4153630ms] > Refuter Turn Start
+[DEBUG] [4153630ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4153630ms] > Refuter Turn End
+[INFO] [4153630ms] > Report: Time = 0.000962 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4344
+[INFO] [4153631ms] > Prover Turn Start
+[INFO] [4169162ms] > Prover Turn End
+[INFO] [4169162ms] > Report: Time = 15.531919 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4398
+[INFO] [4169163ms] > Refuter Turn Start
+[DEBUG] [4169163ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4169163ms] > Refuter Turn End
+[INFO] [4169163ms] > Report: Time = 0.000967 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4398
+[INFO] [4169164ms] > Prover Turn Start
+[INFO] [4185493ms] > Prover Turn End
+[INFO] [4185493ms] > Report: Time = 16.329840 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4452
+[INFO] [4185494ms] > Refuter Turn Start
+[DEBUG] [4185494ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4185494ms] > Refuter Turn End
+[INFO] [4185494ms] > Report: Time = 0.001217 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4452
+[INFO] [4185495ms] > Prover Turn Start
+[INFO] [4201353ms] > Prover Turn End
+[INFO] [4201353ms] > Report: Time = 15.858784 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4506
+[INFO] [4201354ms] > Refuter Turn Start
+[DEBUG] [4201354ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4201354ms] > Refuter Turn End
+[INFO] [4201354ms] > Report: Time = 0.001206 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4506
+[INFO] [4201355ms] > Prover Turn Start
+[INFO] [4218132ms] > Prover Turn End
+[INFO] [4218132ms] > Report: Time = 16.777595 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4560
+[INFO] [4218133ms] > Refuter Turn Start
+[DEBUG] [4218133ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4218133ms] > Refuter Turn End
+[INFO] [4218133ms] > Report: Time = 0.001370 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4560
+[INFO] [4218134ms] > Prover Turn Start
+[INFO] [4232391ms] > Prover Turn End
+[INFO] [4232392ms] > Report: Time = 14.258165 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4614
+[INFO] [4232392ms] > Refuter Turn Start
+[DEBUG] [4232392ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4232393ms] > Refuter Turn End
+[INFO] [4232393ms] > Report: Time = 0.001247 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4614
+[INFO] [4232393ms] > Prover Turn Start
+[INFO] [4246781ms] > Prover Turn End
+[INFO] [4246782ms] > Report: Time = 14.388978 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4665
+[INFO] [4246782ms] > Refuter Turn Start
+[DEBUG] [4246782ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4246783ms] > Refuter Turn End
+[INFO] [4246783ms] > Report: Time = 0.001172 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4665
+[INFO] [4246783ms] > Prover Turn Start
+[INFO] [4255509ms] > Invariant is updated:
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 10)(col 8))((lin 1285)(col 12))))(rmci_cutcat RMCC_trx))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 226)(col 20))((lin 257)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 315)(col 20))((lin 346)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 404)(col 20))((lin 435)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 494)(col 20))((lin 525)(col 31))))(rmci_cutcat RMCC_loop))
+		(MF_and((MF_eq(()MV_car(MV_car(MV_cdr(MV_car(MV_ref((MT_pair(MT_pair(MT_pair(MT_pair MT_string MT_int)(MT_pair MT_mutez MT_address))(MT_pair(MT_pair MT_int MT_address)(MT_pair MT_mutez MT_int)))(MT_pair(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int MT_int))(MT_pair(MT_pair MT_int MT_int)(MT_pair MT_int(MT_pair MT_int MT_int)))))(MSC_mich_stack 0)))))))(()MV_lit_int 100))))
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 583)(col 20))((lin 614)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 673)(col 20))((lin 704)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 763)(col 20))((lin 794)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 859)(col 20))((lin 890)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 956)(col 20))((lin 987)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1044)(col 20))((lin 1075)(col 31))))(rmci_cutcat RMCC_loop))
+		MF_true
+	RMCI: ((rmci_loc(CCLOC_Pos((lin 1284)(col 8))((lin 1284)(col 21))))(rmci_cutcat RMCC_iter))
+		MF_true
+
+[INFO] [4757765ms] > Prover Turn End
+[INFO] [4757766ms] > Report: Time = 510.982768 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4692
+[INFO] [4757766ms] > Refuter Turn Start
+[DEBUG] [4757766ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4757767ms] > Refuter Turn End
+[INFO] [4757767ms] > Report: Time = 0.001108 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4692
+[INFO] [4757767ms] > Prover Turn Start
+[INFO] [4772765ms] > Prover Turn End
+[INFO] [4772765ms] > Report: Time = 14.998444 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4746
+[INFO] [4772766ms] > Refuter Turn Start
+[DEBUG] [4772766ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4772766ms] > Refuter Turn End
+[INFO] [4772766ms] > Report: Time = 0.001096 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4746
+[INFO] [4772767ms] > Prover Turn Start
+[INFO] [4787947ms] > Prover Turn End
+[INFO] [4787947ms] > Report: Time = 15.180818 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4800
+[INFO] [4787947ms] > Refuter Turn Start
+[DEBUG] [4787948ms] Refute : naive_run_escape_condition : ALL NON-UNKNOWN!!!
+[INFO] [4787948ms] > Refuter Turn End
+[INFO] [4787948ms] > Report: Time = 0.000934 sec , Memory = 0.126011 GB , P/R/U/F = 5 / 1 / 6 / 0 , expanding-ppath = 4 , expanding-ppath-acc = 26 , combinations = 4800
+[INFO] [4787948ms] > Prover Turn Start
