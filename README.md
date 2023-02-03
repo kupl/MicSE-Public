@@ -1,10 +1,11 @@
-# MicSE - Synergetic (in development)
+# MicSE
 
 ## Table of Contents
 
-- [MicSE - Synergetic (in development)](#micse---synergetic-in-development)
+- [MicSE](#micse)
   - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
+  - [Installation](#installation)
+  - [Usage](#usage)
   - [Documents](#documents)
   - [Development](#development)
     - [Prerequisite](#prerequisite)
@@ -13,15 +14,21 @@
     - [Git Commit Guidelines](#git-commit-guidelines)
   - [About](#about)
 
+
 ## Introduction
 
-MicSE is a tool for verifying and testing Tezos smart contracts written in Michelson. Michelson is a native smart contract language of the [Tezos Blockchain](https://tezos.foundation).
+MicSE is a tool for verifying and testing Tezos smart contracts written in Michelson. 
+Michelson is a native smart contract language of the [Tezos Blockchain](https://tezos.foundation). 
+MicSE verifies and refutes michelson code with initial storage of smart contract by cooperating prover and refuter.
+MicSE can verify the absence of runtime failures of Michelson programs, e.g., no arithmetic overflow. 
+Also, MicSE supports verification of user-provided assertions.
 
-MicSE can verify the absence of runtime failures of Michelson programs, e.g., no arithmetic overflow. Also, MicSE supports verification of user-provided assertions.
 
 ## Documents
 
 [Installation](./doc/Installation.md)
+
+[Usage](./doc/Usage.md)
 
 ## Development
 
@@ -30,7 +37,7 @@ MicSE can verify the absence of runtime failures of Michelson programs, e.g., no
 #### System packages
 
 - OCaml (v.4.10.0): We use OCaml language to programming.
-- Opam (v2.0.4): We use Opam to manage package of OCaml.
+- Opam (v2.0.5): We use Opam to manage package of OCaml.
 
 #### Opam packages
 

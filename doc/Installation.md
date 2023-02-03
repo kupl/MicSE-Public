@@ -1,16 +1,81 @@
-# Installation of MicSE-Synergetic
+# Installation of MicSE
 
 ## Table of Contents
 
 - [Installation of MicSE](#installation-of-micse)
   - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+    - [Clone and build environment](#1-clone-and-build-environment)
+    - [Connect and ssh to vm](#2-connect-ssh-to-vm)
+    - [Vagrant management commands](#3-vagrant-management-commands)
   - [Vagrant Box](#vagrant-box)
     - [Prerequisite](#prerequisite)
     - [Customize Virtual Machine](#customize-virtual-machine)
-    - [Manage Virtual Machine](#manage-virtual-machine)
   - [From Source](#from-source)
     - [Setup dependencies](#setup-dependencies)
     - [Clone, Build](#clone-build)
+
+## Installation
+
+MicSE is written in ocaml, so you have to install ocaml and opam to install and run MicSE. However MicSE provides a Vagrant Box. This box is based on Ubuntu 20.04 LTS (Focal Fossa) v20210304.0.0. And, provider of this box is only VirtualBox now. So you can install [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) for convenience, and build environment in VirtualBox.
+
+
+### 1. Clone and build environment
+
+```bash
+$ git clone https://github.com/kupl/MicSE-Public
+$ cd MicSE-Public
+$ git submodule update --init --recursive
+$ vagrant up
+Bringing machine 'micse' up with 'virtualbox' provider...
+...
+```
+
+If bootstrapping is done well, MicSE may be installed well in vm.
+
+### 2. Connect ssh to vm
+
+```bash
+$ vagrant ssh
+
+# (optional) You can check whether core executable files are installed well
+$ which micse.naive_trxpath_main micse-s taq
+```
+
+### 3. Vagrant management commands
+
+If you stop or remove vm, please refer to the following commands.
+
+
+```bash
+# Create or load virtual machine with Vagrant box
+$ vagrant up
+Bringing machine 'micse' up with 'virtualbox' provider...
+...
+
+# Connect to the machine
+$ vagrant ssh
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-66-generic x86_64)
+... # Project directory is mounted to `~/MicSE` directory
+
+# Halt the machine after exit the connection
+$ vagrant halt
+==> micse: Attempting graceful shutdown of VM...
+...
+
+# Destroy and delete the machine
+$ vagrant destroy
+    micse: Are you sure you want to destroy the 'micse' VM? [y/N] y
+==> micse: Destroying VM and associated drives...
+...
+```
+
+If you don't need bootstrapping when you run the machine, load machine with option `--no-provision`.
+
+```bash
+# Create or load virtual machine without bootstrapping
+$ vagrant up --no-provision
+```
 
 ## Vagrant Box
 
@@ -42,38 +107,6 @@ config.vm.provider "virtualbox" do |vb|
   vb.cpus = 10
 end
 ...
-```
-
-### Manage Virtual Machine
-
-```bash
-# Create or load virtual machine with Vagrant box
-$ vagrant up
-Bringing machine 'micse' up with 'virtualbox' provider...
-...
-
-# Connect to the machine
-$ vagrant ssh
-Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-66-generic x86_64)
-... # Project directory is mounted to `~/MicSE` directory
-
-# Halt the machine after exit the connection
-$ vagrant halt
-==> micse: Attempting graceful shutdown of VM...
-...
-
-# Destroy and delete the machine
-$ vagrant destroy
-    micse: Are you sure you want to destroy the 'micse' VM? [y/N] y
-==> micse: Destroying VM and associated drives...
-...
-```
-
-If you don't need bootstrapping when you run the machine, load machine with option `--no-provision`.
-
-```bash
-# Create or load virtual machine without bootstrapping
-$ vagrant up --no-provision
 ```
 
 ## From Source
