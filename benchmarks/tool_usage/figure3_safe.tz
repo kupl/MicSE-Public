@@ -9,6 +9,6 @@
         IF { PUSH int 1 ; ADD ; LEFT int } { RIGHT int } };
       #__MICSE_CHECK { PUSH int 50 ; DUP 2 ; COMPARE ; LE }; 
     }
-    { PUSH int 100 ; DUP 2 ; COMPARE ; LT ; 
+    { PUSH int 50 ; DUP 2 ; COMPARE ; LT ; 
       IF { SWAP ; DROP } { DROP } } ;
     NIL operation ; PAIR } }
