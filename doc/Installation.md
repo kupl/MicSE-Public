@@ -39,7 +39,7 @@ If bootstrapping is done well, MicSE may be installed well in vm.
 $ vagrant ssh
 
 # (optional) You can check whether core executable files are installed well
-$ which micse.naive_trxpath_main micse-s taq
+$ which baseline micse taq
 ```
 
 ### 3. Vagrant management commands

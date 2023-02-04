@@ -1,4 +1,4 @@
-open Lib
+
 open! Core
 
 let const_SCORE_MAGNIFY_COEF : float = 8.0
@@ -8,7 +8,7 @@ let const_SCORE_TOLERANCE_COEF : float = 0.5
 (* 0.0 ~ 1.0, 0.0 is REFTUE-first and 1.0 is LENGTH-first. *)
 
 let gen_common_prec_elim_floatscore :
-    Lib.Res.config -> Lib.Res.res -> Lib.Res.qres -> Lib.Res.PPath.t -> float =
+    Res.config -> Res.res -> Res.qres -> Res.PPath.t -> float =
   fun _ _ _ { pp_score; _ } ->
   if List.length pp_score = 0
   then 0.0

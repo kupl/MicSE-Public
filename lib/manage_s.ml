@@ -3,7 +3,7 @@
 exception ManageSError of string
 
 open! Core
-open Lib
+
 
 (******************************************************************************)
 (******************************************************************************)
@@ -124,7 +124,7 @@ let print_size_of_cand_space : Res.res -> unit =
 (* function print_num_of_cands end *)
 
 let print_picked_paths : Res.res -> unit =
-   let open Lib.Res in
+   let open Res in
    let (print_at : int ref) = ref 0 in
    fun res ->
    if Option.is_none !Utils.Argument.status_interval
@@ -165,7 +165,7 @@ let print_picked_paths : Res.res -> unit =
    )
 
 let print_expanded_paths : Res.res -> unit =
-   let open Lib.Res in
+   let open Res in
    let (print_at : int ref) = ref 0 in
    fun res ->
    if Option.is_none !Utils.Argument.status_interval

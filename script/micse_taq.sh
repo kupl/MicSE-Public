@@ -21,7 +21,7 @@ TIMEBUDGET=3600
 CODE=""
 MODE="nonco"
 
-while getopts ":I:S:M:T:Z:C:Z:m:h" option; 
+while getopts ":I:S:M:T:Z:C:Z:m:h" option;
 do
     case "$option" in
         I) INPUTFILE=$OPTARG;;#echo "Found the -I option";
@@ -127,9 +127,9 @@ fi
 ### Compiled well and last verify michelson file
 
 if [ $MODE == "nonco" ]; then
-    micse.naive_trxpath_main -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
+    baseline -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
 elif [ $MODE == "syner" ]; then
-    micse-s -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
+    micse -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
 fi
 
 ##### clean up work directory

@@ -1,0 +1,29 @@
+{ parameter (or (unit %increase) (int %setv)) ;
+  storage int ;
+  code { UNPAIR ;      # p : s
+         IF_LEFT
+           { DROP ;     # s
+             PUSH int 1 ; # 1 : s
+             SWAP ;       # s : 1
+             SUB ;        # s - 1
+             LEFT int ;   # LEFT (s - 1)
+             PUSH bool True; # true : LEFT(s -1)
+             LOOP {
+               IF_LEFT {
+                 PUSH int 50 ; # 50 : s - 1
+                 DUP 2 ; # s - 1 : 50 : s - 1
+                 COMPARE ; # compared (s - 1, 50) : s - 1
+                 LT ;
+                 IF { PUSH int 1 ; ADD ; LEFT int } { RIGHT int ; };
+                 PUSH bool True;
+               }
+               {
+                  RIGHT int; PUSH bool False;
+               };
+             };
+             IF_LEFT {FAILWITH; } { };
+              #__MICSE_CHECK { PUSH int 50 ; DUP 2 ; COMPARE ; LE };
+            }
+            { PUSH int 50 ; DUP 2 ; COMPARE ; LT ; IF { SWAP ; DROP } { DROP } } ;
+           NIL operation ;
+           PAIR } }

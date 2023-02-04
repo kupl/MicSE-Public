@@ -14,7 +14,7 @@ Help()
 START=1
 END=24
 CORES=1
-while getopts ":S:E:j:h" option; 
+while getopts ":S:E:j:h" option;
 do
     case "$option" in
         S) echo "Found the -S option";START=$OPTARG;
@@ -93,26 +93,26 @@ do
                 sleep 480
             fi
         done
-        timeout 4800 micse-s -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
-        echo "Start New micse-s"
+        timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/benchmarks/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
+        echo "Start New micse"
         sleep 30
         while [ 1 ]
         do
-            if [ $(pgrep -xc micse-s) -eq 0 ] ## micse-s is done
+            if [ $(pgrep -xc micse) -eq 0 ] ## micse is done
             then
-                echo "Terminated micse-s"
+                echo "Terminated micse"
                 break
             else
                 sleep 480
             fi
         done
     elif [ $CORES -gt 1 ]; then
-        timeout 4800 micse.naive_trxpath_main -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
+        timeout 4800 baseline -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.nonco 2>&1 &
         USED=$(pgrep -c micse)
         if [ $USED -eq $CORES ]; then
             while [ 1 ]
             do
-                if [ $(pgrep -c micse) -lt 3 ] ## all micse and micse-s process are done
+                if [ $(pgrep -c micse) -lt 3 ] ## all baseline and micse process are done
                 then
                     USED=$(pgrep -c micse)
                     break
@@ -120,12 +120,12 @@ do
                 sleep 480
             done
         fi
-        timeout 4800 micse-s -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
+        timeout 4800 micse -T 4800 -I ~/MicSE/benchmarks/top30/$CODEFILE -S ~/MicSE/benchmarks/top30/$STORAGEFILE -d > ~/MicSE/result/${IDX}/${LIST_FILE_NAME[IDX - 1]}.syner 2>&1 &
         USED=$(pgrep -c micse)
         if [ $USED -eq $CORES ]; then
             while [ 1 ]
             do
-                if [ $(pgrep -c micse) -lt 3 ] ## all micse and micse-s process are done
+                if [ $(pgrep -c micse) -lt 3 ] ## all micse and micse process are done
                 then
                     USED=$(pgrep -c micse)
                     break

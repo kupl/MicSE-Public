@@ -1,29 +1,35 @@
 (lang dune 2.4)
 
-(name micse-s)
+(name micse)
 
 (version 0.0.0)
 
 (generate_opam_files true)
 
 (source
- (uri "git+https://github.com/kupl/MicSE.git"))
+ (uri "git+https://github.com/kupl/MicSE-Public.git"))
 
-(bug_reports "https://github.com/kupl/MicSE/issues")
+(bug_reports "https://github.com/kupl/MicSE-Public/issues")
 
-(homepage "https://github.com/kupl/MicSE")
+(homepage "https://github.com/kupl/MicSE-Public")
 
 (license MIT)
 
-(authors "Jisuk Byun <grayplc@korea.ac.kr>" "Heewoong Jang <jormal@korea.ac.kr>")
+(authors
+  "Jisuk Byun <grayplc@korea.ac.kr>"
+  "Heewoong Jang <jormal@korea.ac.kr>"
+  "Hyun Do Jeong <doslahtm@korea.ac.kr>")
 
-(maintainers "Jisuk Byun <grayplc@korea.ac.kr>" "Heewoong Jang <jormal@korea.ac.kr>")
+(maintainers
+  "Jisuk Byun <grayplc@korea.ac.kr>"
+  "Heewoong Jang <jormal@korea.ac.kr>"
+  "Hyun Do Jeong <doslahtm@korea.ac.kr>")
 
 (package
-  (name micse-s)
+  (name micse)
   (synopsis "The Michelson Symbolic vErifier, for verifying and testing the integrity of smart contracts in the Tezos blockchain")
   (depends
-    (dune (= 2.4.0)) 
+    (dune (= 2.4.0))
     (batteries (= 3.3.0))
     (core (= v0.14.1))
     (menhir (= 20210419))

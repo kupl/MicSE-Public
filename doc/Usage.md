@@ -21,14 +21,14 @@
 
 Binary execution files are located at `(PROJECT_DIR)/bin` directory.
 
-- `micse-s`: Run whole MicSE for input Michelson program code
-- `micse.naive_trxpath_main`: Run MicSE without cooperation
+- `micse`: Run whole MicSE for input Michelson program code
+- `baseline`: Run MicSE without cooperation
 
 ### MicSE
 
 ```bash
-$ (PROJECT_DIR)/bin/micse-s -I (FILE_PATH) -S (FILE_PATH) ...
- Final-Report : 
+$ (PROJECT_DIR)/bin/micse -I (FILE_PATH) -S (FILE_PATH) ...
+ Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
 Combinations: _
@@ -62,8 +62,8 @@ Combinations: _
 - **Input:** [KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz](../benchmarks/top30/KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz)
 - **Output:**
 ```txt
-$ micse-s -I KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz -S KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.storage.tz
- Final-Report : 
+$ micse -I KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz -S KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.storage.tz
+ Final-Report :
 === Final Result ===
 Time: 137.136473 sec            Memory: 0.068417 GB
 Combinations: 17
@@ -112,7 +112,7 @@ Combinations: 17
 
 ```bash
 $ (PROJECT_DIR)/bin/micse.naive_prover -I (FILE_PATH) -S (FILE_PATH) ...
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
 Combinations: _
@@ -147,7 +147,7 @@ Combinations: _
 
 ```txt
 $ ./bin/micse.naive_prover -I ./benchmarks/examples/deposit.tz -S ./benchmarks/examples/deposit.storage.tz -q 126 29
-  Final-Report : 
+  Final-Report :
 === Final Result ===
 Time: 120.732395 sec    Memory: 0.031319 GB
 Combinations: 1948
@@ -166,7 +166,7 @@ Combinations: 1948
 
 ```bash
 $ (PROJECT_DIR)/bin/micse.advanced_trxpath_refuter -I (FILE_PATH) -S (FILE_PATH) ...
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
 Combinations: _
@@ -201,7 +201,7 @@ Combinations: _
 
 ```txt
 $ ./bin/micse.advanced_trxpath_refuter -I ./benchmarks/examples/deposit.tz -S ./benchmarks/examples/deposit.storage.tz -q 344 22
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 23.511754 sec   Memory: 0.039196 GB
 Combinations: 0
@@ -252,7 +252,7 @@ The example in below is located at [here](../benchmarks/examples/transfer.tz)
 ``` michelson
 parameter (pair (address %receiver) (mutez %value));
 storage   (pair (map %balance address mutez) (mutez %totalSupply));
-code { 
+code {
   UNPAIR; UNPAIR; DIP 2 { UNPAIR };
         # %receiver :: %value :: %balance :: %totalSupply :: []
 
@@ -297,7 +297,7 @@ code {
 
 ```txt
 $ ./bin/micse.naive_prover -I ./benchmarks/examples/transfer.tz -S ./benchmarks/examples/transfer.storage.tz
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 0.611170 sec              Memory: 0.024593 GB
 Combinations: 1
@@ -326,7 +326,7 @@ If you want to test MicSE for high level language, you can test it with `script/
 
 ```bash
 $ (PROJECT_DIR)/script/micse_taq.sh -C [mligo|smartpy] -I (FILE_PATH) -S (FILE_PATH) ...
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
 Combinations: _
@@ -359,12 +359,12 @@ Combinations: _
 - **Input:** [hashchall.mligo](../benchmarks/ligo/hashchall.mligo)
 - **Output:**
 ```txt
-$ script/micse_taq.sh -C mligo -I benchmarks/ligo/hashchall.mligo -S benchmarks/ligo/hashchall.storageList.mligo 
+$ script/micse_taq.sh -C mligo -I benchmarks/ligo/hashchall.mligo -S benchmarks/ligo/hashchall.storageList.mligo
 Initializing taqueria is done
 Note: parameter file associated with "hashchall.mligo" can't be found, so "hashchall.parameterList.mligo" has been created for you. Use this file to define all parameter values for this contract
 
 Compile process is done
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 1.972934 sec              Memory: 0.031784 GB
 Combinations: 3

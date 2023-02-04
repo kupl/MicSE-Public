@@ -3,7 +3,6 @@
 exception CoopError of string
 
 open! Core
-open Lib
 
 (******************************************************************************)
 (******************************************************************************)
@@ -136,8 +135,7 @@ let precond_search :
 (* function precond_search end *)
 
 let pick_refutable_path_f_gen :
-    Lib.Res.config -> Lib.Res.res -> Lib.Tz.qid -> Lib.Refute.PickFun.t =
-   let open Lib in
+    Res.config -> Res.res -> Tz.qid -> Refute.PickFun.t =
    let const_MAX_SCORE = 1000 in
    (* let const_IND_PENALTY = 100 in *)
    let integer_score_of_ind_uind_pair : int -> int * int -> int =

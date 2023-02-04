@@ -9,7 +9,7 @@ exception ManageSError of string
 (******************************************************************************)
 
 (* Set of Tz.mich_f *)
-module MFSet : module type of Core.Set.Make (Lib.Tz.MichF_cmp)
+module MFSet : module type of Core.Set.Make (Tz.MichF_cmp)
 
 (******************************************************************************)
 (******************************************************************************)
@@ -17,13 +17,13 @@ module MFSet : module type of Core.Set.Make (Lib.Tz.MichF_cmp)
 (******************************************************************************)
 (******************************************************************************)
 
-val print_num_of_cands : Lib.Res.config -> Lib.Res.res -> unit
+val print_num_of_cands : Res.config -> Res.res -> unit
 
-val print_size_of_cand_space : Lib.Res.res -> unit
+val print_size_of_cand_space : Res.res -> unit
 
-val print_picked_paths : Lib.Res.res -> unit
+val print_picked_paths : Res.res -> unit
 
-val print_expanded_paths : Lib.Res.res -> unit
+val print_expanded_paths : Res.res -> unit
 
 (******************************************************************************)
 (******************************************************************************)
@@ -31,8 +31,8 @@ val print_expanded_paths : Lib.Res.res -> unit
 (******************************************************************************)
 (******************************************************************************)
 
-val enhanced_prover_run : Lib.Res.config -> Lib.Res.res -> Lib.Res.res
+val enhanced_prover_run : Res.config -> Res.res -> Res.res
 
-val syn_run_escape_condition : Lib.Res.config -> Lib.Res.res -> bool
+val syn_run_escape_condition : Res.config -> Res.res -> bool
 
-val syn_run : Lib.Res.config -> Lib.Res.res -> Lib.Res.res
+val syn_run : Res.config -> Res.res -> Res.res

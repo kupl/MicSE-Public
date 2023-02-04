@@ -1,6 +1,12 @@
 (library
- (name lib_s)
- (public_name micse-s.lib_s)
- (libraries core micse.lib micse.utils)
+ (name lib)
+ (public_name micse.lib)
+ (libraries core utils yojson bignum z3 ptime)
  (preprocess
   (pps ppx_sexp_conv ppx_compare)))
+
+(menhir
+ (modules michParser)
+ (flags --explain))
+
+(ocamllex michLexer)
