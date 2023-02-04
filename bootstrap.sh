@@ -71,7 +71,6 @@ echo "[NOTE] End-up Initialize OPAM"
 # Build
 if [[ ! -d "~/MicSE" ]]; then
   eval $(opam env) && cd /vagrant && make
-  ln -s /vagrant ~/MicSE
   PATH=$PATH:/vagrant/bin
   echo "PATH=\$PATH:/vagrant/bin" >> /home/vagrant/.bashrc
   echo "[NOTE] End-up Install MicSE"
