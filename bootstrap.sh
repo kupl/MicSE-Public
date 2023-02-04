@@ -26,9 +26,9 @@ done
 echo "[NOTE] End-up Setup System Dependencies"
 
 # Download MicSE
-#cd ~/
-#git clone https://github.com/kupl/MicSE.git
-#cd MicSE
+cd ~/
+git clone https://github.com/kupl/MicSE-Public.git
+sudo mv ./MicSE-Public ./vagrant
 
 # Initialize opam
 echo "[NOTE] Start Initialize OPAM with Installing OCAML Dependencies"
