@@ -434,7 +434,7 @@ if __name__ == '__main__':
                         if psr_output.count('timeout') < poolnum:
                             row, col = contract_info[idx][0], contract_info[idx][1]
                             contract_addr = contract_info[0]
-                            command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/vagrant/benchmarks/evaluation/{contract_addr}.tz -S ~/vagrant/benchmarks/evaluation/{contract_addr}.storage.tz > ~/vagrant/result_900/{NUM}/{contract_addr}.{suffix} 2>&1 &"
+                            command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/vagrant/benchmarks/evaluation/{contract_addr}.tz -S ~/vagrant/benchmarks/evaluation/{contract_addr}.storage.tz > ~/vagrant/benchmarks/result_900/{NUM}/{contract_addr}.{suffix} 2>&1 &"
                             pool.map(run, [command])
                             NUM += 1
                             time.sleep(1)
