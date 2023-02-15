@@ -25,7 +25,6 @@ MicSE is written in ocaml, so you have to install ocaml and opam to install and 
 ```bash
 $ git clone https://github.com/kupl/MicSE-Public
 $ cd MicSE-Public
-$ git submodule update --init --recursive
 $ vagrant up
 Bringing machine 'micse' up with 'virtualbox' provider...
 ...
@@ -146,8 +145,6 @@ To use the tool of MicSE, you have to clone this repository and build it manuall
 ```bash
 $ git clone https://github.com/kupl/MicSE-Public.git
 $ cd MicSE-Public
-# pull submodule in https://github.com/kupl/MicSE.git
-$ git submodule update --init --recursive
 # Assuming that ocaml, opam are installed
 $ opam install -y -q ./ --deps-only
 $ make
