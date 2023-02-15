@@ -50,7 +50,7 @@ Also, MicSE supports verification of user-provided assertions.
 - Ptime
 - Ocamlgraph
 - Yojson
-- Z3 (v4.8.9)
+- Z3 (v4.8.13)
 - Zarith
 
 ### Git Commit Guidelines
