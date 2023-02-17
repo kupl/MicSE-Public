@@ -1,11 +1,5 @@
 (executables
- (names
-  baseline
-  micse
-  check_grammar)
- (public_names
-  baseline
-  micse
-  check_grammar)
+ (names baseline micse check_grammar get_query_locs)
+ (public_names baseline micse check_grammar get_query_locs)
  (libraries core lib)
  (package micse))
