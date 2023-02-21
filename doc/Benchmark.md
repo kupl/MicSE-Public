@@ -32,4 +32,12 @@ You can also test all queries contained in `.tz` files in `benchmarks/evaluation
 - how to use script
 ```bash
 $ python3 benchmark.py  4 1 ./
+10:02:14 : timeout 1000 baseline -T 900 -d -q 218 24 -I ~/vagrant/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.tz -S ~/vagrant/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.storage.tz > .//result_900//1/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6_218_24.nonco 2>&1 &
+10:02:15 : timeout 1000 micse -T 900 -d -q 218 24 -I ~/vagrant/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.tz -S ~/vagrant/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.storage.tz > .//result_900//1/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6_218_24.syner 2>&1 &
+[*] End of running all commands
+[*] End of Benchmarking
+[*] Now Start to parse result and show table
+No.                         Contact Addr. Baseline           MicSE         Speedup
+                                            Result Time(s)  Result Time(s)        
+#01  KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6   Failed     T/O  Proved     441   > 2.0
 ```

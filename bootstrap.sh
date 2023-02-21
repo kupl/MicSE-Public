@@ -104,5 +104,5 @@ echo -e "{\n    \"consent\": \"opt_out\"\n}" > ~/.taq-settings/taq-settings.json
 
 # install pip and tabulate for benchmarking
 sudo apt-get install -y python3-pip
-python3 -m pip install tabulate
+python3 -m pip install tabulate pandas
 echo "[NOTE] End-up bootstraping"
