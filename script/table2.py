@@ -69,6 +69,7 @@ if __name__ == '__main__':
     if argc < 3 or argc > 5:
         print("Usage: python3 table2.py <cores> <start idx> <end_idx> <output_dir>")
         print("Usage: python3 table2.py <cores> <target idx> <output_dir>")
+        print("Usage: python3 table2.py <cores> <output_dir>")
         exit(1)
     
     cores = int(sys.argv[1])
@@ -86,9 +87,10 @@ if __name__ == '__main__':
     # check and determine idx range
     if argc == 5:
         start_idx, end_idx = int(sys.argv[2]), int(sys.argv[3])
-        assert(start_idx <= end_idx)
+        assert(start_idx <= end_idx and end_idx <= 30)
     elif argc == 4:
         start_idx, end_idx = int(sys.argv[2]), int(sys.argv[2])
+        assert(end_idx <= 30)
     else:
         start_idx, end_idx = 1, 30
     
@@ -103,7 +105,7 @@ if __name__ == '__main__':
     result_dir = output_dir + "/result_900/"
     if os.path.exists(result_dir) == False:
         os.system(f"mkdir {result_dir}")
-    for x in range(1, 31):
+    for x in range(start_idx, end_idx + 1):
         if os.path.exists(f"{result_dir}/{x}") == False:
             os.system(f'mkdir {result_dir}/{x}')
 
@@ -129,14 +131,15 @@ if __name__ == '__main__':
                                 contract_addr = contract_info[0]
                                 command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/vagrant/benchmarks/evaluation/{contract_addr}.tz -S ~/vagrant/benchmarks/evaluation/{contract_addr}.storage.tz > {result_dir}/{NUM}/{contract_addr}.{suffix} 2>&1 &"
                                 pool.map(run, [command])
+                                time.sleep(1)
                                 if not NUM in idx_list:
                                     idx_list.append(NUM)
                             NUM += 1
-                            time.sleep(1)
                             break
                         else:
                             time.sleep(10)
     
+    print("[*] End of running all commands")
 
     # check all processes are done
     while True:

@@ -30,6 +30,8 @@ Also, MicSE supports verification of user-provided assertions.
 
 [Usage](./doc/Usage.md)
 
+[Benchmark](./doc/Benchmark.md)
+
 ## Development
 
 ### Prerequisite
