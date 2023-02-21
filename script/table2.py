@@ -67,8 +67,8 @@ if __name__ == '__main__':
     # first make directory storing result file
     argc = len(sys.argv)
     if argc < 3 or argc > 5:
-        print("Usage: python3 benchmark.py <cores> <start idx> <end_idx> <output_dir>")
-        print("Usage: python3 benchmark.py <cores> <target idx> <output_dir>")
+        print("Usage: python3 table2.py <cores> <start idx> <end_idx> <output_dir>")
+        print("Usage: python3 table2.py <cores> <target idx> <output_dir>")
         exit(1)
     
     cores = int(sys.argv[1])
@@ -100,7 +100,7 @@ if __name__ == '__main__':
         print("Output Directory is not present")
         exit(1)
 
-    result_dir = output_dir + "/result_900"
+    result_dir = output_dir + "/result_900/"
     if os.path.exists(result_dir) == False:
         os.system(f"mkdir {result_dir}")
     for x in range(1, 31):
