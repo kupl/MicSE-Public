@@ -111,8 +111,8 @@ elif [ $CODE == "smartpy" ]; then
     BASENAME=`basename $INPUTFILE .py`
     taq compile "$BASENAME.py" >/dev/null
     DIRNAME=$(cat ./contracts/"$BASENAME.py" | grep "sp.add_compilation_target(" | cut -d '"' -f2)
-    TARGET="./artifacts/$DIRNAME/step_000_cont_0_contract.tz"
-    TARGET_STORAGE="./artifacts/$DIRNAME/step_000_cont_0_storage.tz"
+    TARGET="./artifacts/$BASENAME.tz"
+    TARGET_STORAGE="./artifacts/$BASENAME.default_storage.tz"
 fi
 
 echo "Compile process is done"
