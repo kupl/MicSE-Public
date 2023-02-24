@@ -9,7 +9,7 @@ Help()
     echo "M     The memory budget for overall MicSE process in GB. (default: 5GB)"
     echo "T     The time budget for overall MicSE process in seconds. (default: 360sec)"
     echo "C     The file is Ligo or SmartPy"
-    echo "m     Mode of MicSE (default: nonco -> micse.naive_trxpath_main)"
+    echo "m     Mode of MicSE (default: nonco -> baseline)"
     echo "h     displays the option"
     echo ""
 }
@@ -49,17 +49,17 @@ done
 
 
 ### check whether CODE file format is empty or it's value is not (ligo or smartpy)
-if [ "$CODE" == "" ] || [ "$CODE" != "mligo" -a "$CODE" != "smartpy" ];then
+if [ "$CODE" == "" ] || [ "$CODE" != "mligo" -a "$CODE" != "ligo" -a "$CODE" != "religo" -a "$CODE" != "jsligo"  -a "$CODE" != "smartpy" ];then
     echo "Code format is wrong"
-    echo "micse_taq ..... -C [mligo|SmartPy] <- (case in-sensitive)"
+    echo "micse_taq ..... -C [mligo|ligo|religo|jsligo|SmartPy] <- (case in-sensitive)"
     exit 1
 fi
 
 ### check whether input file is exists or empty string
-if [ "$CODE" == "mligo" ];then
+if [ "$CODE" != "smartpy"  ];then
     ## if mligo, we need two files which are input .tz file and .storageList.mligo file
     if [ "$INPUTFILE" == "" -o ! -e "$INPUTFILE" -o "$STORAGEFILE" == "" -o ! -e "$STORAGEFILE" ];then
-        echo "Input .tz file is something wrong"
+        echo "Input .${CODE} file is something wrong"
         Help
         exit 1
     else
@@ -98,11 +98,11 @@ cd $TEMPDIR
 taq init ./ >/dev/null
 echo "Initializing taqueria is done"
 ## prepare compiling
-if [ $CODE == "mligo" ]; then
+if [ $CODE != "smartpy" ]; then
     taq install @taqueria/plugin-ligo >/dev/null
     cp $INPUTFILE $STORAGEFILE ./contracts/
-    BASENAME=`basename $INPUTFILE .mligo`
-    taq compile "$BASENAME.mligo" >/dev/null
+    BASENAME=`basename $INPUTFILE .$CODE`
+    taq compile "$BASENAME.$CODE" >/dev/null
     TARGET="./artifacts/$BASENAME.tz"
     TARGET_STORAGE="./artifacts/$BASENAME.default_storage.tz"
 elif [ $CODE == "smartpy" ]; then
@@ -129,7 +129,7 @@ fi
 if [ $MODE == "nonco" ]; then
     baseline -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
 elif [ $MODE == "syner" ]; then
-    micse -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
+    micse    -I $TARGET -S $TARGET_STORAGE -T $TIMEBUDGET -M $MEMBUDGET
 fi
 
 ##### clean up work directory

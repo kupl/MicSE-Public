@@ -9,6 +9,7 @@ type id_details = {
 type buy = {
     profile: bytes;
     initial_controller: address option;
+    price: tez;
 }
 
 type update_owner = {
@@ -22,11 +23,13 @@ type update_details = {
     new_controller: address option;
 }
 
+type skip = tez
+
 type action =
 | Buy of buy
 | Update_owner of update_owner
 | Update_details of update_details
-| Skip of unit
+| Skip of skip
 
 (* The prices kept in storage can be changed by bakers, though they should only be
    adjusted down over time, not up. *)
@@ -54,13 +57,14 @@ be to deter people from doing it just to chew up address space.
 *)
 
 let buy (parameter, storage: buy * storage) =
-    let void: unit = 
+    let _void: unit = 
         if Tezos.get_amount () = storage.name_price
         then () 
         else (failwith "Incorrect amount paid.": unit)
     in
     let profile = parameter.profile in
     let initial_controller = parameter.initial_controller in
+    let price = parameter.price in
     let identities = storage.identities in
     let new_id = storage.next_id in
     let controller: address =
@@ -79,7 +83,7 @@ let buy (parameter, storage: buy * storage) =
     in
     ([]: operation list), {identities = updated_identities;
                             next_id = new_id + 1; 
-                            name_price = storage.name_price;
+                            name_price = storage.name_price + price;
                             skip_price = storage.skip_price;
                             }
 
@@ -95,7 +99,7 @@ let update_owner (parameter, storage: update_owner * storage) =
         | Some id_details -> id_details
         | None -> (failwith "This ID does not exist.": id_details)
     in
-    let is_allowed: bool =
+    let _is_allowed: bool =
         if Tezos.get_sender () = current_id_details.owner
         then true
         else (failwith "You are not the owner of this ID.": bool)
@@ -126,7 +130,7 @@ let update_details (parameter, storage: update_details * storage) =
         | Some id_details -> id_details
         | None -> (failwith "This ID does not exist.": id_details)
     in
-    let is_allowed: bool =
+    let _is_allowed: bool =
         if (Tezos.get_sender () = current_id_details.controller) || (Tezos.get_sender () = current_id_details.owner)
         then true
         else (failwith ("You are not the owner or controller of this ID."): bool)
@@ -157,16 +161,18 @@ let update_details (parameter, storage: update_details * storage) =
                             }
 
 (* Let someone skip the next identity so nobody has to take one that's undesirable *)
-let skip (p,storage: unit * storage) =
-    let void: unit =
+let skip (p, storage: skip * storage) =
+    let _void: unit =
         if Tezos.get_amount () = storage.skip_price
         then ()
         else (failwith "Incorrect amount paid.": unit)
     in
+    let price = p in
+    let new_skip_price  = (storage.skip_price + price) mod 1000000mutez in
     ([]: operation list), {identities = storage.identities;
                             next_id = storage.next_id + 1;
                             name_price = storage.name_price;
-                            skip_price = storage.skip_price;
+                            skip_price = new_skip_price;
                             }
 
 let main (action, storage: action * storage) : operation list * storage =
@@ -174,4 +180,4 @@ let main (action, storage: action * storage) : operation list * storage =
     | Buy b -> buy (b, storage)
     | Update_owner uo -> update_owner (uo, storage)
     | Update_details ud -> update_details (ud, storage)
-    | Skip s -> skip ((), storage)
+    | Skip s -> skip (s, storage)

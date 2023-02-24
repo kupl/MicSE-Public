@@ -1,131 +1,155 @@
-type openRaffleParameter is tez * timestamp * option(string) * bytes
-type buyTicketParameter is unit
-type closeRaffleParameter is nat
-type raffleEntrypoints is 
-| OpenRaffle of openRaffleParameter
-| BuyTicket of buyTicketParameter
-| CloseRaffle of closeRaffleParameter
+type open_raffle_parameter = {
+    jackpot_amount: tez;
+    close_date: timestamp;
+    description: string option;
+    winning_ticket_number_hash: bytes;
+}
+type buy_ticket_parameter = nat
+type close_raffle_parameter = nat
 
-type storage is record [
-    admin : address;
-    close_date : timestamp;
-    jackpot : tez;
-    description : string;
-    raffle_is_open : bool;
-    players : set (address);
-    sold_tickets : big_map (nat, address);
-    winning_ticket_number_hash : bytes;
-]
+type raffleEntrypoints =
+| Open_raffle of open_raffle_parameter
+| Buy_ticket of buy_ticket_parameter
+| Close_raffle of close_raffle_parameter
 
-type returnType is list (operation) * storage
+type storage = {
+    admin: address;
+    close_date: timestamp;
+    jackpot: tez;
+    description: string;
+    raffle_is_open: bool;
+    // 각각의 플레이어들의 주소 집합, 참가자 인원수 제한이 없으므로 맵은 big_map
+    players: address set;
+    sold_tickets: (nat, address) big_map;
+    ticket_price_map: (address, tez) big_map;
+    winning_ticket_number_hash: bytes;
+}
 
-function div (const a : nat; const b : nat) : option (nat) is
-    if b = 0n then None else Some(a/b)
+let div (a, b: nat * nat): nat option =
+    if b = 0n then None else Some (a/b)
 
-function open_raffle (const jackpot_amount : tez; const close_date : timestamp; const description : option(string); const winning_ticket_number_hash: bytes; var store : storage) : returnType is {
-    if Tezos.get_source() =/= store.admin
-    then failwith ("administrator not recognized.")
-    else {
-        if not store.raffle_is_open then {
-            if Tezos.get_amount() < jackpot_amount
-            then failwith ("The administrator does not own enough tez.")
-            else {
-                const today : timestamp = Tezos.get_now();
-                const seven_day : int = 7  * 86400;
-                const in_7_day : timestamp = today + seven_day;
-                const is_close_date_not_valid: bool = close_date < in_7_day;
-                if is_close_date_not_valid
-                then failwith ("The raffle must remain open for at least 7 days.")
-                else {
-                    patch store with record [
-                        jackpot = jackpot_amount;
-                        close_date = close_date;
-                        raffle_is_open = True;
-                        winning_ticket_number_hash = winning_ticket_number_hash; // the hash is saved into the storage
-                    ];
-
-                    case description of [
-                    | Some(d) -> patch store with record [description=d]
-                    | None -> {skip}
-                    ]
-                }
-            }
-        } 
-        else {
-            failwith ("A raffle is already open.")
-        }
+let open_raffle (parameter, storage: open_raffle_parameter * storage) = 
+    let _void: unit =
+        if Tezos.get_sender () = storage.admin
+        then ()
+        else (failwith "administrator not recognized.": unit)
+    in
+    let _is_open: bool =
+        if storage.raffle_is_open
+        then (failwith "A raffle is already open.": bool) 
+        else false
+    in
+    let _enough_money: bool =
+        if Tezos.get_amount () < parameter.jackpot_amount
+        then (failwith "The administrator does not own enough tez.": bool)
+        else true
+    in
+    let today: timestamp = Tezos.get_now ()
+    in
+    let seven_day: int = 7 * 86_400 in
+    let in_7_day: timestamp = today + seven_day in
+    let _is_close_date_not_valid: bool =
+        if parameter.close_date < in_7_day
+        then (failwith "The raffle must remain open for at least 7 days": bool)
+        else false 
+    in
+    let new_storage: storage = {
+        storage with
+        jackpot = parameter.jackpot_amount;
+        close_date = parameter.close_date;
+        raffle_is_open = true;
+        winning_ticket_number_hash = parameter.winning_ticket_number_hash;
     }
-} with ((nil: list(operation)), store)
+    in
+    let new_storage: storage =
+        match parameter.description with
+        | Some desc -> {new_storage with description = desc}
+        | None -> new_storage
+    in
+    ([]: operation list), new_storage
 
-function buy_ticket (const _param: unit; var store: storage): returnType is {
-    if store.raffle_is_open then {
-        const ticket_price : tez = 1tez;
-        const current_player : address = Tezos.get_sender();
-        if Tezos.get_amount() =/= ticket_price
-        then failwith("The sender did not send the right tez amount.")
-        else {
-            if store.players contains current_player
-            then failwith("Each player can participate only once.")
-            else {
-                const ticket_id : nat = Set.size(store.players);
-                store.players := Set.add(current_player, store.players);
-                store.sold_tickets[ticket_id] := current_player;
-            }
-        }
-    } else {
-        failwith("The raffle is closed.")
+// make parameter, ticket -> price, (current_player, ticket_price)
+let buy_ticket (parameter, storage: buy_ticket_parameter * storage) =
+    let _is_open: bool =
+        if storage.raffle_is_open
+        then true
+        else (failwith "The raffle is closed.": bool)
+    in
+    let ticket_price: tez = parameter * storage.jackpot in
+    let current_player: address = Tezos.get_sender () in
+    let _is_right_tez_amoount: unit =
+        if Tezos.get_amount () <> ticket_price
+        then (failwith "The sender did not send the right tez amount.": unit)
+        else ()
+    in
+    let _is_player_once =
+        if Set.mem current_player storage.players
+        then (failwith "Each player can participate only once.")
+        else true
+    in
+    let ticket_id: nat = Set.size storage.players in
+    let new_storage = {
+        storage with
+        players = Set.add current_player storage.players;
+        sold_tickets = Big_map.update ticket_id (Some (current_player)) storage.sold_tickets;
+        ticket_price_map = Big_map.update current_player (Some (ticket_price)) storage.ticket_price_map;
     }
-} with ((nil: list(operation)), store)
+    in
+    ([]: operation list), new_storage
 
-function close_raffle (const winning_ticket_number: nat; var store: storage): returnType is { 
-    var operations: list(operation) := nil;
-    if Tezos.get_source() =/= store.admin then failwith("Administrator not recognized.")
-    else {
-        if store.raffle_is_open then {
-            if Tezos.get_now() < store.close_date then failwith("The raffle must remain open for at least 7 days.")
-            else {
-                const winning_ticket_number_bytes : bytes = Bytes.pack(winning_ticket_number);
-                const winning_ticket_number_hash : bytes = Crypto.sha256(winning_ticket_number_bytes);
-                if winning_ticket_number_hash =/= store.winning_ticket_number_hash
-                then failwith("The hash does not match the hash of the winning ticket.")
-                else {
-                    const number_of_players : nat = Set.size(store.players);
-                    const winning_ticket_id : nat = winning_ticket_number mod number_of_players;
-
-                    const winner: address =
-                        case (store.sold_tickets[winning_ticket_id]) of [
-                        | Some(a) -> a
-                        | None -> (failwith("Winner address not found"): address)
-                        ];
-                    
-                    const receiver: contract (unit) =
-                        case (Tezos.get_contract_opt (winner): option (contract (unit))) of [
-                        | Some (c) -> c
-                        | None -> (failwith("Winner contract not found."): contract (unit))
-                        ];
-                    
-                    const op: operation = Tezos.transaction(unit, store.jackpot, receiver);
-                    operations := list [ op; ];
-
-                    patch store with record [
-                        jackpot = 0tez;
-                        close_date = (0 : timestamp);
-                        description = ("raffle is currently closed" : string);
-                        raffle_is_open = False;
-                        players = (set[] : set(address));
-                        sold_tickets = (big_map[] : big_map (nat, address));
-                    ];
-                }
-            }
-        } else {
-            failwith("The raffle is closed.")
-        }
+// when determine reward, if jackpot is succeedd -> 걸었돈 돈을 곱해서 넣어주면 될 듯 하댜
+let close_raffle (parameter, storage: close_raffle_parameter * storage) =
+    let winning_ticket_number = parameter in
+    let _is_admin: bool =
+        if Tezos.get_sender () = storage.admin
+        then true
+        else (failwith "Administrator not recognized.": bool)
+    in
+    let _is_time_over: bool =
+        if Tezos.get_now () < storage.close_date
+        then (failwith "The raffle must remain open for at least 7 days.": bool)
+        else true
+    in
+    let winning_ticket_number_bytes: bytes = Bytes.pack winning_ticket_number in
+    let winning_ticket_number_hash: bytes = Crypto.sha256 winning_ticket_number_bytes in
+    let _is_number_right: bool =
+        if winning_ticket_number_hash = storage.winning_ticket_number_hash
+        then true
+        else (failwith "The hash does not match the hash of the winning ticket.": bool)
+    in
+    let number_of_players: nat = Set.size storage.players in
+    let winning_ticket_id: nat = winning_ticket_number mod number_of_players in
+    let winner: address =
+        match Big_map.find_opt winning_ticket_id storage.sold_tickets with
+        | Some (addr) -> addr
+        | None -> (failwith "Winner address not found": address)
+    in
+    let award: tez =
+        match Big_map.find_opt winner storage.ticket_price_map with
+        | Some (price) -> price
+        | None -> (failwith "Winner does not pay money?": tez)
+    in
+    let receiver : (unit) contract =
+        match Tezos.get_contract_opt (winner) with
+        | Some cont -> cont
+        | None -> (failwith "Winner contract not found.": (unit) contract)
+    in
+    let reward_operation: operation = Tezos.transaction () award receiver in
+    let new_storage: storage = {
+        storage with
+        jackpot = 0tez;
+        close_date = (0: timestamp);
+        description = ("raffle is currently closed": string);
+        raffle_is_open = false;
+        players = (Set.empty: address set);
+        sold_tickets = (Big_map.empty: (nat, address) big_map);
+        ticket_price_map = (Big_map.empty: (address, tez) big_map);
     }
-} with (operations, store)
+    in
+    ([reward_operation]: operation list), new_storage
 
-function main (const action : raffleEntrypoints; const store : storage): list (operation) * storage is
-    case action of [
-        | OpenRaffle (param) -> open_raffle (param.0, param.1, param.2, param.3, store)
-        | BuyTicket (param) -> buy_ticket (param, store)
-        | CloseRaffle (param) -> close_raffle (param, store)
-    ]
+let main (action, storage: raffleEntrypoints * storage): operation list * storage =
+    match action with
+    | Open_raffle param -> open_raffle (param, storage)
+    | Buy_ticket param -> buy_ticket (param, storage)
+    | Close_raffle param -> close_raffle (param, storage)
