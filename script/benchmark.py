@@ -6,11 +6,6 @@ import time
 import sys
 import re
 
-
-
-OUTDIR_HEAD = '~/MicSE/result_900/'
-
-
 ADDR_30_Q = {
     'KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6': [
         (218, 24),
