@@ -182,14 +182,14 @@ Combinations: 1
 << Failed >>
 ```
 
-## MicSE for high level language (e.g. cameLigo, SmartPy)
+## MicSE for high level language (e.g. Ligo, SmartPy)
 
 If you want to test MicSE for high level language, you can test it with `script/micse_taq.sh` which automatically compile cameligo or smartpy into michelson language and run it with MicSE
 
 ### micse_taq.sh
 
 ```bash
-$ (PROJECT_DIR)/script/micse_taq.sh -C [mligo|smartpy] -I (FILE_PATH) -S (FILE_PATH) ...
+$ (PROJECT_DIR)/script/micse_taq.sh -C [mligo|ligo|religo|jsligo|smartpy] -I (FILE_PATH) -S (FILE_PATH) ...
  Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
@@ -208,55 +208,127 @@ Combinations: _
 
 - **Input(Parameters):**
   -
-  - `-I`: The file path of input [mligo|SmartPy] code. file name convention is `<contract name>.[mligo|py]`(REQUIRED)
-  - `-S`: The file path of initial storage information that the target contract has. name convention is `<contract name>.storageList.mligo` (REQUIRED only for cameligo)
+  - `-I`: The file path of input [mligo|ligo|religo|jsligo|SmartPy] code. file name convention is `<contract name>.[mligo|ligo|jsligo|religo|py]`(REQUIRED)
+  - `-S`: The file path of initial storage information that the target contract has. name convention is `<contract name>.storageList.[mligo|ligo|jsligo|religo]` (REQUIRED only for Ligo)
   - `-M`: The memory budget for overall MicSE process in GB. (default: 5GB)
   - `-T`: The time budget for overall MicSE process in seconds. (default: 360sec)
-  - `-C`: The file is cameligo or SmartPy
-  - `-m`: Mode of MicSE (default: non-cooperation mode -> run with micse.naive_trxpath_main)
+  - `-C`: The file is cameligo or pascaligo or jsligo or reasonligo or SmartPy
+  - `-m`: Mode of MicSE (nonco(default) -> run .tz with baseline, syner -> run .tz with micse)
   - `-h`: displays the option
 - **Output:**
   - Verification result from the MicSE
 
-### micse_taq.sh example
+### micse_taq.sh example with cameligo
 
-- **Input:** [hashchall.mligo](../benchmarks/ligo/hashchall.mligo)
+- **Input:** [raffle.mligo](../benchmarks/ligo/raffle.mligo), [raffle.storageList.mligo](../benchmarks/ligo/raffle.storageList.mligo)
 - **Output:**
-```txt
-$ script/micse_taq.sh -C mligo -I benchmarks/ligo/hashchall.mligo -S benchmarks/ligo/hashchall.storageList.mligo
+```bash
+$ (PROJECT_DIR)/script/micse_taq.sh -C mligo -I raffle.mligo -S raffle.storageList.mligo -m syner
 Initializing taqueria is done
-Note: parameter file associated with "hashchall.mligo" can't be found, so "hashchall.parameterList.mligo" has been created for you. Use this file to define all parameter values for this contract
+Note: parameter file associated with "raffle.mligo" can't be found, so "raffle.parameterList.mligo" has been created for you. Use this file to define all parameter values for this contract
 
 Compile process is done
- Final-Report :
+ Final-Report : 
 === Final Result ===
-Time: 1.972934 sec              Memory: 0.031784 GB
-Combinations: 3
+Time: 66.111055 sec             Memory: 0.083351 GB
+Combinations: 1
 #Total: 1               #Proved: 0              #Refuted: 1             #Failed: 0
 #Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
 << Proved >>
 
 << Refuted >>
-> Location:(CCLOC_Pos((lin 55)(col 19))((lin 55)(col 22)))
-        Category:Q_mutez_add_no_overflow
+> Location:(CCLOC_Pos((lin 34)(col 18))((lin 34)(col 21)))
+        Category:Q_mutez_mul_nmm_no_overflow
         Refuted Path:
                 - Initial Balance: 0
                 - Transaction #1:
-                        Amount:0
+                        Amount:2
                         Parameter:
-                                (|(const_or_left (Pair Int Bytes))|
-                                  (|(const_pair Int Bytes)| 9223372036812775808 const_bytes_nil))
+                                (|(const_or_right (Pair (Pair Int (Option String)) (Pair Int Bytes)))|
+                                  (|(const_pair (Pair Int (Option String)) (Pair Int Bytes))|
+                                    (|(const_pair Int (Option String))| 604801 const_option_none)
+                                    (|(const_pair Int Bytes)| 1 const_bytes_nil)))
                 - Transaction #2:
                         Amount:0
                         Parameter:
-                                (let ((a!1 (|(const_pair (Pair Address Bytes) (Lambda Unit (List Operation)))|
-                                             (|(const_pair Address Bytes)|
-                                               (|(const_address KeyHash)| (|(const_keyhash_str String)| "!0!"))
-                                               const_bytes_nil)
-                                             (|(const_lambda Unit (List Operation))| const_unit nil))))
-                                  (|(const_or_right (Pair (Pair Address Bytes) (Lambda Unit (List Operation))))|
-                                    a!1))
+                                (|(const_or_left (Or Int Int))| (|(const_or_left Int)| 9223372036854775808))
 
 << Failed >>
+```
 
+### micse_taq.sh example with pascaligo
+
+- **Input:** [raffle.ligo](../benchmarks/ligo/raffle.ligo), [raffle.storageList.ligo](../benchmarks/ligo/raffle.storageList.ligo)
+- **Output:**
+```bash
+$ (PROJECT_DIR)/script/micse_taq.sh -C ligo -I raffle.ligo -S raffle.storageList.ligo -m syner
+Initializing taqueria is done
+Note: parameter file associated with "raffle.ligo" can't be found, so "raffle.parameterList.ligo" has been created for you. Use this file to define all parameter values for this contract
+
+Compile process is done
+ Final-Report : 
+=== Final Result ===
+Time: 46.699528 sec             Memory: 0.067543 GB
+Combinations: 1
+#Total: 1               #Proved: 0              #Refuted: 1             #Failed: 0
+#Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
+<< Proved >>
+
+<< Refuted >>
+> Location:(CCLOC_Pos((lin 27)(col 23))((lin 27)(col 26)))
+        Category:Q_mutez_mul_nmm_no_overflow
+        Refuted Path:
+                - Initial Balance: 0
+                - Transaction #1:
+                        Amount:2
+                        Parameter:
+                                (|(const_or_right (Pair (Pair Int Int) (Pair (Option String) Bytes)))|
+                                  (|(const_pair (Pair Int Int) (Pair (Option String) Bytes))|
+                                    (|(const_pair Int Int)| 1 604801)
+                                    (|(const_pair (Option String) Bytes)| const_option_none const_bytes_nil)))
+                - Transaction #2:
+                        Amount:0
+                        Parameter:
+                                (|(const_or_left (Or Int Int))| (|(const_or_left Int)| 9223372036854775808))
+
+<< Failed >>
+```
+
+### micse_taq.sh example with SmartPy
+
+- **Input:** [raffle.py](../benchmarks/smartpy/raffle.py)
+- **Output:**
+```bash
+$ (PROJECT_DIR)/script/micse_taq.sh -C smartpy -I raffle.py -m syner
+Initializing taqueria is done
+Compile process is done
+ Final-Report : 
+=== Final Result ===
+Time: 73.403712 sec             Memory: 0.089329 GB
+Combinations: 1
+#Total: 2               #Proved: 1              #Refuted: 1             #Failed: 0
+#Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
+<< Proved >>
+> Location:(CCLOC_Pos((lin 104)(col 9))((lin 104)(col 12)))
+        Category:Q_mutez_mul_nmm_no_overflow
+
+<< Refuted >>
+> Location:(CCLOC_Pos((lin 37)(col 9))((lin 37)(col 12)))
+        Category:Q_mutez_mul_nmm_no_overflow
+        Refuted Path:
+                - Initial Balance: 0
+                - Transaction #1:
+                        Amount:4
+                        Parameter:
+                                (|(const_or_right (Or Int (Pair (Pair Int String) (Pair Int Bytes))))|
+                                  (|(const_or_right (Pair (Pair Int String) (Pair Int Bytes)))|
+                                    (|(const_pair (Pair Int String) (Pair Int Bytes))|
+                                      (|(const_pair Int String)| 604801 "The raffle is not yet opened.")
+                                      (|(const_pair Int Bytes)| 3 const_bytes_nil))))
+                - Transaction #2:
+                        Amount:0
+                        Parameter:
+                                (|(const_or_left Int)| 9223372036854775808)
+
+<< Failed >>
 ```
