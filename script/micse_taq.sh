@@ -9,7 +9,7 @@ Help()
     echo "M     The memory budget for overall MicSE process in GB. (default: 5GB)"
     echo "T     The time budget for overall MicSE process in seconds. (default: 360sec)"
     echo "C     The file is Ligo or SmartPy"
-    echo "m     Mode of MicSE (default: nonco -> baseline)"
+    echo "m     Mode of MicSE (default: syner -> micse)"
     echo "h     displays the option"
     echo ""
 }
@@ -19,7 +19,7 @@ STORAGEFILE=""
 MEMBUDGET=5
 TIMEBUDGET=3600
 CODE=""
-MODE="nonco"
+MODE="syner"
 
 while getopts ":I:S:M:T:Z:C:Z:m:h" option;
 do

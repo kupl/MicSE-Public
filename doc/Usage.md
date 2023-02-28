@@ -213,7 +213,7 @@ Combinations: _
   - `-M`: The memory budget for overall MicSE process in GB. (default: 5GB)
   - `-T`: The time budget for overall MicSE process in seconds. (default: 360sec)
   - `-C`: The file is cameligo or pascaligo or jsligo or reasonligo or SmartPy
-  - `-m`: Mode of MicSE (nonco(default) -> run .tz with baseline, syner -> run .tz with micse)
+  - `-m`: Mode of MicSE (nonco -> run .tz with baseline, syner(default) -> run .tz with micse)
   - `-h`: displays the option
 - **Output:**
   - Verification result from the MicSE
