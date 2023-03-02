@@ -55,7 +55,7 @@ Combinations: _
 
 ### MicSE example
 
-- **Input:** [KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz](../benchmarks/top30/KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz)
+- **Input:** [KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz](../benchmarks/evaluation/KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz)
 - **Output:**
 ```txt
 $ micse -I KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz -S KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.storage.tz
@@ -102,6 +102,9 @@ Combinations: 17
 
 ```
 
+* If MicSE is installed using vagrant box we provide, the micse binary file will be located at `~/vagrant/bin/`.
+* If MicSE is manually installed using `dune build` command, the micse binary file `micse.exe` will be located at `(PROJECT_DIR)/_build/default/cmd/micse.exe`.
+
 
 ## Specifying Custom Safety Properties
 
@@ -111,70 +114,39 @@ The **`#__MICSE_CHECK {(instruction)}`** statement should be given as a single-l
 
 ### Custom Safety Property Example
 
-The example in below is located at [here](../benchmarks/examples/transfer.tz)
+The example in below is located at [here](../benchmarks/tool_usage/figure3.tz)
 
 ``` michelson
-parameter (pair (address %receiver) (mutez %value));
-storage   (pair (map %balance address mutez) (mutez %totalSupply));
-code {
-  UNPAIR; UNPAIR; DIP 2 { UNPAIR };
-        # %receiver :: %value :: %balance :: %totalSupply :: []
-
-  DUP 3; SENDER; GET; IF_NONE { FAIL } {};
-        # %balance[@sender] :: %receiver :: %value :: %balance :: %totalSupply :: []
-
-  DUP 3; DUP 2; COMPARE; GE; IF {} { FAIL };
-        # %balance[@sender] :: %receiver :: %value :: %balance :: %totalSupply :: []
-
-  DIP { DIG 2; DUP 3 }; SUB; SOME; SENDER; UPDATE;
-        # %balance' :: %receiver :: %value :: %totalSupply :: []
-
-  DUP; DUP 3; GET; IF_NONE { PUSH mutez 0 } {};
-        # %balance'[%receiver] :: %balance' :: %receiver :: %value :: %totalSupply :: []
-
-  DIP { DIG 2 }; ADD;
-        # (%balance'[%receiver] + %value) :: %balance' :: %receiver :: %totalSupply :: []
-
-
-  # [The user-provided assertion below should be a single-line comment]
-  #__MICSE_CHECK { \
-    DIP {DROP; DROP }; \
-        # (%balance'[%receiver] + %value) :: %totalSupply :: []
-
-    COMPARE; \
-        # int :: []
-
-    LE };
-        # bool :: []
-  # [This notation should be in only one line]
-        # (%balance'[%receiver] + %value) :: %balance' :: %receiver :: %totalSupply :: []
-
-
-  SOME; DIG 2; UPDATE;
-        # %balance'' :: %totalSupply :: []
-  PAIR; NIL operation; PAIR };
-        # (pair [] (pair %balance'' %totalSupply)) :: []
+{ parameter (or (unit %increase) (int %setv)) ;
+  storage int ;   # Initial Storage Value Input: 49
+  code { 
+    UNPAIR ;
+    IF_LEFT { 
+      DROP ; PUSH int 1 ; SWAP ; SUB ; LEFT int ;
+      LOOP_LEFT { 
+        PUSH int 50 ; DUP 2 ; COMPARE ; LT ;
+        IF { PUSH int 1 ; ADD ; LEFT int } { RIGHT int } };
+      # [The user-provided assertion below should be a single-line comment]
+      #__MICSE_CHECK { PUSH int 50 ; DUP 2 ; COMPARE ; LE }; 
+    }
+    { PUSH int 50 ; DUP 2 ; COMPARE ; LT ; 
+      IF { SWAP ; DROP } { DROP } } ;
+    NIL operation ; PAIR } }
 ```
 
-- **Input:** [`transfer.tz`](../benchmarks/examples/transfer.tz)
+- **Input:** [`figure3.tz`](../benchmarks/tool_usage/figure3.tz)
 - **Output:**
 
 ```txt
-$ ./bin/micse.naive_prover -I ./benchmarks/examples/transfer.tz -S ./benchmarks/examples/transfer.storage.tz
- Final-Report :
+$ ./bin/micse -I ./benchmarks/tool_usage/figure3_safe.tz -S ./benchmarks/tool_usage/figure3.storage.tz
+ Final-Report : 
 === Final Result ===
-Time: 0.611170 sec              Memory: 0.024593 GB
-Combinations: 1
-#Total: 3               #Proved: 3              #Refuted: 0             #Failed: 0
+Time: 1.529440 sec              Memory: 0.033859 GB
+Combinations: 11
+#Total: 1               #Proved: 1              #Refuted: 0             #Failed: 0
 #Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
 << Proved >>
-> Location:(CCLOC_Pos((lin 7)(col 25))((lin 7)(col 28)))
-        Category:Q_mutez_sub_no_underflow
-
-> Location:(CCLOC_Pos((lin 9)(col 18))((lin 9)(col 21)))
-        Category:Q_mutez_add_no_overflow
-
-> Location:(CCLOC_Pos((lin 11)(col 4))((lin 11)(col 52)))
+> Location:(CCLOC_Pos((lin 10)(col 8))((lin 10)(col 60)))
         Category:Q_assertion
 
 << Refuted >>
