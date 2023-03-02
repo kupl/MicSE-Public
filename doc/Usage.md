@@ -16,7 +16,7 @@
 
 ## Demo Videos
 * [MicSE successfully proves that there are no overflow at line 184 in the contract `KT1Tvr6`](https://youtu.be/9vcQNYH5mk0)
-* [MicSE successfully finds a overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
+* [MicSE successfully finds an overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
 * [Prove/Refute custom safety property using MicSE](https://youtu.be/dZiDRjDSKeo)
 
 ## Run
