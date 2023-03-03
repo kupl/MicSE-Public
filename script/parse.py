@@ -34,7 +34,7 @@ LIST_QUERY_NUM=[
 ]
 
 def parse_nonco_result(idx: int):
-    f = open(f"/home/vagrant/MicSE/benchmarks/result/{idx}/{LIST_FILE_NAME[idx-1]}.nonco", "rt")
+    f = open(f"~/MicSE-Public/MicSE/benchmarks/result/{idx}/{LIST_FILE_NAME[idx-1]}.nonco", "rt")
     result = f.read()
     if "=== Final Result ===" in result:
         try:
@@ -65,7 +65,7 @@ def make_benchmark_table(start: int, end: int):
     Query_info = []
     for i in range(start, end + 1):
         Query_info.append([i, LIST_FILE_NAME[i-1], LIST_QUERY_NUM[i-1]] + parse_nonco_result(i))
-    
+
     table = tabulate(Query_info, headers=["", "Address", "#Query", "#Proved", "#Refuted", "#Failed", "Time (s)"], tablefmt="fancy_grid")
     print(table)
 

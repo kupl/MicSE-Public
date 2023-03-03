@@ -28,7 +28,6 @@ echo "[NOTE] End-up Setup System Dependencies"
 # Download MicSE
 cd ~/
 git clone https://github.com/kupl/MicSE-Public.git
-sudo mv ./MicSE-Public ./vagrant
 
 # Initialize opam
 echo "[NOTE] Start Initialize OPAM with Installing OCAML Dependencies"
@@ -45,7 +44,7 @@ fi
 #echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 eval $(opam env) && \
 	#opam install -y -q -j $CORES dune.2.4.0 batteries.3.3.0 core.v0.14.1 menhir.20210419 ocamlgraph.2.0.0 ptime.0.8.5 yojson.1.7.0 zarith.1.11 ounit2.2.2.4 bignum.v0.14.0 ppx_deriving.5.2.1 mtime.1.2.0 logs.0.7.0 z3.4.8.11 odoc.1.5.3
-  opam install -y -q -j $CORES ~/vagrant --deps-only
+  opam install -y -q -j $CORES ~/MicSE-Public --deps-only
 echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 OPAM_LIB_DIR=~/.opam/$OPAM_SWITCH_VERSION/lib/
 echo "[NOTE] End-up Initialize OPAM"
@@ -69,10 +68,10 @@ echo "[NOTE] End-up Initialize OPAM"
 # fi
 
 # Build
-if [[ ! -d "~/vagrant" ]]; then
-  eval $(opam env) && cd ~/vagrant && make
-  PATH=$PATH:~/vagrant/bin
-  echo "PATH=\$PATH:~/vagrant/bin" >> /home/vagrant/.bashrc
+if [[ ! -d "~/MicSE-Public" ]]; then
+  eval $(opam env) && cd ~/MicSE-Public && make
+  PATH=$PATH:~/MicSE-Public/bin
+  echo "PATH=\$PATH:~/MicSE-Public/bin" >> /home/MicSE-Public/.bashrc
   echo "[NOTE] End-up Install MicSE"
 fi
 
@@ -90,9 +89,9 @@ echo "[NOTE] End-up installing docker"
 
 # Install smartpy
 echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
-PATH=$PATH:/home/vagrant/smartpy-cli
-echo "PATH=\$PATH:/home/vagrant/smartpy-cli" >> /home/vagrant/.bashrc
-ln -s /home/vagrant/smartpy-cli/SmartPy.sh /home/vagrant/smartpy-cli/smartpy
+PATH=$PATH:/home/MicSE-Public/smartpy-cli
+echo "PATH=\$PATH:/home/MicSE-Public/smartpy-cli" >> /home/MicSE-Public/.bashrc
+ln -s /home/MicSE-Public/smartpy-cli/SmartPy.sh /home/MicSE-Public/smartpy-cli/smartpy
 
 # Install tacqueria
 # ./install_ligo_smartpy.sh

@@ -111,7 +111,7 @@ Combinations: 17
 
 ```
 
-* If MicSE is installed using vagrant box we provide, the micse binary file will be located at `~/vagrant/bin/`.
+* If MicSE is installed using vagrant box we provide, the micse binary file will be located at `~/MicSE-Public/bin/`.
 * If MicSE is manually installed using `dune build` command, the micse binary file `micse.exe` will be located at `(PROJECT_DIR)/_build/default/cmd/micse.exe`.
 
 
@@ -128,17 +128,17 @@ The example in below is located at [here](../benchmarks/tool_usage/figure3.tz)
 ``` michelson
 { parameter (or (unit %increase) (int %setv)) ;
   storage int ;   # Initial Storage Value Input: 49
-  code { 
+  code {
     UNPAIR ;
-    IF_LEFT { 
+    IF_LEFT {
       DROP ; PUSH int 1 ; SWAP ; SUB ; LEFT int ;
-      LOOP_LEFT { 
+      LOOP_LEFT {
         PUSH int 50 ; DUP 2 ; COMPARE ; LT ;
         IF { PUSH int 1 ; ADD ; LEFT int } { RIGHT int } };
       # [The user-provided assertion below should be a single-line comment]
-      #__MICSE_CHECK { PUSH int 50 ; DUP 2 ; COMPARE ; LE }; 
+      #__MICSE_CHECK { PUSH int 50 ; DUP 2 ; COMPARE ; LE };
     }
-    { PUSH int 50 ; DUP 2 ; COMPARE ; LT ; 
+    { PUSH int 50 ; DUP 2 ; COMPARE ; LT ;
       IF { SWAP ; DROP } { DROP } } ;
     NIL operation ; PAIR } }
 ```
@@ -148,7 +148,7 @@ The example in below is located at [here](../benchmarks/tool_usage/figure3.tz)
 
 ```txt
 $ ./bin/micse -I ./benchmarks/tool_usage/figure3_safe.tz -S ./benchmarks/tool_usage/figure3.storage.tz
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 1.529440 sec              Memory: 0.033859 GB
 Combinations: 11
@@ -209,7 +209,7 @@ Initializing taqueria is done
 Note: parameter file associated with "raffle.mligo" can't be found, so "raffle.parameterList.mligo" has been created for you. Use this file to define all parameter values for this contract
 
 Compile process is done
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 66.111055 sec             Memory: 0.083351 GB
 Combinations: 1
@@ -247,7 +247,7 @@ Initializing taqueria is done
 Note: parameter file associated with "raffle.ligo" can't be found, so "raffle.parameterList.ligo" has been created for you. Use this file to define all parameter values for this contract
 
 Compile process is done
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 46.699528 sec             Memory: 0.067543 GB
 Combinations: 1
@@ -283,7 +283,7 @@ Combinations: 1
 $ (PROJECT_DIR)/script/micse_taq.sh -C smartpy -I raffle.py -m syner
 Initializing taqueria is done
 Compile process is done
- Final-Report : 
+ Final-Report :
 === Final Result ===
 Time: 73.403712 sec             Memory: 0.089329 GB
 Combinations: 1

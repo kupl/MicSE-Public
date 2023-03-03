@@ -21,7 +21,7 @@ INSTR_QUERY_LIST = [["KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6", 2372, (218, 24), (1
                     ["KT18dDtdzvEj3Y9okKJxASMCyWfSscRfjtbP", 2069, (210, 24), (1380, 24)]]
 
 
-OUTDIR_HEAD = '~/vagrant/benchmarks/result/'
+OUTDIR_HEAD = '~/MicSE-Public/benchmarks/result/'
 
 
 def run(cmd):
@@ -71,7 +71,7 @@ if __name__ == '__main__':
         print("Usage: python3 table2.py <cores> <target idx> <output_dir>")
         print("Usage: python3 table2.py <cores> <output_dir>")
         exit(1)
-    
+
     cores = int(sys.argv[1])
 
     # check cores
@@ -93,7 +93,7 @@ if __name__ == '__main__':
         assert(end_idx <= 30)
     else:
         start_idx, end_idx = 1, 30
-    
+
     # determine and check output_dir and sub result directory
     output_dir = sys.argv[-1]
 
@@ -126,10 +126,10 @@ if __name__ == '__main__':
                         if psr_output.count('timeout') < poolnum:
                             # If NUM is in range of start and end idx
                             # then execute command
-                            if NUM >= start_idx and NUM <= end_idx: 
+                            if NUM >= start_idx and NUM <= end_idx:
                                 row, col = contract_info[idx][0], contract_info[idx][1]
                                 contract_addr = contract_info[0]
-                                command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/vagrant/benchmarks/evaluation/{contract_addr}.tz -S ~/vagrant/benchmarks/evaluation/{contract_addr}.storage.tz > {result_dir}/{NUM}/{contract_addr}.{suffix} 2>&1 &"
+                                command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/MicSE-Public/benchmarks/evaluation/{contract_addr}.tz -S ~/MicSE-Public/benchmarks/evaluation/{contract_addr}.storage.tz > {result_dir}/{NUM}/{contract_addr}.{suffix} 2>&1 &"
                                 pool.map(run, [command])
                                 time.sleep(1)
                                 if not NUM in idx_list:
@@ -138,7 +138,7 @@ if __name__ == '__main__':
                             break
                         else:
                             time.sleep(10)
-    
+
     print("[*] End of running all commands")
 
     # check all processes are done
@@ -150,7 +150,7 @@ if __name__ == '__main__':
             time.sleep(10)
         else:
             break
-    
+
     print("[*] End of Benchmarking")
     print("[*] Now Start to parse result and show table in paper")
 
@@ -187,7 +187,7 @@ if __name__ == '__main__':
                 row = [contract_addr, inst, qloc, baseline_status, baseline_time_second, micse_status, micse_time_second, speedup]
                 rows.append(row)
             idx += 1
-    
+
     columns = pd.MultiIndex.from_frame(column_names)
     index = ["#" + str(i).rjust(2, "0") for i in idx_list]
 

@@ -24,7 +24,7 @@ smartpy_benchmark_list = {
     "taco-shop": [(138, 5)]
 }
 
-PROJECT_DIR = "~/vagrant/"
+PROJECT_DIR = "~/MicSE-Public/"
 
 OUTPUT_DIR = f"{PROJECT_DIR}/benchmarks/benchmark_result"
 
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     if argc != 3:
         print("Usage: python3 benchmark_mligo.py <output_dir_name> [mligo|smartpy]")
         exit(1)
-    
-    
+
+
     is_dir_exists = os.path.exists(sys.argv[1])
     if is_dir_exists == True:
         print("Please check output_dir is not present")
@@ -77,8 +77,8 @@ if __name__ == "__main__":
     if code_format != "mligo" and code_format != "smartpy":
         print("Usage: python3 benchmark_mligo.py <output_dir_name> [mligo|smartpy]")
         exit(1)
-        
-    OUTPUT_DIR = os.path.abspath(sys.argv[1])    
+
+    OUTPUT_DIR = os.path.abspath(sys.argv[1])
     os.system(f"mkdir {OUTPUT_DIR}")
     os.chdir(OUTPUT_DIR)
     print(f"[*] Working Directory : {os.getcwd()}")
@@ -109,7 +109,7 @@ if __name__ == "__main__":
                                 columns=["No.", ""])
     rows  = []
     #idx = 1
-    
+
     for benchmark_name, query_locs in benchmark_list.items():
         if code_format == "mligo":
             file_name = f"{PROJECT_DIR}/benchmarks/ligo/{benchmark_name}.{suffix}"
@@ -138,10 +138,10 @@ if __name__ == "__main__":
 
             row = [f"{benchmark_name}.{suffix}", row, col, status]
             rows.append(row)
-    
+
 
     columns = pd.MultiIndex.from_frame(column_names)
-    
+
     index = ["#" + str(i).rjust(2, "0") for i in range(1, total_nums + 1)]
 
     df = pd.DataFrame(rows, columns=columns, index=index)

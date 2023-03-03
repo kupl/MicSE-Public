@@ -337,7 +337,7 @@ if __name__ == '__main__':
         print("Usage: python3 benchmark.py <cores> <target idx> <output_dir>")
         print("Usage: python3 benchmark.py <cores> <output_dir>")
         exit(1)
-    
+
     cores = int(sys.argv[1])
 
     # check cores
@@ -359,7 +359,7 @@ if __name__ == '__main__':
         assert(end_idx <= 207)
     else:
         start_idx, end_idx = 1, 207
-    
+
     # determine and check output_dir and sub result directory
     output_dir = sys.argv[-1]
 
@@ -397,10 +397,10 @@ if __name__ == '__main__':
                         psr_output = psr.stdout.decode('utf-8').split()
                         if psr_output.count('timeout') < poolnum:
                             row, col = query
-                            command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/vagrant/benchmarks/evaluation/{contract_addr}.tz -S ~/vagrant/benchmarks/evaluation/{contract_addr}.storage.tz > {result_dir}/{IDX}/{contract_addr}_{row}_{col}.{suffix} 2>&1 &"
+                            command = f"timeout 1000 {binary} -T 900 -d -q {row} {col} -I ~/MicSE-Public/benchmarks/evaluation/{contract_addr}.tz -S ~/MicSE-Public/benchmarks/evaluation/{contract_addr}.storage.tz > {result_dir}/{IDX}/{contract_addr}_{row}_{col}.{suffix} 2>&1 &"
                             pool.map(run, [command])
                             time.sleep(1)
-                            break            
+                            break
                         else:
                             time.sleep(10)
                 IDX += 1
@@ -453,4 +453,4 @@ if __name__ == '__main__':
     df = pd.DataFrame(rows, columns=columns, index=index)
     print(df)
 
-    
+
