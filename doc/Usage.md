@@ -18,6 +18,9 @@
 * [MicSE successfully proves that there are no overflow at line 184 in the contract `KT1Tvr6`](https://youtu.be/9vcQNYH5mk0)
 * [MicSE successfully finds an overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
 * [Prove/Refute custom safety property using MicSE](https://youtu.be/dZiDRjDSKeo)
+* [Example of using micse_taq.sh for cameligo](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
+* [Example of using micse_taq.sh for pascaligo](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
+* [Example of using micse_taq.sh for smartpy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
 
 ## Run
 
