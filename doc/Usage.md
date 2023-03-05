@@ -18,12 +18,15 @@
 
 ## Demo Videos
 
-- [MicSE successfully proves that there are no overflow at line 184 in the contract `KT1Tvr6`](https://youtu.be/9vcQNYH5mk0)
-- [MicSE successfully finds an overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
-- [Prove/Refute custom safety property using MicSE](https://youtu.be/dZiDRjDSKeo)
-- [Example of using micse_taq.sh for cameligo](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
-- [Example of using micse_taq.sh for pascaligo](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
-- [Example of using micse_taq.sh for smartpy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
+- MicSE evaluation example videos
+  - [`KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9`: MicSE proves no overflow occured at line 184](https://youtu.be/9vcQNYH5mk0)
+  - [`KT1Lrjm4rPcQNqQG5UVN2QvF1ouD9eDuFwbQ`: MicSE finds an overflow scenario](https://youtu.be/FxluWYiWlBI)
+- Custom safety property example video
+  - [`figure3`: Prove/Refute custom safety property](https://youtu.be/dZiDRjDSKeo)
+- MicSE for high-level language example videos
+  - [Example for CameLIGO](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
+  - [Example for PascaLIGO](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
+  - [Example for SmartPy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
 
 ## Run
 
@@ -123,7 +126,7 @@ The example in below is located at [here](../benchmarks/tool_usage/figure3.tz)
 - **Output:**
 
 ```txt
-$ ./bin/micse -I ./benchmarks/tool_usage/figure3_safe.tz -S ./benchmarks/tool_usage/figure3.storage.tz
+$ micse -I (PROJECT_DIR)/benchmarks/tool_usage/figure3_safe.tz -S (PROJECT_DIR)/benchmarks/tool_usage/figure3.storage.tz
  Final-Report :
 === Final Result ===
 Time: 1.498865 sec              Memory: 0.033646 GB
