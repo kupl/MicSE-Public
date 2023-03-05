@@ -6,7 +6,8 @@ export DEBIAN_FRONTEND=noninteractive
 # Env
 OPAM_SWITCH_VERSION=4.10.0
 MICSE_PUBLIC_REPO_URL=https://github.com/kupl/MicSE-Public.git
-MICSE_DIR=~/MicSE-Public
+HOME_DIR=$(eval echo ~$USER)
+MICSE_DIR=$HOME_DIR/MicSE-Public
 CORES=$(grep -c ^processor /proc/cpuinfo)
 HALF_CORES=$(echo "${CORES}/2" | bc)
 USABLE_CORES=$((HALF_CORES > 1 ? HALF_CORES : 1))
@@ -38,8 +39,8 @@ if [ -d "$MICSE_DIR" ]; then
     exit -1
   fi
 else
-  cd ~/
-  git clone $MICSE_PUBLIC_REPO_URL
+  cd $HOME_DIR
+  git clone $MICSE_PUBLIC_REPO_URL >/dev/null
 fi
 echo "[NOTE] End-up Clone MicSE Repository"
 
@@ -57,7 +58,7 @@ if [[ ! "$(ocaml --version)" =~ "$OPAM_SWITCH_VERSION" ]]; then
 fi
 echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 eval $(opam env) && opam install -y -q -j $USABLE_CORES $MICSE_DIR --deps-only
-echo "eval \$(opam env)" >> ~/.bashrc
+echo "eval \$(opam env)" >> $HOME_DIR/.bashrc
 echo "[NOTE] End-up Initialize OPAM"
 
 # Build MicSE
@@ -66,7 +67,7 @@ if [[ ! -d "$MICSE_BIN_DIR" ]]; then
   echo "[NOTE] Start Install MicSE"
   eval $(opam env) && cd $MICSE_DIR && make
   PATH=$PATH:$MICSE_BIN_DIR
-  echo "PATH=\$PATH:$MICSE_BIN_DIR" >> ~/.bashrc
+  echo "PATH=\$PATH:$MICSE_BIN_DIR" >> $HOME_DIR/.bashrc
   echo "[NOTE] End-up Install MicSE"
 fi
 
@@ -84,7 +85,7 @@ echo "[NOTE] End-up installing docker for tacqueria"
 echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
 SMARTPY_DIR=$MICSE_DIR/smartpy-cli
 PATH=$PATH:$SMARTPY_DIR
-echo "PATH=\$PATH:$SMARTPY_DIR" >> ~/.bashrc
+echo "PATH=\$PATH:$SMARTPY_DIR" >> $HOME_DIR/.bashrc
 ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
 
 # Install tacqueria
@@ -92,8 +93,8 @@ ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
 curl -LO https://taqueria.io/get/linux/taq
 chmod +x taq
 sudo mv taq /usr/local/bin
-mkdir ~/.taq-settings
-echo -e "{\n    \"consent\": \"opt_out\"\n}" > ~/.taq-settings/taq-settings.json
+mkdir $HOME_DIR/.taq-settings
+echo -e "{\n    \"consent\": \"opt_out\"\n}" > $HOME_DIR/.taq-settings/taq-settings.json
 
 # install pip and tabulate for benchmarking
 sudo apt-get install -y python3-pip
