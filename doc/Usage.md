@@ -22,11 +22,11 @@
   - [`KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9`: MicSE proves no overflow occured at line 184](https://youtu.be/9vcQNYH5mk0)
   - [`KT1Lrjm4rPcQNqQG5UVN2QvF1ouD9eDuFwbQ`: MicSE finds an overflow scenario](https://youtu.be/FxluWYiWlBI)
 - Custom safety property example video
-  - [`figure3`: Prove/Refute custom safety property](https://youtu.be/dZiDRjDSKeo)
+  - [`figure3`: MicSE proves/refutes custom safety property](https://youtu.be/dZiDRjDSKeo)
 - MicSE for high-level language example videos
-  - [Example for CameLIGO](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
-  - [Example for PascaLIGO](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
-  - [Example for SmartPy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
+  - [`raffle.mligo`: MicSE refutes safety property in CameLIGO contract](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
+  - [`raffle.ligo`: MicSE refutes safety property in PascaLIGO contract](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
+  - [`raffle.py`: MicSE proves/refutes safety property in SmartPy contract](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
 
 ## Run
 
