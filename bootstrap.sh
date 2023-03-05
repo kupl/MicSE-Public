@@ -5,31 +5,45 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Env
 OPAM_SWITCH_VERSION=4.10.0
-Z3_VERSION=4.8.12
-CORES=4
+MICSE_PUBLIC_REPO_URL=https://github.com/kupl/MicSE-Public.git
+MICSE_DIR=~/MicSE-Public
+CORES=$(grep -c ^processor /proc/cpuinfo)
+HALF_CORES=$(echo "${CORES}/2" | bc)
+USABLE_CORES=$((HALF_CORES > 1 ? HALF_CORES : 1))
 
 # Setup System Dependencies
 echo "[NOTE] Start Setup System Dependencies"
 sudo apt-get update >/dev/null
-curl -s https://deb.nodesource.com/setup_16.x | sudo bash # for tacqueria installation
-for pkg in "cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "nodejs"; do
-  echo "[NOTE] $pkg: Install"
-  sudo apt-get install -y -qq $pkg >/dev/null 2>&1
-  # if [ $(dpkg-query -W -f='${Status}' $pkg 2>/dev/null | grep -c "ok installed" 2>/dev/null) -eq 0 ]; then
-  #   echo "[NOTE] $pkg: Installation started."
-  #   sudo apt-get install -y -qq $pkg >/dev/null 2>&1
-  #   echo "[NOTE] $pkg: Installed successfully."
-  # else
-  #   echo "[NOTE] $pkg: Already installed."
-  # fi
+PKG_LIST=("cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "nodejs")
+for pkg in ${PKG_LIST[@]}; do
+  PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $pkg 2>/dev/null | grep "install ok installed")
+  if [ "" = "$PKG_OK" ]; then
+    echo "[NOTE] $pkg: Installation started."
+    sudo apt-get install -y -qq $pkg >/dev/null 2>&1
+    echo "[NOTE] $pkg: installation done."
+  else
+    echo "[NOTE] $pkg: Already installed."
+  fi
 done
 echo "[NOTE] End-up Setup System Dependencies"
 
 # Download MicSE
-cd ~/
-git clone https://github.com/kupl/MicSE-Public.git
+echo "[NOTE] Start Clone MicSE Repository"
+if [ -d "$MICSE_DIR" ]; then
+  echo "[NOTE] $MICSE_DIR directory is already exist."
+  if [ -d "$MICSE_DIR/.git" ]; then
+    git pull >/dev/null
+  else
+    echo "[ERROR] $MICSE_DIR: Invalid direcotry state."
+    exit -1
+  fi
+else
+  cd ~/
+  git clone $MICSE_PUBLIC_REPO_URL
+fi
+echo "[NOTE] End-up Clone MicSE Repository"
 
-# Initialize opam
+# Initialize OPAM
 echo "[NOTE] Start Initialize OPAM with Installing OCAML Dependencies"
 opam init -y --bare >/dev/null
 opam update >/dev/null
@@ -41,57 +55,37 @@ if [[ ! "$(ocaml --version)" =~ "$OPAM_SWITCH_VERSION" ]]; then
     opam switch $OPAM_SWITCH_VERSION >/dev/null
   fi
 fi
-#echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
-eval $(opam env) && \
-	#opam install -y -q -j $CORES dune.2.4.0 batteries.3.3.0 core.v0.14.1 menhir.20210419 ocamlgraph.2.0.0 ptime.0.8.5 yojson.1.7.0 zarith.1.11 ounit2.2.2.4 bignum.v0.14.0 ppx_deriving.5.2.1 mtime.1.2.0 logs.0.7.0 z3.4.8.11 odoc.1.5.3
-  opam install -y -q -j $CORES ~/MicSE-Public --deps-only
 echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
-OPAM_LIB_DIR=~/.opam/$OPAM_SWITCH_VERSION/lib/
+eval $(opam env) && opam install -y -q -j $USABLE_CORES $MICSE_DIR --deps-only
+echo "eval \$(opam env)" >> ~/.bashrc
 echo "[NOTE] End-up Initialize OPAM"
 
-# Install Z3
-# if [[ ! -d "${OPAM_LIB_DIR%%/}/z3" ]]; then
-#   echo "[NOTE] Start Install Z3"
-#   curl -L -o z3-$Z3_VERSION.tar.gz https://github.com/Z3Prover/z3/archive/z3-$Z3_VERSION.tar.gz >/dev/null 2>&1 && \
-#     tar -zxvf z3-$Z3_VERSION.tar.gz >/dev/null 2>&1 && \
-#     rm z3-$Z3_VERSION.tar.gz >/dev/null
-#   Z3_DIR=~/z3-z3-$Z3_VERSION/
-#   cd ${Z3_DIR%%/}/ && \
-#     python2.7 scripts/mk_make.py --ml --staticlib >/dev/null
-#   eval $(opam env) && \
-#     make -C build -j $CORES >/dev/null 2>&1
-#   eval $(opam env) && \
-#     ocamlfind install z3 build/api/ml/* build/libz3-static.a >/dev/null && \
-#     sudo cp build/z3 /usr/bin/z3 && \
-#     rm -rf ${Z3_DIR%%/}
-#   echo "[NOTE] End-up Install Z3"
-# fi
-
-# Build
-if [[ ! -d "~/MicSE-Public" ]]; then
-  eval $(opam env) && cd ~/MicSE-Public && make
-  PATH=$PATH:~/MicSE-Public/bin
-  echo "PATH=\$PATH:~/MicSE-Public/bin" >> /home/MicSE-Public/.bashrc
+# Build MicSE
+MICSE_BIN_DIR=$MICSE_DIR/bin
+if [[ ! -d "$MICSE_BIN_DIR" ]]; then
+  echo "[NOTE] Start Install MicSE"
+  eval $(opam env) && cd $MICSE_DIR && make
+  PATH=$PATH:$MICSE_BIN_DIR
+  echo "PATH=\$PATH:$MICSE_BIN_DIR" >> ~/.bashrc
   echo "[NOTE] End-up Install MicSE"
 fi
 
-echo "eval \$(opam env)" >> ~/.bashrc
-
-cd ~
 # Install docker for tacqueria
-sudo apt update
+echo "[NOTE] Start installing docker for tacqueria"
+curl -s https://deb.nodesource.com/setup_16.x | sudo bash # for tacqueria installation
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
-echo "[NOTE] End-up installing docker"
+echo "[NOTE] End-up installing docker for tacqueria"
 
 # Install smartpy
 echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
-PATH=$PATH:/home/MicSE-Public/smartpy-cli
-echo "PATH=\$PATH:/home/MicSE-Public/smartpy-cli" >> /home/MicSE-Public/.bashrc
-ln -s /home/MicSE-Public/smartpy-cli/SmartPy.sh /home/MicSE-Public/smartpy-cli/smartpy
+SMARTPY_DIR=$MICSE_DIR/smartpy-cli
+PATH=$PATH:$SMARTPY_DIR
+echo "PATH=\$PATH:$SMARTPY_DIR" >> ~/.bashrc
+ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
 
 # Install tacqueria
 # ./install_ligo_smartpy.sh
