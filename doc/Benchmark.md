@@ -5,6 +5,7 @@
 You can test and reproduce result of experiment in our paper. In `script/` folder, we prepare script for automatically testing our tool. \<start idx> and \<end idx> are same in our paper. (idx range: 1 ~ 30)
 
 - how to check usage
+
 ```bash
 $ python3 table2.py
 Usage: python3 table2.py <cores> <start idx> <end_idx> <output_dir>
@@ -13,6 +14,7 @@ Usage: python3 table2.py <cores> <output_dir> # test all queries
 ```
 
 - how to run script
+
 ```bash
 $ python3 table2.py 2 8 ./
 06:29:59 : timeout 1000 baseline -T 900 -d -q 83 28 -I ~/MicSE-Public/benchmarks/evaluation/KT1BzkCjvNf4tgPjPHMNFTfe2UpU1JzCrXiV.tz -S ~/MicSE-Public/benchmarks/evaluation/KT1BzkCjvNf4tgPjPHMNFTfe2UpU1JzCrXiV.storage.tz > .//result_900/8/KT1BzkCjvNf4tgPjPHMNFTfe2UpU1JzCrXiV.nonco 2>&1 &
@@ -30,6 +32,7 @@ No.                         Contact Addr.  Inst QLoc Baseline           MicSE   
 You can also test all queries contained in `.tz` files in `benchmarks/evaluation/`. We prepare script `script/benchmark.py`, whose usage is same as above script `script/table2.py`. Idx range is from 1 to 207
 
 - how to use script
+
 ```bash
 $ python3 benchmark.py  4 1 ./
 10:02:14 : timeout 1000 baseline -T 900 -d -q 218 24 -I ~/MicSE-Public/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.tz -S ~/MicSE-Public/benchmarks/evaluation/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6.storage.tz > .//result_900//1/KT1AbYeDbjjcAnV1QK7EZUUdqku77CdkTuv6_218_24.nonco 2>&1 &
@@ -47,6 +50,7 @@ No.                         Contact Addr. Baseline           MicSE         Speed
 We prepare scripts for automatically testing cameligo, smartpy source codes, whose path is `script/benchmark_mligo_smartpy`.
 
 - how to use script
+
 ```bash
 # check usage
 $ python3 benchmark_mligo_smartpy.py

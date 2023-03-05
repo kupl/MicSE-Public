@@ -10,17 +10,20 @@
     - [MicSE example](#micse-example)
   - [Specifying Custom Safety Properties](#specifying-custom-safety-properties)
     - [Custom Safety Property Example](#custom-safety-property-example)
-  - [MicSE for high level language (e.g. cameLigo, SmartPy)](#micse-for-high-level-language-eg-cameligo-smartpy)
+  - [MicSE for high level language (e.g. Ligo, SmartPy)](#micse-for-high-level-language-eg-ligo-smartpy)
     - [micse\_taq.sh](#micse_taqsh)
-    - [micse\_taq.sh example](#micse_taqsh-example)
+    - [micse\_taq.sh example with cameligo](#micse_taqsh-example-with-cameligo)
+    - [micse\_taq.sh example with pascaligo](#micse_taqsh-example-with-pascaligo)
+    - [micse\_taq.sh example with SmartPy](#micse_taqsh-example-with-smartpy)
 
 ## Demo Videos
-* [MicSE successfully proves that there are no overflow at line 184 in the contract `KT1Tvr6`](https://youtu.be/9vcQNYH5mk0)
-* [MicSE successfully finds an overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
-* [Prove/Refute custom safety property using MicSE](https://youtu.be/dZiDRjDSKeo)
-* [Example of using micse_taq.sh for cameligo](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
-* [Example of using micse_taq.sh for pascaligo](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
-* [Example of using micse_taq.sh for smartpy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
+
+- [MicSE successfully proves that there are no overflow at line 184 in the contract `KT1Tvr6`](https://youtu.be/9vcQNYH5mk0)
+- [MicSE successfully finds an overflow scenario in the contract `KT1Lrjm`](https://youtu.be/FxluWYiWlBI)
+- [Prove/Refute custom safety property using MicSE](https://youtu.be/dZiDRjDSKeo)
+- [Example of using micse_taq.sh for cameligo](https://www.youtube.com/watch?v=82sX6M05S9E&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=6)
+- [Example of using micse_taq.sh for pascaligo](https://www.youtube.com/watch?v=-y3Ebn2Mydc&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=5)
+- [Example of using micse_taq.sh for smartpy](https://www.youtube.com/watch?v=z2-M9gnoVek&list=PLNnGLFV5qy0pRvcu1mg2sGBE-DKNSrB9A&index=4)
 
 ## Run
 
@@ -32,7 +35,7 @@ Binary execution files are located at `(PROJECT_DIR)/bin` directory.
 ### MicSE
 
 ```bash
-$ (PROJECT_DIR)/bin/micse -I (FILE_PATH) -S (FILE_PATH) ...
+$ micse -I (FILE_PATH) -S (FILE_PATH) ...
  Final-Report :
 === Final Result ===
 Time: _ sec   Memory: _ GB
@@ -51,7 +54,7 @@ Combinations: _
 
 - **Input(Parameters):**
   - `--input`, `-I`: The file path of input Michelson code. (REQUIRED)
-    - (Optionally) with [User custom safety property](#user-custom-safety-property)
+    - (Optionally) with [Custom Safety Property Example](#custom-safety-property-example)
   - `--initial-storage`, `-S`: The file path of initial storage information that the target contract has. (REQUIRED)
   - `--memory-bound`, `-M`: The memory budget for overall MicSE process in GB. (default: 5GB)
   - `--total-timeout`, `-T`: The time budget for overall MicSE process in seconds. (default: 360sec)
@@ -64,45 +67,19 @@ Combinations: _
 
 ### MicSE example
 
-- **Input:** [KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz](../benchmarks/evaluation/KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz)
+- **Input:** [KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9.tz](../benchmarks/evaluation/KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9.tz)
 - **Output:**
+
 ```txt
-$ micse -I KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.tz -S KT1Xf2Cwwwh67Ycu7E9yd3UhsABQC4YZPkab.storage.tz
+$ micse -I (PROJECT_DIR)/benchmarks/evaluation/KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9.tz -S (PROJECT_DIR)/benchmarks/evaluation/KT1Tvr6XRUwN4JRjma1tsdVQ1GC6QU6gbsg9.storage.tz -q 184 40 -T 900
  Final-Report :
 === Final Result ===
-Time: 137.136473 sec            Memory: 0.068417 GB
-Combinations: 17
-#Total: 10              #Proved: 10             #Refuted: 0             #Failed: 0
+Time: 297.485055 sec            Memory: 0.071789 GB
+Combinations: 12
+#Total: 1               #Proved: 1              #Refuted: 0             #Failed: 0
 #Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
 << Proved >>
-> Location:(CCLOC_Pos((lin 206)(col 24))((lin 206)(col 27)))
-        Category:Q_mutez_add_no_overflow
-
-> Location:(CCLOC_Pos((lin 395)(col 24))((lin 395)(col 27)))
-        Category:Q_mutez_add_no_overflow
-
-> Location:(CCLOC_Pos((lin 588)(col 20))((lin 588)(col 23)))
-        Category:Q_mutez_mul_mnm_no_overflow
-
-> Location:(CCLOC_Pos((lin 725)(col 20))((lin 725)(col 23)))
-        Category:Q_mutez_sub_no_underflow
-
-> Location:(CCLOC_Pos((lin 897)(col 24))((lin 897)(col 27)))
-        Category:Q_mutez_add_no_overflow
-
-> Location:(CCLOC_Pos((lin 1021)(col 24))((lin 1021)(col 27)))
-        Category:Q_mutez_mul_mnm_no_overflow
-
-> Location:(CCLOC_Pos((lin 1059)(col 30))((lin 1059)(col 33)))
-        Category:Q_mutez_sub_no_underflow
-
-> Location:(CCLOC_Pos((lin 1202)(col 20))((lin 1202)(col 23)))
-        Category:Q_mutez_mul_mnm_no_overflow
-
-> Location:(CCLOC_Pos((lin 1240)(col 20))((lin 1240)(col 23)))
-        Category:Q_mutez_sub_no_underflow
-
-> Location:(CCLOC_Pos((lin 1511)(col 24))((lin 1511)(col 27)))
+> Location:(CCLOC_Pos((lin 184)(col 40))((lin 184)(col 43)))
         Category:Q_mutez_add_no_overflow
 
 << Refuted >>
@@ -111,9 +88,8 @@ Combinations: 17
 
 ```
 
-* If MicSE is installed using vagrant box we provide, the micse binary file will be located at `~/MicSE-Public/bin/`.
-* If MicSE is manually installed using `dune build` command, the micse binary file `micse.exe` will be located at `(PROJECT_DIR)/_build/default/cmd/micse.exe`.
-
+- If MicSE is installed using installation script we provide (_vagrant box_, _docker image_, and _direct installation_), the micse binary file will be located at `~/MicSE-Public/bin/`.
+- If MicSE is manually built using `dune build` command, the micse binary file `micse.exe` will be located at `(PROJECT_DIR)/_build/default/cmd/micse.exe`.
 
 ## Specifying Custom Safety Properties
 
@@ -143,14 +119,14 @@ The example in below is located at [here](../benchmarks/tool_usage/figure3.tz)
     NIL operation ; PAIR } }
 ```
 
-- **Input:** [`figure3.tz`](../benchmarks/tool_usage/figure3.tz)
+- **Input:** [`figure3_safe.tz`](../benchmarks/tool_usage/figure3.tz)
 - **Output:**
 
 ```txt
 $ ./bin/micse -I ./benchmarks/tool_usage/figure3_safe.tz -S ./benchmarks/tool_usage/figure3.storage.tz
  Final-Report :
 === Final Result ===
-Time: 1.529440 sec              Memory: 0.033859 GB
+Time: 1.498865 sec              Memory: 0.033646 GB
 Combinations: 11
 #Total: 1               #Proved: 1              #Refuted: 0             #Failed: 0
 #Err: 0 #UU: 0  #UF: 0  #FU: 0  #FF: 0
@@ -161,6 +137,7 @@ Combinations: 11
 << Refuted >>
 
 << Failed >>
+
 ```
 
 ## MicSE for high level language (e.g. Ligo, SmartPy)
@@ -188,7 +165,6 @@ Combinations: _
 ```
 
 - **Input(Parameters):**
-  -
   - `-I`: The file path of input [mligo|ligo|religo|jsligo|SmartPy] code. file name convention is `<contract name>.[mligo|ligo|jsligo|religo|py]`(REQUIRED)
   - `-S`: The file path of initial storage information that the target contract has. name convention is `<contract name>.storageList.[mligo|ligo|jsligo|religo]` (REQUIRED only for Ligo)
   - `-M`: The memory budget for overall MicSE process in GB. (default: 5GB)
@@ -203,6 +179,7 @@ Combinations: _
 
 - **Input:** [raffle.mligo](../benchmarks/ligo/raffle.mligo), [raffle.storageList.mligo](../benchmarks/ligo/raffle.storageList.mligo)
 - **Output:**
+
 ```bash
 $ (PROJECT_DIR)/script/micse_taq.sh -C mligo -I raffle.mligo -S raffle.storageList.mligo -m syner
 Initializing taqueria is done
@@ -241,6 +218,7 @@ Combinations: 1
 
 - **Input:** [raffle.ligo](../benchmarks/ligo/raffle.ligo), [raffle.storageList.ligo](../benchmarks/ligo/raffle.storageList.ligo)
 - **Output:**
+
 ```bash
 $ (PROJECT_DIR)/script/micse_taq.sh -C ligo -I raffle.ligo -S raffle.storageList.ligo -m syner
 Initializing taqueria is done
@@ -279,6 +257,7 @@ Combinations: 1
 
 - **Input:** [raffle.py](../benchmarks/smartpy/raffle.py)
 - **Output:**
+
 ```bash
 $ (PROJECT_DIR)/script/micse_taq.sh -C smartpy -I raffle.py -m syner
 Initializing taqueria is done

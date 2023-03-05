@@ -5,22 +5,33 @@
 - [Installation of MicSE](#installation-of-micse)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
-    - [Clone and build environment](#1-clone-and-build-environment)
-    - [Connect and ssh to vm](#2-connect-ssh-to-vm)
-    - [Vagrant management commands](#3-vagrant-management-commands)
-  - [Vagrant Box](#vagrant-box)
-    - [Prerequisite](#prerequisite)
-    - [Customize Virtual Machine](#customize-virtual-machine)
-  - [From Source](#from-source)
-    - [Setup dependencies](#setup-dependencies)
-    - [Clone, Build](#clone-build)
+    - [I. Using Vagrant Box](#i-using-vagrant-box)
+      - [I.1. Clone and build environment](#i1-clone-and-build-environment)
+      - [I.2. Connect ssh to vm](#i2-connect-ssh-to-vm)
+      - [I.3. Vagrant management commands](#i3-vagrant-management-commands)
+      - [I.i. Prerequisite](#ii-prerequisite)
+      - [I.ii. Customize Virtual Machine](#iii-customize-virtual-machine)
+    - [II. Using Docker Image (TBA)](#ii-using-docker-image-tba)
+    - [III. Direct Installation with Installation Script](#iii-direct-installation-with-installation-script)
+    - [IV. Direct Installation from Source](#iv-direct-installation-from-source)
+      - [IV.1. Clone, Build](#iv1-clone-build)
+      - [IV.i. Prerequisite](#ivi-prerequisite)
+      - [IV.ii. Ocaml Package dependencies](#ivii-ocaml-package-dependencies)
 
 ## Installation
 
-MicSE is written in ocaml, so you have to install ocaml and opam to install and run MicSE. However MicSE provides a Vagrant Box. This box is based on Ubuntu 20.04 LTS (Focal Fossa) v20210304.0.0. And, provider of this box is only VirtualBox now. So you can install [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) for convenience, and build environment in VirtualBox.
+MicSE can be installed in four ways:
 
+I. [Using vagrant box](#i-using-vagrant-box)
+II. Using docker image (TBA)
+III. [Direct installation with installation script](#iii-direct-installation-with-installation-script)
+IV. [Direct installation from source](#iv-direct-installation-from-source)
 
-### 1. Clone and build environment
+### I. Using Vagrant Box
+
+MicSE provides a Vagrant Box. This box is based on Ubuntu 20.04 LTS (Focal Fossa) v20210304.0.0. And, provider of this box is only VirtualBox now. So you can install [Vagrant](https://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/) for convenience, and build environment in VirtualBox.
+
+#### I.1. Clone and build environment
 
 ```bash
 $ git clone https://github.com/kupl/MicSE-Public
@@ -32,7 +43,7 @@ Bringing machine 'micse' up with 'virtualbox' provider...
 
 If bootstrapping is done well, MicSE may be installed well in vm.
 
-### 2. Connect ssh to vm
+#### I.2. Connect ssh to vm
 
 ```bash
 $ vagrant ssh
@@ -41,10 +52,9 @@ $ vagrant ssh
 $ which baseline micse taq
 ```
 
-### 3. Vagrant management commands
+#### I.3. Vagrant management commands
 
 If you stop or remove vm, please refer to the following commands.
-
 
 ```bash
 # Create or load virtual machine with Vagrant box
@@ -76,18 +86,12 @@ If you don't need bootstrapping when you run the machine, load machine with opti
 $ vagrant up --no-provision
 ```
 
-## Vagrant Box
-
-MicSE provides a Vagrant Box.
-This box is based on Ubuntu 20.04 LTS (Focal Fossa) v20210304.0.0.
-And, provider of this box is only VirtualBox now.
-
-### Prerequisite
+#### I.i. Prerequisite
 
 - [Vagrant](https://www.vagrantup.com/docs/installation)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-### Customize Virtual Machine
+#### I.ii. Customize Virtual Machine
 
 If you want to customize virtual machine (e.g., size of disk, memory, number of cores, ...) depending on your system spec,
 you can modify following parts of [`Vagrantfile`](../Vagrantfile) for such purpose.
@@ -108,9 +112,44 @@ end
 ...
 ```
 
-## From Source
+### II. Using Docker Image (TBA)
 
-### Setup dependencies
+### III. Direct Installation with Installation Script
+
+To install the MicSE directly:
+
+```bash
+wget -O - https://raw.githubusercontent.com/kupl/MicSE-Public/main/bootstrap.sh | bash
+```
+
+### IV. Direct Installation from Source
+
+#### IV.1. Clone, Build
+
+We are not providing the version build file now.
+To use the tool of MicSE, you have to clone this repository and build it manually.
+
+```bash
+$ git clone https://github.com/kupl/MicSE-Public.git
+$ cd MicSE-Public
+# Assuming that ocaml, opam are installed
+$ opam install -y -q ./ --deps-only
+$ make
+dune build
+...
+```
+
+#### IV.i. Prerequisite
+
+- cmake: `^3.22.1`
+- build-essential: `^12.9`
+- python2.7: `^2.7.18`
+- libgmp-dev: `^6.2.1`
+- opam: `^2.1.2`
+- ocaml-findlib: `^1.9.1`
+- nodejs: `^12.22.9`
+
+#### IV.ii. Ocaml Package dependencies
 
 MicSE uses these packages.
 
@@ -136,18 +175,3 @@ MicSE uses these packages.
 | ppx_deriving      |  =5.2.1   |
 | Mtime             |  =1.2.0   |
 | Logs              |  =0.7.0   |
-
-### Clone, Build
-
-We are not providing the version build file now.
-To use the tool of MicSE, you have to clone this repository and build it manually.
-
-```bash
-$ git clone https://github.com/kupl/MicSE-Public.git
-$ cd MicSE-Public
-# Assuming that ocaml, opam are installed
-$ opam install -y -q ./ --deps-only
-$ make
-dune build
-...
-```
