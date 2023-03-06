@@ -15,7 +15,7 @@ USABLE_CORES=$((HALF_CORES > 1 ? HALF_CORES : 1))
 # Setup System Dependencies
 echo "[NOTE] Start Setup System Dependencies"
 sudo apt-get update >/dev/null
-PKG_LIST=("cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "nodejs")
+PKG_LIST=("cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "nodejs" "python3" "curl" "python3-distutils" "python3-apt")
 for pkg in ${PKG_LIST[@]}; do
   PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $pkg 2>/dev/null | grep "install ok installed")
   if [ "" = "$PKG_OK" ]; then
