@@ -4,8 +4,7 @@
 
 - [MicSE](#micse)
   - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
+  - [Introduction](#introduction)
   - [Documents](#documents)
   - [Development](#development)
     - [Prerequisite](#prerequisite)
@@ -14,23 +13,21 @@
     - [Git Commit Guidelines](#git-commit-guidelines)
   - [About](#about)
 
-
 ## Introduction
 
-MicSE is a tool for verifying and testing Tezos smart contracts written in Michelson. 
-Michelson is a native smart contract language of the [Tezos Blockchain](https://tezos.foundation). 
+MicSE is a tool for verifying and testing Tezos smart contracts written in Michelson.
+Michelson is a native smart contract language of the [Tezos Blockchain](https://tezos.foundation).
 MicSE verifies and refutes michelson code with initial storage of smart contract by cooperating prover and refuter.
-MicSE can verify the absence of runtime failures of Michelson programs, e.g., no arithmetic overflow. 
+MicSE can verify the absence of runtime failures of Michelson programs, e.g., no arithmetic overflow.
 Also, MicSE supports verification of user-provided assertions.
-
 
 ## Documents
 
-[Installation](./doc/Installation.md)
+- [Installation](./doc/Installation.md)
 
-[Usage](./doc/Usage.md)
+- [Usage](./doc/Usage.md)
 
-[Benchmark](./doc/Benchmark.md)
+- [Benchmark](./doc/Benchmark.md)
 
 ## Development
 
@@ -65,5 +62,5 @@ This project is funded by Tezos Foundation: [Verification and Testing Infrastruc
 
 Authored and maintained by **Jisuk Byun**, **Heewoong Jang**
 
-> Github [@cushionbadak](https://github.com/cushionbadak)  
+> Github [@cushionbadak](https://github.com/cushionbadak)
 > Github [@JormalHeewoongJang](https://github.com/jormal)
