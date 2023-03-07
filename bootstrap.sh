@@ -82,17 +82,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
+sudo chmod 757 /var/run/docker.sock
 echo "[NOTE] End-up installing docker for tacqueria"
 
-# Install smartpy
-#echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
-#SMARTPY_DIR=$MICSE_DIR/smartpy-cli
-#PATH=$PATH:$SMARTPY_DIR
-#echo "PATH=\$PATH:$SMARTPY_DIR" >> $HOME_DIR/.bashrc
-#ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
-
 # Install tacqueria
-# ./install_ligo_smartpy.sh
 curl -LO https://taqueria.io/get/linux/taq
 chmod +x taq
 sudo mv taq /usr/local/bin
