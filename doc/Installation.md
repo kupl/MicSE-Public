@@ -11,7 +11,9 @@
       - [I.3. Vagrant management commands](#i3-vagrant-management-commands)
       - [I.i. Prerequisite](#ii-prerequisite)
       - [I.ii. Customize Virtual Machine](#iii-customize-virtual-machine)
-    - [II. Using Docker Image (TBA)](#ii-using-docker-image-tba)
+    - [II. Using Docker Image](#ii-using-docker-image)
+      - [II.1. Build docker image](#ii1-build-docker-image)
+      - [II.2. Launch docker container](#ii2-launch-docker-container)
     - [III. Direct Installation with Installation Script](#iii-direct-installation-with-installation-script)
     - [IV. Direct Installation from Source](#iv-direct-installation-from-source)
       - [IV.1. Clone, Build](#iv1-clone-build)
@@ -23,7 +25,7 @@
 MicSE can be installed in four ways:
 
 I. [Using vagrant box](#i-using-vagrant-box)
-II. Using docker image (TBA)
+II. [Using docker image](#ii-using-docker-image)
 III. [Direct installation with installation script](#iii-direct-installation-with-installation-script)
 IV. [Direct installation from source](#iv-direct-installation-from-source)
 
@@ -112,7 +114,23 @@ end
 ...
 ```
 
-### II. Using Docker Image (TBA)
+### II. Using Docker Image
+
+#### II.1. Build docker image
+
+To build docker image for MicSE:
+
+```bash
+docker build -t micse https://github.com/kupl/MicSE-Public.git#main
+```
+
+#### II.2. Launch docker container
+
+To launch docker container for using MicSE:
+
+```bash
+docker run -it micse /bin/bash
+```
 
 ### III. Direct Installation with Installation Script
 
