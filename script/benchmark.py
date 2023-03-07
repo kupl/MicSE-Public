@@ -442,7 +442,11 @@ if __name__ == '__main__':
                 if type(baseline_time_second) == int:
                     speedup = "> " + str(round(baseline_time_second / micse_time_second, 1))
                 else:
-                    speedup = "> " + str(round(900 / micse_time_second, 1))
+                    if type(micse_time_second) == int:
+                        speedup = "> " + str(round(900 / micse_time_second, 1))
+                    else:
+                        speedup = "> " + str(round(900 / 900, 1))
+
                 row = [contract_addr, baseline_status, baseline_time_second, micse_status, micse_time_second, speedup]
                 rows.append(row)
 
