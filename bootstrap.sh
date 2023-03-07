@@ -66,7 +66,6 @@ MICSE_BIN_DIR=$MICSE_DIR/bin
 if [[ ! -d "$MICSE_BIN_DIR" ]]; then
   echo "[NOTE] Start Install MicSE"
   eval $(opam env) && cd $MICSE_DIR && make
-  PATH=$PATH:$MICSE_BIN_DIR
   echo "PATH=\$PATH:$MICSE_BIN_DIR" >> $HOME_DIR/.bashrc
   echo "[NOTE] End-up Install MicSE"
 fi
@@ -103,4 +102,6 @@ echo -e "{\n    \"consent\": \"opt_out\"\n}" > $HOME_DIR/.taq-settings/taq-setti
 # install pip and tabulate for benchmarking
 sudo apt-get install -y python3-pip
 python3 -m pip install tabulate pandas
+
+source $HOME_DIR/.bashrc
 echo "[NOTE] End-up bootstraping"
