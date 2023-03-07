@@ -15,7 +15,7 @@ USABLE_CORES=$((HALF_CORES > 1 ? HALF_CORES : 1))
 # Setup System Dependencies
 echo "[NOTE] Start Setup System Dependencies"
 sudo apt-get update >/dev/null
-PKG_LIST=("cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "nodejs" "python3" "curl" "python3-distutils" "python3-apt")
+PKG_LIST=("cmake" "build-essential" "python2.7" "libgmp-dev" "opam" "ocaml-findlib" "python3" "curl" "python3-distutils" "python3-apt")
 for pkg in ${PKG_LIST[@]}; do
   PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $pkg 2>/dev/null | grep "install ok installed")
   if [ "" = "$PKG_OK" ]; then
@@ -71,7 +71,11 @@ if [[ ! -d "$MICSE_BIN_DIR" ]]; then
   echo "[NOTE] End-up Install MicSE"
 fi
 
-# Install docker for tacqueria
+# Install nodejs v16 for taqueria
+curl -s https://deb.nodesource.com/setup_16.x | sudo bash
+sudo apt install nodejs -y
+
+# Install docker for taqueria
 echo "[NOTE] Start installing docker for tacqueria"
 curl -s https://deb.nodesource.com/setup_16.x | sudo bash # for tacqueria installation
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
@@ -82,11 +86,11 @@ sudo usermod -aG docker ${USER}
 echo "[NOTE] End-up installing docker for tacqueria"
 
 # Install smartpy
-echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
-SMARTPY_DIR=$MICSE_DIR/smartpy-cli
-PATH=$PATH:$SMARTPY_DIR
-echo "PATH=\$PATH:$SMARTPY_DIR" >> $HOME_DIR/.bashrc
-ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
+#echo "y" | bash <(curl -s https://smartpy.io/cli/install.sh)
+#SMARTPY_DIR=$MICSE_DIR/smartpy-cli
+#PATH=$PATH:$SMARTPY_DIR
+#echo "PATH=\$PATH:$SMARTPY_DIR" >> $HOME_DIR/.bashrc
+#ln -s $SMARTPY_DIR/SmartPy.sh $SMARTPY_DIR/smartpy
 
 # Install tacqueria
 # ./install_ligo_smartpy.sh
