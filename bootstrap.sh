@@ -82,7 +82,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
+sudo npm install -g npm@latest
 sudo chmod 757 /var/run/docker.sock
+
 echo "[NOTE] End-up installing docker for tacqueria"
 
 # Install tacqueria
@@ -96,5 +98,11 @@ echo -e "{\n    \"consent\": \"opt_out\"\n}" > $HOME_DIR/.taq-settings/taq-setti
 sudo apt-get install -y python3-pip
 python3 -m pip install tabulate pandas
 
+# install ligo as binary
+wget https://gitlab.com/ligolang/ligo/-/jobs/3857618664/artifacts/raw/ligo
+chmod +x ./ligo
+sudo mv ./ligo /usr/local/bin
+
+## 환경변수 쉘이 잘 안 잡힌다.
 exec $SHELL
 echo "[NOTE] End-up bootstraping"
