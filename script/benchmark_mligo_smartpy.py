@@ -8,20 +8,20 @@ import re
 import sys
 
 mligo_benchmark_list = {
-    "Increment": [(20, 18), (21, 18)],
-    "FA1": [(65, 14), (79, 14)],
-    "hashchall": [(55, 19)],
-    "ID": [(53, 18), (73, 18)],
-    "raffle": [(34, 18)],
-    "taco-shop": [(42, 10)]
+    "Increment": [],
+    "FA1": [],
+    "hashchall": [],
+    "ID": [],
+    "raffle": [],
+    "taco-shop": []
 }
 smartpy_benchmark_list = {
-    "increment": [(33, 9), (38, 9)],
-    "FA1": [(71, 5), (94, 5)],
-    "hashchall": [(65, 13)],
-    "ID": [(44, 13), (70, 13)],
-    "raffle": [(37, 9), (104, 9)],
-    "taco-shop": [(138, 5)]
+    "increment": [],
+    "FA1": [],
+    "hashchall": [],
+    "ID": [],
+    "raffle": [],
+    "taco-shop": []
 }
 
 PROJECT_DIR = "~/MicSE-Public/"
@@ -110,7 +110,8 @@ if __name__ == "__main__":
     rows  = []
     #idx = 1
 
-    for benchmark_name, query_locs in benchmark_list.items():
+
+    for benchmark_name, query_locs_list in benchmark_list.items():
         if code_format == "mligo":
             file_name = f"{PROJECT_DIR}/benchmarks/ligo/{benchmark_name}.{suffix}"
             storage_name = f"{PROJECT_DIR}/benchmarks/ligo/{benchmark_name}.storageList.{suffix}"
@@ -119,7 +120,12 @@ if __name__ == "__main__":
             #os.system(f"{PROJECT_DIR}/script/micse_taq.sh -C mligo -I {file_name} -S {storage_name} -m syner > {OUTPUT_DIR}/{benchmark_name}")
             # change current working directory
             # compile target
-            os.system(f"taq compile {benchmark_name}.{suffix} >/dev/null")
+            os.system(f"ligo compile contract ./contracts/{benchmark_name}.{suffix} > artifacts/{benchmark_name}.tz")
+            with open(f"./contracts/{benchmark_name}.storageList.{suffix}", "rt") as f:
+                storage_content = f.read()
+                idx = storage_content.index('=') + 1
+                storage_expr = f"'{storage_content[idx:]}'"
+                os.system(f"ligo compile storage contracts/{benchmark_name}.{suffix} {storage_expr} >artifacts/{benchmark_name}.default_storage.tz")
         else:
             file_name = f"{PROJECT_DIR}/benchmarks/smartpy/{benchmark_name}.{suffix}"
             # copy target files to working direcotry
@@ -128,9 +134,15 @@ if __name__ == "__main__":
             # change current working directory
             # compile target
             os.system(f"taq compile {benchmark_name}.{suffix} >/dev/null")
+        popen = subprocess.Popen(f'dune exec -- get_query_locs -I ./artifacts/{benchmark_name}.tz', stdout=subprocess.PIPE, stderr=subprocess.PIPE,shell=True)
+        (result, _stderr_data) = popen.communicate()
+        result_list = result.split(b"\n")[:-1]
+        for result in result_list:
+            qloc = list(map(int, result.split(b" ")[1:]))
+            query_locs_list.append(qloc)
 
         # run micse for each query
-        for query_loc in query_locs:
+        for query_loc in query_locs_list:
             row, col = query_loc
             result_file_path = os.path.abspath(f"./result/{benchmark_name}_{suffix}_{row}_{col}.result")
             run(f"micse -q {row} {col} -I artifacts/{benchmark_name}.tz -S artifacts/{benchmark_name}.default_storage.tz > {result_file_path}")

@@ -99,10 +99,19 @@ taq init ./ >/dev/null
 echo "Initializing taqueria is done"
 ## prepare compiling
 if [ $CODE != "smartpy" ]; then
-    taq install @taqueria/plugin-ligo >/dev/null
     cp $INPUTFILE $STORAGEFILE ./contracts/
     BASENAME=`basename $INPUTFILE .$CODE`
-    taq compile "$BASENAME.$CODE" >/dev/null
+    echo "First compile ligo file with ligo binary"
+    ligo compile contract ./contracts/$BASENAME.$CODE > artifacts/$BASENAME.tz
+    storage_expr=$(cat ./contracts/$BASENAME.storageList.$CODE)
+    storage_expr=${storage_expr#*=*}
+    storage_expr="'$storage_expr'"
+    eval ligo compile storage contracts/$BASENAME.$CODE $storage_expr >artifacts/$BASENAME.default_storage.tz
+    #if [ ! -f "$TARGET" -o ! -f "$TARGET_STORAGE" ]; then
+    #    taq install @taqueria/plugin-ligo >/dev/null
+    #    taq compile "$BASENAME.$CODE" >/dev/null  
+    #fi
+
     TARGET="./artifacts/$BASENAME.tz"
     TARGET_STORAGE="./artifacts/$BASENAME.default_storage.tz"
 elif [ $CODE == "smartpy" ]; then
@@ -135,3 +144,4 @@ fi
 ##### clean up work directory
 cd ../
 rm -r $TEMPDIR
+
