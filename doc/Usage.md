@@ -184,7 +184,7 @@ Combinations: _
 - **Output:**
 
 ```bash
-$ (PROJECT_DIR)/script/micse_taq.sh -C mligo -I raffle.mligo -S raffle.storageList.mligo -m syner
+$ (PROJECT_DIR)/script/micse_taq.sh -C mligo -I (PROJECT_DIR)/benchmarks/ligo/raffle.mligo -S (PROJECT_DIR)/benchmarks/ligo/raffle.storageList.mligo -m syner
 Initializing taqueria is done
 Note: parameter file associated with "raffle.mligo" can't be found, so "raffle.parameterList.mligo" has been created for you. Use this file to define all parameter values for this contract
 
@@ -223,7 +223,7 @@ Combinations: 1
 - **Output:**
 
 ```bash
-$ (PROJECT_DIR)/script/micse_taq.sh -C ligo -I raffle.ligo -S raffle.storageList.ligo -m syner
+$ (PROJECT_DIR)/script/micse_taq.sh -C ligo -I (PROJECT_DIR)/benchmarks/ligo/raffle.ligo -S (PROJECT_DIR)/benchmarks/ligo/raffle.storageList.ligo -m syner
 Initializing taqueria is done
 Note: parameter file associated with "raffle.ligo" can't be found, so "raffle.parameterList.ligo" has been created for you. Use this file to define all parameter values for this contract
 
@@ -262,7 +262,7 @@ Combinations: 1
 - **Output:**
 
 ```bash
-$ (PROJECT_DIR)/script/micse_taq.sh -C smartpy -I raffle.py -m syner
+$ (PROJECT_DIR)/script/micse_taq.sh -C smartpy -I (PROJECT_DIR)/benchmarks/smartpy/raffle.py -m syner
 Initializing taqueria is done
 Compile process is done
  Final-Report :
