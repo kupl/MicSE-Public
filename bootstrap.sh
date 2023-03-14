@@ -58,7 +58,7 @@ if [[ ! "$(ocaml --version)" =~ "$OPAM_SWITCH_VERSION" ]]; then
 fi
 echo "[NOTE] Current OCAML version is $(ocaml --version | grep -P "\d+\.\d+\.\d+" -o)"
 eval $(opam env) && opam install -y -q -j $USABLE_CORES $MICSE_DIR --deps-only
-echo "eval \$(opam env)" >> $HOME_DIR/.profile
+echo "eval \$(opam env)" >> $HOME_DIR/.bashrc
 echo "[NOTE] End-up Initialize OPAM"
 
 # Build MicSE
@@ -66,7 +66,7 @@ MICSE_BIN_DIR=$MICSE_DIR/bin
 if [[ ! -d "$MICSE_BIN_DIR" ]]; then
   echo "[NOTE] Start Install MicSE"
   eval $(opam env) && cd $MICSE_DIR && make
-  echo "PATH=\$PATH:$MICSE_BIN_DIR" >> $HOME_DIR/.profile
+  echo "PATH=\$PATH:$MICSE_BIN_DIR" >> $HOME_DIR/.bashrc
   echo "[NOTE] End-up Install MicSE"
 fi
 
